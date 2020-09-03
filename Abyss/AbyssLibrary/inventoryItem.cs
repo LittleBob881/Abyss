@@ -7,11 +7,13 @@ public class inventoryItem
 	private string activeImage;
 	private int id;
 
-	public innventoryItem(int id, string image, string active)
+	public inventoryItem(int id, string image, string active)
 	{
 		this.id = id;
 		this.image = image;
 		this.activeImage = active;
+
+
 	}
 
 	public int getID()
@@ -26,6 +28,6 @@ public class inventoryItem
 
 	public string getActiveImage()
     {
-		return this.activeImage
+		return this.activeImage;
     }
 }
