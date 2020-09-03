@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "SXEsh3pUkWd+eQfEBuCgirtfHgRL+PmHRsqZGxz2tWV/9owBQsBhiFJRoSCBmvJ20+yKWX/WiloW53yYIwzhSA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Judith Kearney\\Documents\\GitHub\\Abyss\\Abyss\\AbyssLibrary\\AbyssLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Judith Kearney\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Judith Kearney\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
