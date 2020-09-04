@@ -6,19 +6,22 @@ using UnityEngine.TestTools;
 
 namespace Tests
 {
-    public class NewTestScript
+    public class inventorytestSript
     {
         // A Test behaves as an ordinary method
         [Test]
-        public void NewTestScriptSimplePasses()
+        public void inventorytestSriptSimplePasses()
         {
-            // Use the Assert class to test conditions
+            //create inventory object
+            // add item to inventory
+
+
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
-        public IEnumerator NewTestScriptWithEnumeratorPasses()
+        public IEnumerator inventorytestSriptWithEnumeratorPasses()
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
