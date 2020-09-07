@@ -56,9 +56,19 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="plublished" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="InventoryItems.sql" />
     <Build Include="RoomItem.sql" />
+    <Build Include="Room.sql" />
+    <Build Include="RoomRoomItems.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="AbyssDatabase.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="plublished\AbyssDatabase.publish.xml" />
+    <None Include="plublished\AbyssDatabase1_1.publish.xml" />
   </ItemGroup>
 </Project>

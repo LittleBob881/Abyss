@@ -6,23 +6,18 @@ using UnityEngine.TestTools;
 
 namespace Tests
 {
-    public class NewTestScript1
+    public class TitleMenuTestScript
     {
         // A Test behaves as an ordinary method
         [Test]
         public void NewTestScript1SimplePasses()
         {
-            // Use the Assert class to test conditions
+            //crete static inventory vairable and items in titlemenu script.
+
+
+           // playerinventory.getEmpty == "emptySlot";
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator NewTestScript1WithEnumeratorPasses()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
-        }
+ 
     }
 }
