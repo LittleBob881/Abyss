@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[RoomRoomItems]
 (
-	[IdRRI] INT NOT NULL PRIMARY KEY, 
-    [Room] INT NOT NULL, 
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [RoomID] INT NOT NULL, 
     [RoomItemID] INT NOT NULL, 
-    CONSTRAINT [FK_Table1_Room] FOREIGN KEY (Room) REFERENCES [Room]([Id]), 
-    CONSTRAINT [FK_Table1_RoomItem] FOREIGN KEY (RoomItemID) REFERENCES [RoomItem] ([Id])
+    CONSTRAINT [FK_RRI_Room] FOREIGN KEY ([RoomID]) REFERENCES [Room]([Id]), 
+    CONSTRAINT [FK_RRI_RoomItem] FOREIGN KEY ([RoomItemID]) REFERENCES [RoomItem] ([Id])
 )

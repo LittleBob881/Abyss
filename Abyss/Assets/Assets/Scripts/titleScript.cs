@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Data.SqlClient;
+using System.Text;
+using System.Data;
 
 
 public class titleScrip : MonoBehaviour
@@ -25,4 +27,7 @@ public class titleScrip : MonoBehaviour
     {
         
     }
+
+
+
 }

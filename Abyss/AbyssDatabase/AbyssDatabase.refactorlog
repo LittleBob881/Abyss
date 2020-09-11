@@ -63,4 +63,32 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Id" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="84414774-4f7f-4c61-8295-2b5df181bac8" ChangeDateTime="09/10/2020 02:05:08">
+    <Property Name="ElementName" Value="[dbo].[RoomRoomItems].[IdRRI]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RoomRoomItems]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="96c8f159-903b-4a45-867e-115ccf1f6543" ChangeDateTime="09/10/2020 02:05:41">
+    <Property Name="ElementName" Value="[dbo].[RoomRoomItems].[Room]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RoomRoomItems]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RoomID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a783b895-e9e6-45ef-9d71-261520ea9ddb" ChangeDateTime="09/10/2020 02:05:54">
+    <Property Name="ElementName" Value="[dbo].[RoomRoomItems].[RoomItemID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RoomRoomItems]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RoomItemIDe" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="67cff58b-0ef3-4663-82e2-775a870efe4e" ChangeDateTime="09/10/2020 02:05:58">
+    <Property Name="ElementName" Value="[dbo].[RoomRoomItems].[RoomItemIDe]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RoomRoomItems]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RoomItemID" />
+  </Operation>
 </Operations>

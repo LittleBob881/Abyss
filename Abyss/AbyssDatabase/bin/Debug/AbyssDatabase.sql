@@ -40,62 +40,60 @@ USE [$(DatabaseName)];
 
 
 GO
-PRINT N'The following operation was generated from a refactoring log file fa2bc8b1-d370-4794-afac-4cac383fabfb';
-
-PRINT N'Rename [dbo].[RoomItem].[IdRI] to Id';
+PRINT N'Rename refactoring operation with key fa2bc8b1-d370-4794-afac-4cac383fabfb is skipped, element [dbo].[RoomItem].[IdRI] (SqlSimpleColumn) will not be renamed to Id';
 
 
 GO
-EXECUTE sp_rename @objname = N'[dbo].[RoomItem].[IdRI]', @newname = N'Id', @objtype = N'COLUMN';
+PRINT N'Rename refactoring operation with key 3886827d-79c9-4e40-960c-3c9705612d03 is skipped, element [dbo].[Room].[IdR] (SqlSimpleColumn) will not be renamed to Id';
 
 
 GO
-PRINT N'The following operation was generated from a refactoring log file 3886827d-79c9-4e40-960c-3c9705612d03';
-
-PRINT N'Rename [dbo].[Room].[IdR] to Id';
+PRINT N'Rename refactoring operation with key 84414774-4f7f-4c61-8295-2b5df181bac8 is skipped, element [dbo].[RoomRoomItems].[IdRRI] (SqlSimpleColumn) will not be renamed to Id';
 
 
 GO
-EXECUTE sp_rename @objname = N'[dbo].[Room].[IdR]', @newname = N'Id', @objtype = N'COLUMN';
+PRINT N'Rename refactoring operation with key 96c8f159-903b-4a45-867e-115ccf1f6543 is skipped, element [dbo].[RoomRoomItems].[Room] (SqlSimpleColumn) will not be renamed to RoomID';
 
 
 GO
-PRINT N'Creating [dbo].[RoomRoomItems]...';
-
-
-GO
-CREATE TABLE [dbo].[RoomRoomItems] (
-    [IdRRI]      INT NOT NULL,
-    [Room]       INT NOT NULL,
-    [RoomItemID] INT NOT NULL,
-    PRIMARY KEY CLUSTERED ([IdRRI] ASC)
-);
-
-
-GO
-PRINT N'Creating [dbo].[FK_Table1_Room]...';
+PRINT N'Creating [dbo].[FK_RRI_Room]...';
 
 
 GO
 ALTER TABLE [dbo].[RoomRoomItems] WITH NOCHECK
-    ADD CONSTRAINT [FK_Table1_Room] FOREIGN KEY ([Room]) REFERENCES [dbo].[Room] ([Id]);
+    ADD CONSTRAINT [FK_RRI_Room] FOREIGN KEY ([RoomID]) REFERENCES [dbo].[Room] ([Id]);
 
 
 GO
-PRINT N'Creating [dbo].[FK_Table1_RoomItem]...';
+PRINT N'Creating [dbo].[FK_RRI_RoomItem]...';
 
 
 GO
 ALTER TABLE [dbo].[RoomRoomItems] WITH NOCHECK
-    ADD CONSTRAINT [FK_Table1_RoomItem] FOREIGN KEY ([RoomItemID]) REFERENCES [dbo].[RoomItem] ([Id]);
+    ADD CONSTRAINT [FK_RRI_RoomItem] FOREIGN KEY ([RoomItemID]) REFERENCES [dbo].[RoomItem] ([Id]);
 
 
+GO
+PRINT N'Creating [dbo].[getItems]...';
+
+
+GO
+CREATE VIEW [dbo].[getItems]
+	AS SELECT * FROM [InventoryItems];
 GO
 -- Refactoring step to update target server with deployed transaction logs
 IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'fa2bc8b1-d370-4794-afac-4cac383fabfb')
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('fa2bc8b1-d370-4794-afac-4cac383fabfb')
 IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '3886827d-79c9-4e40-960c-3c9705612d03')
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('3886827d-79c9-4e40-960c-3c9705612d03')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '84414774-4f7f-4c61-8295-2b5df181bac8')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('84414774-4f7f-4c61-8295-2b5df181bac8')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '96c8f159-903b-4a45-867e-115ccf1f6543')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('96c8f159-903b-4a45-867e-115ccf1f6543')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'a783b895-e9e6-45ef-9d71-261520ea9ddb')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('a783b895-e9e6-45ef-9d71-261520ea9ddb')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '67cff58b-0ef3-4663-82e2-775a870efe4e')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('67cff58b-0ef3-4663-82e2-775a870efe4e')
 
 GO
 
@@ -108,9 +106,9 @@ USE [$(DatabaseName)];
 
 
 GO
-ALTER TABLE [dbo].[RoomRoomItems] WITH CHECK CHECK CONSTRAINT [FK_Table1_Room];
+ALTER TABLE [dbo].[RoomRoomItems] WITH CHECK CHECK CONSTRAINT [FK_RRI_Room];
 
-ALTER TABLE [dbo].[RoomRoomItems] WITH CHECK CHECK CONSTRAINT [FK_Table1_RoomItem];
+ALTER TABLE [dbo].[RoomRoomItems] WITH CHECK CHECK CONSTRAINT [FK_RRI_RoomItem];
 
 
 GO
