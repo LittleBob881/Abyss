@@ -12,20 +12,19 @@ namespace Tests
         [Test]
         public void inventorytestSriptSimplePasses()
         {
-            //create inventory object
-            // add item to inventory
+            //crete static inventory vairable and items in titlemenu script.
+            //ARANGE
+             //var inventoryIsStatic = "emptySlot";
+            //ACT
+
+            //ASSERT
+
+
+            // Assert.AreEqual(inventoryIsStatic, inventoryScript.playerInventory.getEmptyImage());
 
 
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator inventorytestSriptWithEnumeratorPasses()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
-        }
+
     }
 }

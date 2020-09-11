@@ -6,3 +6,4 @@ C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\bin\Debug\nets
 C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\bin\Debug\netstandard2.0\AbyssLibrary.pdb
 C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\obj\Debug\netstandard2.0\AbyssLibrary.dll
 C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\obj\Debug\netstandard2.0\AbyssLibrary.pdb
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\obj\Debug\netstandard2.0\AbyssLibrary.csproj.CoreCompileInputs.cache

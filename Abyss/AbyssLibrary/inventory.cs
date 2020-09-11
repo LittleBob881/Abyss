@@ -29,7 +29,7 @@ public class inventory
 	}
 
 	// adds and item to the inventorySlots list
-	public void addIventoryItem(inventoryItem item)
+	public void addInventoryItem(inventoryItem item)
 	{
 		this.inventorySlots.Add(item);
 	}
