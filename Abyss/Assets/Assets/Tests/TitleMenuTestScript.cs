@@ -13,9 +13,14 @@ namespace Tests
         public void NewTestScript1SimplePasses()
         {
             //crete static inventory vairable and items in titlemenu script.
+            //ARANGE
+           // var inventoryIsStatic = "emptySlot";
+            //ACT
+
+            //ASSERT
 
 
-           // playerinventory.getEmpty == "emptySlot";
+           // Assert.That(playerinventory.getEmpty, is.EqualTo(inventoryIsStatic));
         }
 
  

@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Data.SqlClient;
 using System.Text;
 using System.Data;
 
 
 public class titleScrip : MonoBehaviour
 {
-    private inventory playerInventory;
-    private player player;
+    private static inventory playerInventory;
+    private static player player;
+    private static inventory puzzleInventory;
+    private static inventory usedInventory;
+
 
 
     // Start is called before the first frame update
@@ -29,5 +31,12 @@ public class titleScrip : MonoBehaviour
     }
 
 
+    private void createNewGame()
+    {
+        playerInventory = new inventory();
+        puzzleInventory = new inventory();
+        usedInventory = new inventory();
+
+    }
 
 }
