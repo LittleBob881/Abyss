@@ -38,8 +38,22 @@ public class inventoryScript : MonoBehaviour
         Debug.Log("You have clicked the button!");
     }
 
+    void OnDisable()
+    {
+        Debug.Log("PrintOnDisable: script was disabled");
+
+    }
+
+    void OnEnable()
+    {
+        Debug.Log("PrintOnEnable: script was enabled");
+        Slot1.GetComponent<Image>().sprite = playerInventory.getInventorySlot(1).getImage();
+    }
+
+
     private void slot1OnClick()
     {
+       // if () ;
         int slot= 1;
         
         updateactiveitem(slot);
@@ -79,18 +93,25 @@ public class inventoryScript : MonoBehaviour
 
     private void createNewGame()
     {
-        playerInventory = new inventory();
+        
         puzzleInventory = new inventory();
         usedInventory = new inventory();
+        inventoryItem item0 = new inventoryItem(0, sprites[0], sprites[0]);
+        inventoryItem item1 = new inventoryItem(1, sprites[1], sprites[2]);
+        inventoryItem item2 = new inventoryItem(2, sprites[3], sprites[4]);
+        inventoryItem item3 = new inventoryItem(3, sprites[5], sprites[6]);
+        inventoryItem item4 = new inventoryItem(4, sprites[7], sprites[8]);
+        inventoryItem item5 = new inventoryItem(5, sprites[9], sprites[10]);
+        inventoryItem item6 = new inventoryItem(6, sprites[11], sprites[12]);
 
-        inventoryItem item1 = new inventoryItem(1, "bone", "boneA");
-        inventoryItem item2 = new inventoryItem(2, "pen", "penA");
-        inventoryItem item3 = new inventoryItem(3, "tomato", "tomatoA");
-        inventoryItem item4 = new inventoryItem(4, "onion", "onionA");
-        inventoryItem item5 = new inventoryItem(5, "crayons", "crayonsA");
-        inventoryItem item6 = new inventoryItem(6, "key", "keyA");
+        List<inventoryItem> inventorySlots= new List<inventoryItem>();
 
-        
+        for (int a = 0 ; a<12 ; ++a)
+        {
+            inventorySlots.Add(item0);
+        }
+
+        playerInventory = new inventory();
 
         puzzleInventory.addInventoryItem(item1);
         puzzleInventory.addInventoryItem(item2);
@@ -105,5 +126,93 @@ public class inventoryScript : MonoBehaviour
 
     }
 
+    public class inventoryItem
+    {
+
+        private Sprite image;
+        private Sprite activeImage;
+        private int id;
+
+
+        public inventoryItem(int id, Sprite image, Sprite active)
+        {
+            this.id = id;
+            this.image = image;
+            this.activeImage = active;
+
+
+        }
+
+        public int getID()
+        {
+            return this.id;
+        }
+
+        public Sprite getImage()
+        {
+            return this.image;
+        }
+
+        public Sprite getActiveImage()
+        {
+            return this.activeImage;
+        }
+    }
+
+    public class inventory
+    {
+        private List<inventoryItem> inventorySlots;
+        private inventoryItem activeItem;
+        private String empty;
+
+        //for Initializing iventory class when loading a save file
+        public inventory(List<inventoryItem> slots)
+        {
+            this.inventorySlots = slots;
+            this.empty = "emptySlot";
+        }
+
+        //for Initializing iventory class when creating a new game.
+        public inventory()
+        {
+            inventorySlots = new List<inventoryItem>();
+            this.empty = "emptySlot";
+
+        }
+
+        //gets an iventory item at the slot location given to the method
+        public inventoryItem getInventorySlot(int slot)
+        {
+            inventoryItem toreturn = this.inventorySlots[slot];
+            return toreturn;
+        }
+
+        // adds and item to the inventorySlots list
+        public void addInventoryItem(inventoryItem item)
+        {
+            this.inventorySlots.Add(item);
+        }
+
+        //sets active item. When a player taps on a slot, an int of which slot is sent
+        //                  to here and an iventoryItem is taken from invetorySlots list
+        //					dependint on what int is sent and saved into activeItem. 
+        public void setActiveItem(int slot)
+        {
+            this.activeItem = this.inventorySlots[slot];
+        }
+
+        //returns the ativeImage of the activeItem 
+        public Sprite getActiveItemActiveimage()
+        {
+            return this.activeItem.getActiveImage();
+        }
+
+        //retuns the string held in empty
+        public string getEmptyImage()
+        {
+            return this.empty;
+        }
+
+    }
 
 }

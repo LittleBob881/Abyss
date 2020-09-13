@@ -4,73 +4,76 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7731032343331597158
-    second: emptySlot
+    second: 0emptySlot
   - first:
       213: -4689094131225449595
-    second: bone
+    second: 1bone
   - first:
       213: 615041621794760373
-    second: pen
+    second: 2pen
   - first:
       213: -107103165641378979
-    second: tomato
+    second: 3tomato
   - first:
       213: 1485216544250080018
-    second: onion
+    second: 4onion
   - first:
       213: -462825578438198591
-    second: crayons
+    second: 5crayons
   - first:
       213: 1765550635412227503
-    second: key
+    second: 6key
   - first:
       213: 927007806595126882
-    second: coffee
+    second: 7coffee
   - first:
       213: -497693570949742501
-    second: money
+    second: 8money
   - first:
       213: 7952555066896194551
-    second: whisky
+    second: 9whisky
   - first:
       213: -7533448562493163431
-    second: knife
+    second: 10knife
   - first:
       213: 3397781404037397008
-    second: poison
+    second: 11poison
   - first:
       213: 4358715899777093412
-    second: boneA
+    second: 1boneA
   - first:
       213: -6172564943782091566
-    second: penA
+    second: 2penA
   - first:
       213: -8347811252521897374
-    second: tomatoA
+    second: 3tomatoA
   - first:
       213: -1370075035364863347
-    second: onionA
+    second: 4onionA
   - first:
       213: -1820516732857263323
-    second: crayonsA
+    second: 5crayonsA
   - first:
       213: 7885000385977715179
-    second: keyA
+    second: 6keyA
   - first:
       213: 5920848318041090359
-    second: coffeeA
+    second: 7coffeeA
   - first:
       213: 7787726612144191193
-    second: moneyA
+    second: 8moneyA
   - first:
       213: -9082487890503442632
-    second: whiskyA
+    second: 9whiskyA
   - first:
       213: 4434268315888006837
-    second: knifeA
+    second: 10knifeA
   - first:
       213: -8382432008417719297
-    second: poisonA
+    second: 11poisonA
+  - first:
+      213: 5594921024686962480
+    second: itemsheet_6_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -170,7 +173,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: emptySlot
+      name: 0emptySlot
       rect:
         serializedVersion: 2
         x: 0
@@ -191,7 +194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bone
+      name: 1bone
       rect:
         serializedVersion: 2
         x: 65
@@ -212,7 +215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pen
+      name: 2pen
       rect:
         serializedVersion: 2
         x: 130
@@ -233,7 +236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tomato
+      name: 3tomato
       rect:
         serializedVersion: 2
         x: 195
@@ -254,7 +257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: onion
+      name: 4onion
       rect:
         serializedVersion: 2
         x: 260
@@ -275,7 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crayons
+      name: 5crayons
       rect:
         serializedVersion: 2
         x: 325
@@ -296,7 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: key
+      name: 6key
       rect:
         serializedVersion: 2
         x: 390
@@ -317,7 +320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coffee
+      name: 7coffee
       rect:
         serializedVersion: 2
         x: 455
@@ -338,7 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: money
+      name: 8money
       rect:
         serializedVersion: 2
         x: 520
@@ -359,7 +362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: whisky
+      name: 9whisky
       rect:
         serializedVersion: 2
         x: 585
@@ -380,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knife
+      name: 10knife
       rect:
         serializedVersion: 2
         x: 650
@@ -401,7 +404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: poison
+      name: 11poison
       rect:
         serializedVersion: 2
         x: 715
@@ -422,7 +425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boneA
+      name: 1boneA
       rect:
         serializedVersion: 2
         x: 65
@@ -443,7 +446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: penA
+      name: 2penA
       rect:
         serializedVersion: 2
         x: 130
@@ -464,7 +467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tomatoA
+      name: 3tomatoA
       rect:
         serializedVersion: 2
         x: 195
@@ -485,7 +488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: onionA
+      name: 4onionA
       rect:
         serializedVersion: 2
         x: 260
@@ -506,7 +509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crayonsA
+      name: 5crayonsA
       rect:
         serializedVersion: 2
         x: 325
@@ -527,7 +530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: keyA
+      name: 6keyA
       rect:
         serializedVersion: 2
         x: 390
@@ -548,7 +551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coffeeA
+      name: 7coffeeA
       rect:
         serializedVersion: 2
         x: 455
@@ -569,7 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: moneyA
+      name: 8moneyA
       rect:
         serializedVersion: 2
         x: 520
@@ -590,7 +593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: whiskyA
+      name: 9whiskyA
       rect:
         serializedVersion: 2
         x: 585
@@ -611,7 +614,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knifeA
+      name: 10knifeA
       rect:
         serializedVersion: 2
         x: 650
@@ -632,7 +635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: poisonA
+      name: 11poisonA
       rect:
         serializedVersion: 2
         x: 715

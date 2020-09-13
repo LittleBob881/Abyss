@@ -4,18 +4,18 @@
 
 	public class player
 	{
-		inventoryItem activeItem;
-		inventoryItem notActiveItem;
+		//inventoryItem activeItem;
+		//inventoryItem notActiveItem;
 
 	public player()
 		{
-		notActiveItem = new inventoryItem(0, "false", "false");
-		activeItem = notActiveItem;
+		//notActiveItem = new inventoryItem(0, "false", "false");
+		//activeItem = notActiveItem;
 		}
 
 
 		//Sets the active item with an item.
-		public void setActiveItem(inventoryItem item)
+		/*public void setActiveItem(inventoryItem item)
 		{
 			this.activeItem = item;
 
@@ -26,5 +26,5 @@
 		public void unactivateActiveItem()
 		{
 		this.activeItem = notActiveItem;
-		}
+		}*/
 	}
