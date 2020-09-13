@@ -20,7 +20,7 @@ namespace Tests
             //ASSERT
 
 
-            // Assert.AreEqual(inventoryIsStatic, inventoryScript.playerInventory.getEmptyImage());
+           // Assert.AreEqual(inventoryIsStatic, inventoryScript.playerInventory.getEmptyImage());
 
 
         }

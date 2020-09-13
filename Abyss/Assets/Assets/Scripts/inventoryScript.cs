@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,27 +13,50 @@ public class inventoryScript : MonoBehaviour
     public GameObject Slot1;
     
     public GameObject view;
+    public Sprite[] sprites;
 
     // Start is called before the first frame update
-    void start()
+    void Start()
     {
+        Debug.Log("You have clicked the button!");
         //if
         createNewGame();
         //else 
         //add continue game load
 
-       // view = GameObject.Find("InventoryView");
+        //view = GameObject.Find("InventoryView");
 
-        //IExitButton = GameObject.Find("IExitButton");
-       // IExitButton.onClick.AddListener(() => ExitTaskOnClick());
+        sprites = Resources.LoadAll<Sprite>("Itemsheet_6");
+        Button btu = IExitButton.GetComponent<Button>();
+        btu.onClick.AddListener(ExitTaskOnClick);
 
-       // Button Slot1L = Slot1.GetComponent<Button>();
-       // Slot1L.onClick.AddListener(ExitTaskOnClick);
+        Button Slot1L = Slot1.GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
 
 
 
+        Debug.Log("You have clicked the button!");
+    }
+
+    private void slot1OnClick()
+    {
+        int slot= 1;
+        
+        updateactiveitem(slot);
+        Button Slot1L = Slot1.GetComponent<Button>();
+        Sprite sprite = GetComponent<Sprite>();
+        //Slot1L.image.sprite = playerInventory.getActiveItemActiveimage();
+    }
+
+
+    private void updateactiveitem(int slot)
+    {
+        playerInventory.setActiveItem(slot);
+        //player set active item
 
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -49,7 +73,7 @@ public class inventoryScript : MonoBehaviour
     void ExitTaskOnClick()
     {
         Debug.Log("You have clicked the button!");
-       // view.gameObject.SetActive(false);
+        view.gameObject.SetActive(false);
 
     }
 
@@ -66,7 +90,7 @@ public class inventoryScript : MonoBehaviour
         inventoryItem item5 = new inventoryItem(5, "crayons", "crayonsA");
         inventoryItem item6 = new inventoryItem(6, "key", "keyA");
 
-        inventoryItem notActiveItem = new inventoryItem(0, "false", "false");
+        
 
         puzzleInventory.addInventoryItem(item1);
         puzzleInventory.addInventoryItem(item2);

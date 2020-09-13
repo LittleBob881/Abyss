@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryButtonSript : MonoBehaviour
+public class ButtonScripts : MonoBehaviour
 {
-
-
-   public void closeInventory()
+    public void closeInventory()
     {
         GameObject.Find("InventoryView").gameObject.SetActive(false);
     }

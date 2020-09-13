@@ -1,11 +1,13 @@
 ﻿using System;
 
-	public class inventoryItem
+
+public class inventoryItem
 	{
 
 		private string image;
 		private string activeImage;
 		private int id;
+		
 
 		public inventoryItem(int id, string image, string active)
 		{

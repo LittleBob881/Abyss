@@ -18,7 +18,9 @@ public class inventory
 	//for Initializing iventory class when creating a new game.
 	public inventory()
 	{
+		inventorySlots = new List<inventoryItem>();
 		this.empty = "emptySlot";
+
 	}
 
 	//gets an iventory item at the slot location given to the method
