@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NotebookScript : MonoBehaviour
 {
@@ -45,12 +46,12 @@ public class NotebookScript : MonoBehaviour
 
     public void turnBackPage()
     {
-        this.playerNoteBook.turnPageBack();
+        playerNoteBook.turnPageBack();
     }
 
     public void turnForwardPage()
     {
-        this.playerNoteBook.turnPageForward();
+        playerNoteBook.turnPageForward();
     }
 
     public void createNoteBook()
@@ -105,14 +106,16 @@ public class noteBookPage
 public class NoteBook
 {
     private List<noteBookPage> pages;
-    private noteBookPage activePage;
+    private static noteBookPage activePage;
+    private int activePageNum;
     private int numPages;
 
     //For loading a saved games notebook
     public NoteBook(List<noteBookPage> pages)
     {
         this.pages = pages;
-        this.activePage = pages[0];
+        activePage = pages[0];
+        activePageNum = activePage.getPageNum();
         this.numPages = pages.Count;
     }
 
@@ -133,26 +136,27 @@ public class NoteBook
     //Checks to see if there is another page and changes the active page to the next page
     public void turnPageForward()
     {
-        int currentPage = pages.FindIndex(activePage);
-        if(numPages > currentPage) //While loop to find next unlocked page?
-        {
-            activePage = pages[currentPage+1];
-        }
+        activePageNum = activePage.getPageNum();
+        //if(numPages > activePage) //While loop to find next unlocked page?
+        //{
+        //    activePage = pages[currentPage+1];
+        //}
     }
 
     //Checks to see if there is a page before the current page and if so changes the active page to the previous page
     public void turnPageBack()
     {
-        int currentPage = pages.FindIndex(activePage);
-        if(currentPage != 0) //While loop to find previous unlocked page
-        {
-            activePage = pages[currentPage - 1];
-        }
+        activePageNum = activePage.getPageNum();
+        //int currentPage = pages.FindIndex(activePage);
+        //if(currentPage != 0) //While loop to find previous unlocked page
+        //{
+        //    activePage = pages[currentPage - 1];
+        //}
     }
 
     //Returns the active pages sprite
     public Sprite getActivePage()
     {
-        return this.activePage.getPage;
+        return activePage.getPage();
     }
 }

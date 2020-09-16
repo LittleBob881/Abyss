@@ -13,7 +13,7 @@ public class LeftOrRight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScreenWidth = ScreenWidth;
+        //ScreenWidth = ScreenWidth;
         characterBody = character.GetComponent<Rigidbody2D>();
 
     }
