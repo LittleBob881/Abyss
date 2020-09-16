@@ -10,6 +10,7 @@ public class inventoryScript : MonoBehaviour
     private static inventory puzzleInventory;
     private static inventory usedInventory;
     public GameObject IExitButton;
+    public GameObject IOpenButton;
     public GameObject Slot1;
     
     public GameObject view;
@@ -18,7 +19,9 @@ public class inventoryScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("You have clicked the button!");
+        Debug.Log("start loaded");
+
+        sprites = Resources.LoadAll<Sprite>("Itemsheet_6");
         //if
         createNewGame();
         //else 
@@ -26,29 +29,24 @@ public class inventoryScript : MonoBehaviour
 
         //view = GameObject.Find("InventoryView");
 
-        sprites = Resources.LoadAll<Sprite>("Itemsheet_6");
+        Button btu1 = IOpenButton.GetComponent<Button>();
+        btu1.onClick.AddListener(OpenTaskOnClick);
+
+
         Button btu = IExitButton.GetComponent<Button>();
         btu.onClick.AddListener(ExitTaskOnClick);
 
         Button Slot1L = Slot1.GetComponent<Button>();
         Slot1L.onClick.AddListener(slot1OnClick);
 
-
-
         Debug.Log("You have clicked the button!");
+
+
+        // hides the inventory at start of game. 
+        view.gameObject.SetActive(false);
     }
 
-    void OnDisable()
-    {
-        Debug.Log("PrintOnDisable: script was disabled");
 
-    }
-
-    void OnEnable()
-    {
-        Debug.Log("PrintOnEnable: script was enabled");
-        Slot1.GetComponent<Image>().sprite = playerInventory.getInventorySlot(1).getImage();
-    }
 
 
     private void slot1OnClick()
@@ -91,6 +89,13 @@ public class inventoryScript : MonoBehaviour
 
     }
 
+    void OpenTaskOnClick()
+    {
+        Debug.Log("You have clicked the button!");
+        view.gameObject.SetActive(true);
+
+    }
+
     private void createNewGame()
     {
         
@@ -105,12 +110,12 @@ public class inventoryScript : MonoBehaviour
         inventoryItem item6 = new inventoryItem(6, sprites[11], sprites[12]);
 
         List<inventoryItem> inventorySlots= new List<inventoryItem>();
-
+        
         for (int a = 0 ; a<12 ; ++a)
         {
             inventorySlots.Add(item0);
         }
-
+        
         playerInventory = new inventory();
 
         puzzleInventory.addInventoryItem(item1);
