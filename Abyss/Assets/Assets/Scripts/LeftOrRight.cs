@@ -36,6 +36,7 @@ public class LeftOrRight : MonoBehaviour
         }
     }
 
+
     private void Walk(float horizontalInput)
     {
         characterBody.AddForce(new Vector2(horizontalInput * movement * Time.deltaTime, 0));
