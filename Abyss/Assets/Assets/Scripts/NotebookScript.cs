@@ -59,13 +59,17 @@ public class NotebookScript : MonoBehaviour
     {
         playerNoteBook = new NoteBook();
 
-        noteBookPage page1 = new noteBookPage(sprites[0], 1);
-        noteBookPage page2 = new noteBookPage(sprites[1], 2);
-        noteBookPage page3 = new noteBookPage(sprites[2], 3);
-
-        //playerNoteBook.addNoteBookPage(page1);
-        //playerNoteBook.addNoteBookPage(page2);
-        //playerNoteBook.addNoteBookPage(page3);
+        for(int i = 0; i < sprites.Length; i++)
+        {
+            noteBookPage page = new noteBookPage(sprites[i], i);
+            playerNoteBook.addNoteBookPage(page);
+            //don't unlock all 
+            playerNoteBook.unlockPage(i);
+            if(i == 1)
+            {
+                playerNoteBook.setActivePage(page);
+            }
+        }
 
     }
 }
@@ -117,7 +121,7 @@ public class NoteBook
         this.pages = pages;
         activePage = pages[0];
         activePageNum = activePage.getPageNum();
-        this.numPages = pages.Count;
+        numPages = pages.Count;
     }
 
     //For starting a new game
@@ -126,39 +130,93 @@ public class NoteBook
         this.pages = new List<noteBookPage>();
     }
 
-    //Adds new notebook page to the notebook so that the player can see it
+    //Is used to generate the notebook at the beginning with pages
     //Title page is page 0 in array
-    public void addNoteBookPage(int pageNum)
+    public void addNoteBookPage(noteBookPage page)
     {
-        //page.setUnlocked(true);
-        //this.pages.Add(page); //Change so that the array has all pages??
-        //this.numPages++;
+        this.pages.Add(page);
+        this.numPages++;
+    }
+
+    //Is called to unlock the page at the page number given (Page 0 is the title page)
+    public void unlockPage(int pageNum)
+    {
+        pages[pageNum].setUnlocked(true);
     }
 
     //Checks to see if there is another page and changes the active page to the next page
     public void turnPageForward()
     {
         activePageNum = activePage.getPageNum();
-        //if(numPages > activePage) //While loop to find next unlocked page?
-        //{
-        //    activePage = pages[currentPage+1];
-        //}
+        Boolean stop = false;
+        Boolean found = false;
+        noteBookPage current = pages[activePageNum];
+        int count = activePageNum;
+        while(!stop)
+        {
+            current = pages[++count];
+            if(current.getPageNum() < numPages)
+            {
+                found = current.getUnlocked();
+                if(found == true)
+                {
+                    stop = true;
+                }
+            }
+            else
+            {
+                stop = true;
+            }
+        }
+        
+        if(found == true)
+        {
+            activePage = current;
+            activePageNum = count;
+        }
     }
 
     //Checks to see if there is a page before the current page and if so changes the active page to the previous page
     public void turnPageBack()
     {
         activePageNum = activePage.getPageNum();
-        //int currentPage = pages.FindIndex(activePage);
-        //if(currentPage != 0) //While loop to find previous unlocked page
-        //{
-        //    activePage = pages[currentPage - 1];
-        //}
+        Boolean stop = false;
+        Boolean found = false;
+        noteBookPage current = pages[activePageNum];
+        int count = activePageNum;
+        while (!stop)
+        {
+            current = pages[--count];
+            if (current.getPageNum() > 0)
+            {
+                found = current.getUnlocked();
+                if (found == true)
+                {
+                    stop = true;
+                }
+            }
+            else
+            {
+                stop = true;
+            }
+        }
+
+        if (found == true)
+        {
+            activePage = current;
+            activePageNum = count;
+        }
     }
 
     //Returns the active pages sprite
     public Sprite getActivePage()
     {
         return activePage.getPage();
+    }
+
+    public void setActivePage(noteBookPage page)
+    {
+        activePage = page;
+        activePageNum = page.getPageNum();
     }
 }
