@@ -20,6 +20,7 @@ public class NotebookScript : MonoBehaviour
         createNoteBook();
 
         //Load in Sprites (ask Judith how to make a resource sheet and how that is impletemented)
+        //sprites = Resources.LoadAll<Sprite>("Itemsheet_6");
 
         Button next = NextButton.GetComponent<Button>();
         next.onClick.AddListener(turnForwardPage);
@@ -62,9 +63,9 @@ public class NotebookScript : MonoBehaviour
         noteBookPage page2 = new noteBookPage(sprites[1], 2);
         noteBookPage page3 = new noteBookPage(sprites[2], 3);
 
-        playerNoteBook.addNoteBookPage(page1);
-        playerNoteBook.addNoteBookPage(page2);
-        playerNoteBook.addNoteBookPage(page3);
+        //playerNoteBook.addNoteBookPage(page1);
+        //playerNoteBook.addNoteBookPage(page2);
+        //playerNoteBook.addNoteBookPage(page3);
 
     }
 }
@@ -126,11 +127,12 @@ public class NoteBook
     }
 
     //Adds new notebook page to the notebook so that the player can see it
-    public void addNoteBookPage(noteBookPage page)
+    //Title page is page 0 in array
+    public void addNoteBookPage(int pageNum)
     {
-        page.setUnlocked(true);
-        this.pages.Add(page); //Change so that the array has all pages??
-        this.numPages++;
+        //page.setUnlocked(true);
+        //this.pages.Add(page); //Change so that the array has all pages??
+        //this.numPages++;
     }
 
     //Checks to see if there is another page and changes the active page to the next page

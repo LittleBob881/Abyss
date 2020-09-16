@@ -895,3 +895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63dc0715bfbddb24fa22d11b70919ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitButton: {fileID: 481442023}
+  NextButton: {fileID: 1924894517}
+  BackButton: {fileID: 329320870}
+  view: {fileID: 1935184738}
+  sprites: []
