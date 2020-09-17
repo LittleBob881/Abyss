@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 
 
-public class titleScrip : MonoBehaviour
+public class titleScript : MonoBehaviour
 {
 
 
