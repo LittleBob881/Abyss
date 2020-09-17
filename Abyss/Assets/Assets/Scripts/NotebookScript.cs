@@ -20,7 +20,7 @@ public class NotebookScript : MonoBehaviour
         createNoteBook();
 
         //Load in Sprites (ask Judith how to make a resource sheet and how that is impletemented)
-        //sprites = Resources.LoadAll<Sprite>("Itemsheet_6");
+        sprites = Resources.LoadAll<Sprite>("PagesPage");
 
         Button next = NextButton.GetComponent<Button>();
         next.onClick.AddListener(turnForwardPage);
