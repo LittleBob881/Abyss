@@ -1,6 +1,0 @@
-C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssDatabase\bin\Debug\AbyssDatabase.dacpac
-C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssDatabase\bin\Debug\AbyssDatabase.dll
-C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssDatabase\bin\Debug\AbyssDatabase.pdb
-C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssDatabase\obj\Debug\AbyssDatabase.sqlprojAssemblyReference.cache
-C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssDatabase\obj\Debug\AbyssDatabase.dll
-C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssDatabase\obj\Debug\AbyssDatabase.pdb
