@@ -354,7 +354,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1740946836}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -786,7 +786,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1740946836}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &542202777
 MonoBehaviour:
@@ -1343,7 +1343,7 @@ RectTransform:
   m_Children:
   - {fileID: 892744318}
   m_Father: {fileID: 1740946836}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2785,7 +2785,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IExitButton: {fileID: 818698468}
   IOpenButton: {fileID: 1936922060}
-  Slot1: {fileID: 77790893}
+  Slot:
+  - {fileID: 77790893}
+  - {fileID: 1127508713}
+  - {fileID: 1947974302}
+  - {fileID: 1310231872}
+  - {fileID: 1001876776}
+  - {fileID: 1860138440}
+  - {fileID: 581331036}
+  - {fileID: 1360822321}
+  - {fileID: 131700776}
+  - {fileID: 68484956}
+  - {fileID: 1286369029}
+  - {fileID: 1508606594}
   view: {fileID: 1740946831}
   sprites: []
 --- !u!114 &1740946833
@@ -2860,9 +2872,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 122387213}
-  - {fileID: 77790897}
   - {fileID: 818698472}
   - {fileID: 542202776}
+  - {fileID: 77790897}
   - {fileID: 1127508714}
   - {fileID: 1947974303}
   - {fileID: 1310231873}

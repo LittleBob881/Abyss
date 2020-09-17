@@ -11,8 +11,10 @@ public class inventoryScript : MonoBehaviour
     private static inventory usedInventory;
     public GameObject IExitButton;
     public GameObject IOpenButton;
-    public GameObject Slot1;
-    
+    public GameObject[] Slot;
+
+
+
     public GameObject view;
     public Sprite[] sprites;
 
@@ -29,14 +31,37 @@ public class inventoryScript : MonoBehaviour
 
         //view = GameObject.Find("InventoryView");
 
-        Button btu1 = IOpenButton.GetComponent<Button>();
-        btu1.onClick.AddListener(OpenTaskOnClick);
+        Button openBtu = IOpenButton.GetComponent<Button>();
+        openBtu.onClick.AddListener(OpenTaskOnClick);
 
 
-        Button btu = IExitButton.GetComponent<Button>();
-        btu.onClick.AddListener(ExitTaskOnClick);
+        Button exitBtu = IExitButton.GetComponent<Button>();
+        exitBtu.onClick.AddListener(ExitTaskOnClick);
 
-        Button Slot1L = Slot1.GetComponent<Button>();
+        Button Slot1L = Slot[0].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+
+        Button Slot2L = Slot[1].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot3L = Slot[2].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot4L = Slot[3].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot5L = Slot[4].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot6L = Slot[5].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot7L = Slot[6].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot8L = Slot[7].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot9L = Slot[8].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot10L = Slot[9].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot11L = Slot[10].GetComponent<Button>();
+        Slot1L.onClick.AddListener(slot1OnClick);
+        Button Slot12L = Slot[11].GetComponent<Button>();
         Slot1L.onClick.AddListener(slot1OnClick);
 
         Debug.Log("You have clicked the button!");
@@ -55,9 +80,9 @@ public class inventoryScript : MonoBehaviour
         int slot= 1;
         
         updateactiveitem(slot);
-        Button Slot1L = Slot1.GetComponent<Button>();
+        Button Slot1L = Slot[1].GetComponent<Button>();
         Sprite sprite = GetComponent<Sprite>();
-        //Slot1L.image.sprite = playerInventory.getActiveItemActiveimage();
+        Slot1L.image.sprite = playerInventory.getActiveItemActiveimage();
     }
 
 
@@ -92,6 +117,17 @@ public class inventoryScript : MonoBehaviour
     void OpenTaskOnClick()
     {
         Debug.Log("You have clicked the button!");
+   
+        for(int a = 0; a<11; a++)
+        {
+            Debug.Log(a);
+            Button Slots = Slot[a].GetComponent<Button>();
+            
+            Slots.image.sprite = playerInventory.getInventorySlot(a).getImage();
+        }
+   
+
+
         view.gameObject.SetActive(true);
 
     }
@@ -116,7 +152,7 @@ public class inventoryScript : MonoBehaviour
             inventorySlots.Add(item0);
         }
         
-        playerInventory = new inventory();
+        playerInventory = new inventory(inventorySlots);
 
         puzzleInventory.addInventoryItem(item1);
         puzzleInventory.addInventoryItem(item2);
