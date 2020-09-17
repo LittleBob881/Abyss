@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-
+// needs to be added into a script as inventoryItem uses an class that is not availbe here. 
 	public class player
 	{
 		//inventoryItem activeItem;
