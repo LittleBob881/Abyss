@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class DatabaseLoaderScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   
+
+
+    public void NewGame()
     {
+       //load roomItem here
+
         
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    public void ConGame()
     {
-        
+        //code stuff here 
     }
 }
