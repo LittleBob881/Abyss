@@ -13,58 +13,97 @@ public class NotebookScript : MonoBehaviour
 
     public GameObject view;
     public Sprite[] sprites;
+    public Image activePage;
+    public Image page0;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Makes a sprite array of all of the pages 
+        sprites = Resources.LoadAll<Sprite>("Pagespage");
+
+        //Makes the notebook with all the pages
         createNoteBook();
 
-        //Load in Sprites (ask Judith how to make a resource sheet and how that is impletemented)
-        sprites = Resources.LoadAll<Sprite>("PagesPage");
-
+        //Set up for each of the buttons and sets the appropriate action listeners
         Button next = NextButton.GetComponent<Button>();
         next.onClick.AddListener(turnForwardPage);
 
         Button back = BackButton.GetComponent<Button>();
-        next.onClick.AddListener(turnBackPage);
+        back.onClick.AddListener(turnBackPage);
 
         Button exit = exitButton.GetComponent<Button>();
-        next.onClick.AddListener(ExitTaskOnClick);
+        exit.onClick.AddListener(ExitTaskOnClick);
+
+        //Sets the image on the left side of the screen to page 0
+        Image firstPage = page0.GetComponent<Image>();
+        firstPage.sprite = sprites[0];
+
+        //Sets the image on the right side of the screen to page 1
+        Image active = activePage.GetComponent<Image>();
+        active.sprite = sprites[1];
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
+    //Is called as the action listener for the exit button and will close the notebook
     void ExitTaskOnClick()
     {
-        Debug.Log("You have clicked the button!");
         view.gameObject.SetActive(false);
 
     }
 
+    //Is called as the action listener for the back button and will turn back the page if another page is unlocked previous to the active page
     public void turnBackPage()
     {
-        playerNoteBook.turnPageBack();
+        noteBookPage page = playerNoteBook.turnPageBack();
+
+        //If it is going back to the first page also will show page 0
+        if(page.getPageNum() == 1)
+        {
+            page0.enabled = true;
+        }
+
+        //Sets the image in Unity to the new active page
+        Image active = activePage.GetComponent<Image>();
+        activePage.sprite = page.getPage();
     }
 
+    //Is called as the action listener for the next button and will turn forward the page if there is an unlocked page after the active page
     public void turnForwardPage()
     {
-        playerNoteBook.turnPageForward();
+        noteBookPage page = playerNoteBook.turnPageForward();
+
+        //If it is going back to the first page also will show page 0
+        if (page.getPageNum() > 1)
+        {
+            page0.enabled = false;
+        }
+
+        //Sets the image in Unity to the new active page
+        Image active = activePage.GetComponent<Image>();
+        activePage.sprite = page.getPage();
+
     }
 
+    //Is called at the start of a new game to make the notebook and initalise all the pages into an array
     public void createNoteBook()
     {
         playerNoteBook = new NoteBook();
 
+        //Creates all of the pages into one notebook
         for(int i = 0; i < sprites.Length; i++)
         {
             noteBookPage page = new noteBookPage(sprites[i], i);
             playerNoteBook.addNoteBookPage(page);
+
             //don't unlock all 
             playerNoteBook.unlockPage(i);
+            
+            //Sets the first page to the active page
             if(i == 1)
             {
                 playerNoteBook.setActivePage(page);
@@ -74,6 +113,7 @@ public class NotebookScript : MonoBehaviour
     }
 }
 
+//Notebook Page Class - Has the information that each page needs and the needed getters and setters for each attribute
 public class noteBookPage
 {
     private Sprite page;
@@ -108,6 +148,7 @@ public class noteBookPage
     }
 }
 
+//Notebook Class - Has a list of the notebook pages and methods needed for turning pages and setting page information
 public class NoteBook
 {
     private List<noteBookPage> pages;
@@ -145,67 +186,53 @@ public class NoteBook
     }
 
     //Checks to see if there is another page and changes the active page to the next page
-    public void turnPageForward()
+    public noteBookPage turnPageForward()
     {
-        activePageNum = activePage.getPageNum();
-        Boolean stop = false;
         Boolean found = false;
-        noteBookPage current = pages[activePageNum];
+        noteBookPage current = activePage;
         int count = activePageNum;
-        while(!stop)
+
+        //Checks while there are pages left until the next unlocked page is found 
+            //Else will leave the active page as the original page
+        for(int i = count; i < numPages-1; i++)
         {
             current = pages[++count];
-            if(current.getPageNum() < numPages)
+            found = current.getUnlocked();
+
+            //If the page is unlocked then the active page is set to the current page and the loop is broken
+            if (found == true)
             {
-                found = current.getUnlocked();
-                if(found == true)
-                {
-                    stop = true;
-                }
-            }
-            else
-            {
-                stop = true;
+                i = numPages;
+                this.setActivePage(current);
+                return current;
             }
         }
-        
-        if(found == true)
-        {
-            activePage = current;
-            activePageNum = count;
-        }
+
+        //If unlocked page not found returns the original active page
+        return activePage;
     }
 
     //Checks to see if there is a page before the current page and if so changes the active page to the previous page
-    public void turnPageBack()
+    public noteBookPage turnPageBack()
     {
-        activePageNum = activePage.getPageNum();
-        Boolean stop = false;
         Boolean found = false;
         noteBookPage current = pages[activePageNum];
         int count = activePageNum;
-        while (!stop)
+
+        //Checks while there are pages left before of the active page until the first unlocked page is found 
+            //Else will leave the active page as the original page
+        for (int i = count; i > 1; i--)
         {
             current = pages[--count];
-            if (current.getPageNum() > 0)
+            found = current.getUnlocked();
+            if(found == true)
             {
-                found = current.getUnlocked();
-                if (found == true)
-                {
-                    stop = true;
-                }
-            }
-            else
-            {
-                stop = true;
+                i = -1; //Breaks loop if unlocked page is found
+                this.setActivePage(current); //Sets current page to the active page
             }
         }
 
-        if (found == true)
-        {
-            activePage = current;
-            activePageNum = count;
-        }
+        return activePage;
     }
 
     //Returns the active pages sprite
@@ -214,6 +241,7 @@ public class NoteBook
         return activePage.getPage();
     }
 
+    //Sets the active page to the passed in page and also sets the page number to the passes in pages number
     public void setActivePage(noteBookPage page)
     {
         activePage = page;

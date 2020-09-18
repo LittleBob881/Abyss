@@ -276,7 +276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -119.2, y: -1.6}
+  m_AnchoredPosition: {x: -119.17, y: -1.6377}
   m_SizeDelta: {x: 238.33316, y: 297.27533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368102816
@@ -1052,3 +1052,5 @@ MonoBehaviour:
   BackButton: {fileID: 329320870}
   view: {fileID: 1935184738}
   sprites: []
+  activePage: {fileID: 1719396119}
+  page0: {fileID: 368102816}
