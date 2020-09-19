@@ -1,31 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
 
 public class LeftOrRight : MonoBehaviour
 {
+    public float movement = 300;
     public GameObject character;
 
-    private Rigidbody2D body;
+    private Rigidbody2D characterBody;
     private float ScreenWidth;
+    // Start is called before the first frame update
+    void Start()
+    {
+        //ScreenWidth = ScreenWidth;
+        characterBody = character.GetComponent<Rigidbody2D>();
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Input.GetAxis("Horizontal")*30f*Time.deltaTime, 0f, 0f);
+        int i = 0;
+        while (i < Input.touchCount)
+        {
+            if(Input.GetTouch(i).position.x > ScreenWidth / 2)
+            {
+                Walk(1.0f);
+            }
+            if(Input.GetTouch(i).position.x < ScreenWidth / 2)
+            {
+                Walk(-1.0f);
+            }
+            ++i;
+        }
+    }
 
-        Vector3 characterScale = transform.localScale;
-        if(Input.GetAxis("Horizontal") < 0)
-        {
-            characterScale.x = -1056;
-        }
-        if(Input.GetAxis("Horizontal") > 0)
-        {
-            characterScale.x = 1056;
-        }
-        transform.localScale = characterScale;
+
+    private void Walk(float horizontalInput)
+    {
+        characterBody.AddForce(new Vector2(horizontalInput * movement * Time.deltaTime, 0));
     }
 }
