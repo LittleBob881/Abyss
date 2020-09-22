@@ -15,7 +15,7 @@ namespace Tests
             //tests that the task of geting a item from an room item adds an item to a inventory. 
 
             //ARANGE
-            var inventory = new PickupItem();
+            //var inventory = new PickupItem();
             //ACT
 
             //ASSERT
