@@ -4,25 +4,21 @@ using System.Text;
 
 namespace AbyssLibrary
 {
-    public class RoomItem
+    class RoomItem
     {
         private String room;
-        private String name;
         private String output;
         private string[] dialog;
         private int item;
-        private int page;
         private int dialogNumber;
 
 
-        public RoomItem(String room, String name, string[] textlines, int item, int page)
+        public RoomItem(String room, string[] textlines, int item)
         {
             this.room = room;
-            this.name = name;
             this.output = "  ";
             this.dialog = textlines;
             this.item = item;
-            this.page = page;
             this.dialogNumber = 0;
 
         }
@@ -45,13 +41,6 @@ namespace AbyssLibrary
         public int GetItem()
         {
             return item;
-
-        }
-
-        // returns item (not sure how this will work with the page getting.)
-        public int GetPage()
-        {
-            return page;
 
         }
 
