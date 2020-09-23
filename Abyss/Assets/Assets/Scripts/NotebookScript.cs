@@ -112,9 +112,6 @@ public class NotebookScript : MonoBehaviour
             noteBookPage page = new noteBookPage(sprites[i], i);
             playerNoteBook.addNoteBookPage(page);
 
-            //don't unlock all 
-            playerNoteBook.unlockPage(i);
-            
             //Sets the first page to the active page
             if(i == 1)
             {
@@ -122,6 +119,8 @@ public class NotebookScript : MonoBehaviour
             }
         }
 
+        playerNoteBook.unlockPage(0);
+        playerNoteBook.unlockPage(1);
     }
 }
 
