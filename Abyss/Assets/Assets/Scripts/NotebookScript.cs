@@ -10,6 +10,7 @@ public class NotebookScript : MonoBehaviour
     public GameObject exitButton;
     public GameObject NextButton;
     public GameObject BackButton;
+    public GameObject OpenButton;
 
     public GameObject view;
     public Sprite[] sprites;
@@ -35,6 +36,9 @@ public class NotebookScript : MonoBehaviour
         Button exit = exitButton.GetComponent<Button>();
         exit.onClick.AddListener(ExitTaskOnClick);
 
+        Button open = OpenButton.GetComponent<Button>();
+        open.onClick.AddListener(OpenOnClick);
+
         //Sets the image on the left side of the screen to page 0
         Image firstPage = page0.GetComponent<Image>();
         firstPage.sprite = sprites[0];
@@ -42,11 +46,19 @@ public class NotebookScript : MonoBehaviour
         //Sets the image on the right side of the screen to page 1
         Image active = activePage.GetComponent<Image>();
         active.sprite = sprites[1];
+
+        view.gameObject.SetActive(false);
     }
 
     void Update()
     {
         
+    }
+
+    void OpenOnClick()
+    {
+        view.gameObject.SetActive(true);
+
     }
 
     //Is called as the action listener for the exit button and will close the notebook
