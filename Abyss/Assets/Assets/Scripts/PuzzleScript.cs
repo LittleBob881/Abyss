@@ -5,7 +5,7 @@ using UnityEngine;
 public class PuzzleScript : MonoBehaviour
 {
 
-    private static PuzzleClass puzzleMaster;
+    private static PuzzleRefeanceItems puzzleMaster;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +19,13 @@ public class PuzzleScript : MonoBehaviour
         
     }
 
-    public class PuzzleClass
+    public class PuzzleRefeanceItems
     {
         inventoryScript.inventory puzzleInventory;
         //add story array here 
 
 
-        public PuzzleClass()
+        public PuzzleRefeanceItems()
         {
             puzzleInventory = new inventoryScript.inventory();
             Sprite[] sprites= Resources.LoadAll<Sprite>("itemsheet_6");
