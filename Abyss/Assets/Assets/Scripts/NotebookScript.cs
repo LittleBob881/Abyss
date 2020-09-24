@@ -247,9 +247,9 @@ public class NoteBook
     }
 
     //Returns the active pages sprite
-    public Sprite getActivePage()
+    public noteBookPage getActivePage()
     {
-        return activePage.getPage();
+        return pages[activePageNum];
     }
 
     //Sets the active page to the passed in page and also sets the page number to the passes in pages number
@@ -257,5 +257,10 @@ public class NoteBook
     {
         activePage = page;
         activePageNum = page.getPageNum();
+    }
+
+    public noteBookPage getPage(int pageNum)
+    {
+        return pages[pageNum];
     }
 }
