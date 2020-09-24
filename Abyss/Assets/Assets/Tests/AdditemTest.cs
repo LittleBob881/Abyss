@@ -20,8 +20,8 @@ namespace Tests
             string[] Strings2 = { "Its chilly in here", "There is a tomato here, added to inventory" };
             var fridge = (new AbyssLibrary.RoomItem("Kitchen", "Fridge", Strings2, 3, 0));
             //creates the item
-            PuzzleScript.PuzzleClass puzzle = new PuzzleScript.PuzzleClass();
-            // creates the invetory 
+            PuzzleScript.PuzzleRefeanceItems puzzle = new PuzzleScript.PuzzleRefeanceItems();
+            inventoryScript.inventoryItem TestTomato = puzzle.GetPuzzleInventory().getInventorySlot(3);     // creates the invetory 
             List<inventoryScript.inventoryItem> inventorySlots = new List<inventoryScript.inventoryItem>();
             for (int a = 0; a < 12; ++a)
             {
@@ -30,12 +30,12 @@ namespace Tests
             var inventory = new inventoryScript.inventory(inventorySlots);
 
 
-            
-            inventoryScript.inventoryItem TestTomato = puzzle.GetPuzzleInventory().getInventorySlot(3);
+
+
 
             //ACT
 
-            inventory.PickupItem(fridge.GetItem());
+            inventory.PickupItem(puzzle.GetPuzzleInventory().getInventorySlot(fridge.GetItem()));
 
             //ASSERT
 

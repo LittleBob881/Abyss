@@ -8,8 +8,7 @@ using UnityEngine.UI;
 public class inventoryScript : MonoBehaviour
 {
     private static inventory playerInventory;
-    private static inventory puzzleInventory;
-    
+    private PuzzleScript.PuzzleRefeanceItems alist;
     public GameObject IExitButton;
     public GameObject IOpenButton;
     public GameObject[] Slot;
@@ -27,11 +26,12 @@ public class inventoryScript : MonoBehaviour
 
         sprites = Resources.LoadAll<Sprite>("Itemsheet_6");
         //if
+        alist = new PuzzleScript.PuzzleRefeanceItems();
         createNewGame();
         //else 
         //add continue game load
 
-        //view = GameObject.Find("InventoryView");
+       
 
         Button openBtu = IOpenButton.GetComponent<Button>();
         openBtu.onClick.AddListener(OpenTaskOnClick);
@@ -74,8 +74,7 @@ public class inventoryScript : MonoBehaviour
     }
 
 
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
+ 
 
     // num == what slot is clicked.
     // calls SlotButtonAction.
@@ -85,6 +84,9 @@ public class inventoryScript : MonoBehaviour
         int num = 0;
         SlotButtonAction(num);
     }
+
+    // num == what slot is clicked.
+    // calls SlotButtonAction.
     private void slot1OnClick()
     {
         int num = 1;
@@ -259,16 +261,7 @@ public class inventoryScript : MonoBehaviour
     private void createNewGame()
     {
         Empty = new inventoryItem(0, sprites[0], sprites[0]);
-        puzzleInventory = new inventory();
-       
-        
-        inventoryItem item1 = new inventoryItem(1, sprites[1], sprites[2]);
-        inventoryItem item2 = new inventoryItem(2, sprites[3], sprites[4]);
-        inventoryItem item3 = new inventoryItem(3, sprites[5], sprites[6]);
-        inventoryItem item4 = new inventoryItem(4, sprites[7], sprites[8]);
-        inventoryItem item5 = new inventoryItem(5, sprites[9], sprites[10]);
-        inventoryItem item6 = new inventoryItem(6, sprites[11], sprites[12]);
-
+    
         List<inventoryItem> inventorySlots= new List<inventoryItem>();
         
         for (int a = 0 ; a<12 ; ++a)
@@ -278,46 +271,14 @@ public class inventoryScript : MonoBehaviour
         
         playerInventory = new inventory(inventorySlots);
 
-        puzzleInventory.addInventoryItem(item1);
-        puzzleInventory.addInventoryItem(item2);
-        puzzleInventory.addInventoryItem(item3);
-        puzzleInventory.addInventoryItem(item4);
-        puzzleInventory.addInventoryItem(item5);
-        puzzleInventory.addInventoryItem(item6);
 
-      
+       
 
         // set player aciveitem to notitemactive 
 
     }
 
-    // false = did not pick up 
-    // 1 checks if the item picking is already in inventory
-    // 2 finds the first empty slot
-    // if newslot == 55 invenvtory is full 
-    //sets first empty slot (from step 2) in playerInventory with the item from puzzleInventory 
-    //  with the item id that was given into this meathord. 
-    // returns true if the item was added to the playerInventory. 
-   
-   /* public Boolean PickupItem(int num)
-    {
-        int newSlot;
-        Boolean toreturn = false;
-        Boolean check = playerInventory.Checkforitem(num);
-        if(check== false)
-        {
-            newSlot = playerInventory.FristEmptySlot();
-            if (newSlot == 55)
-            {
-                return false;
-            }
-
-            playerInventory.SetInventoryItem(puzzleInventory.getInventorySlot(num),newSlot);
-            toreturn = true;
-        }
-
-        return toreturn;
-    } */
+ 
 
     public class inventoryItem
     {
@@ -409,7 +370,7 @@ public class inventoryScript : MonoBehaviour
             {
                if (inventorySlots[k].getID() == 0)
                 {
-                    toreturn = k;
+                    return k;
                 }
             }
             return toreturn;
@@ -456,7 +417,7 @@ public class inventoryScript : MonoBehaviour
         public Boolean Checkforitem(int num)
         {
             Boolean toreturn = false;
-            for (int k = 0; k <= inventorySlots.Count; k++)
+            for (int k = 0; k < inventorySlots.Count; k++)
             {
                 if (inventorySlots[k].getID()== num)
                 {
@@ -470,7 +431,7 @@ public class inventoryScript : MonoBehaviour
         public int CheckforActiveItem()
         {
             int toreturn = 55;
-            for (int k = 0; k <= inventorySlots.Count; k++)
+            for (int k = 0; k < inventorySlots.Count; k++)
             {
                 if (inventorySlots[k].getID() == activeItem.getID())
                 {
@@ -489,11 +450,11 @@ public class inventoryScript : MonoBehaviour
         //  with the item id that was given into this meathord. 
         // returns true if the item was added to the playerInventory. 
 
-        public Boolean PickupItem(int num)
+        public Boolean PickupItem(inventoryItem aItem)
         {
             int newSlot;
             Boolean toreturn = false;
-            Boolean check = Checkforitem(num);
+            Boolean check = Checkforitem(aItem.getID());
             if (check == false)
             {
                 newSlot = FristEmptySlot();
@@ -502,7 +463,7 @@ public class inventoryScript : MonoBehaviour
                     return false;
                 }
 
-                SetInventoryItem(puzzleInventory.getInventorySlot(num), newSlot);
+                SetInventoryItem(aItem, newSlot);
                 toreturn = true;
             }
 
@@ -510,6 +471,7 @@ public class inventoryScript : MonoBehaviour
         }
 
     }
+
     static public inventoryItem getItemForTest()
     {
         return new inventoryItem(3, sprites[5], sprites[6]);
