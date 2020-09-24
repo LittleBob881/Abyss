@@ -9,7 +9,7 @@ public class inventoryScript : MonoBehaviour
 {
     private static inventory playerInventory;
     private static inventory puzzleInventory;
-    private static inventory usedInventory;
+    
     public GameObject IExitButton;
     public GameObject IOpenButton;
     public GameObject[] Slot;
@@ -17,7 +17,8 @@ public class inventoryScript : MonoBehaviour
 
 
     public GameObject view;
-    public Sprite[] sprites;
+    static public Sprite[] sprites;
+    static public inventoryItem Empty;
 
     // Start is called before the first frame update
     void Start()
@@ -225,12 +226,9 @@ public class inventoryScript : MonoBehaviour
     }
 
 
-
-    // Update is called once per frame
-    void Update()
+    public inventory GetPlayerInventory()
     {
-
-        
+        return playerInventory;
     }
 
 
@@ -260,9 +258,9 @@ public class inventoryScript : MonoBehaviour
 
     private void createNewGame()
     {
-        inventoryItem item0 = new inventoryItem(0, sprites[0], sprites[0]);
-        puzzleInventory = new inventory(item0);
-        usedInventory = new inventory(item0);
+        Empty = new inventoryItem(0, sprites[0], sprites[0]);
+        puzzleInventory = new inventory();
+       
         
         inventoryItem item1 = new inventoryItem(1, sprites[1], sprites[2]);
         inventoryItem item2 = new inventoryItem(2, sprites[3], sprites[4]);
@@ -275,10 +273,10 @@ public class inventoryScript : MonoBehaviour
         
         for (int a = 0 ; a<12 ; ++a)
         {
-            inventorySlots.Add(item0);
+            inventorySlots.Add(Empty);
         }
         
-        playerInventory = new inventory(inventorySlots, item0);
+        playerInventory = new inventory(inventorySlots);
 
         puzzleInventory.addInventoryItem(item1);
         puzzleInventory.addInventoryItem(item2);
@@ -301,25 +299,25 @@ public class inventoryScript : MonoBehaviour
     //  with the item id that was given into this meathord. 
     // returns true if the item was added to the playerInventory. 
    
-    public Boolean PickupItem(int num)
+   /* public Boolean PickupItem(int num)
     {
-        int newslot;
+        int newSlot;
         Boolean toreturn = false;
         Boolean check = playerInventory.Checkforitem(num);
         if(check== false)
         {
-            newslot = playerInventory.FristEmptySlot();
-            if (newslot == 55)
+            newSlot = playerInventory.FristEmptySlot();
+            if (newSlot == 55)
             {
                 return false;
             }
 
-            playerInventory.SetInventoryItem(puzzleInventory.getInventorySlot(num),newslot);
+            playerInventory.SetInventoryItem(puzzleInventory.getInventorySlot(num),newSlot);
             toreturn = true;
         }
 
         return toreturn;
-    }
+    } */
 
     public class inventoryItem
     {
@@ -372,19 +370,21 @@ public class inventoryScript : MonoBehaviour
         private inventoryItem empty;
 
         //for Initializing iventory class when loading a save file
-        public inventory(List<inventoryItem> slots,inventoryItem emptys)
+        public inventory(List<inventoryItem> slots)
         {
             this.inventorySlots = slots;
-            this.empty = emptys ;
+            this.empty = Empty;
         }
 
         //for Initializing iventory class when creating a new game.
-        public inventory(inventoryItem emptys)
+        public inventory()
         {
             inventorySlots = new List<inventoryItem>();
-            this.empty = emptys;
+            this.empty = Empty;
 
         }
+
+     
 
         //gets an iventory item at the slot location given to the method
         public inventoryItem getInventorySlot(int slot)
@@ -407,7 +407,7 @@ public class inventoryScript : MonoBehaviour
             int toreturn = 55;
             for (int k = 0; k <= 11; k++)
             {
-               if ( Checkforitem(0))
+               if (inventorySlots[k].getID() == 0)
                 {
                     toreturn = k;
                 }
@@ -451,7 +451,7 @@ public class inventoryScript : MonoBehaviour
         }
 
 
-        // checks if there is this item in the inventory so there is not x2.
+        // checks if there is this item in the inventory, so there is not doubles.
         // returns true if there is already that item in the inventory. returns false if not. 
         public Boolean Checkforitem(int num)
         {
@@ -479,6 +479,39 @@ public class inventoryScript : MonoBehaviour
             }
             return toreturn;
         }
-    }
 
+
+        // false = item was not picked up
+        // 1 checks if the item picking is already in inventory if it is then check is true. if it is not then false. 
+        // 2 finds the first empty slot
+        // if newslot == 55 invenvtory is full 
+        //sets first empty slot (from step 2) in playerInventory with the item from puzzleInventory 
+        //  with the item id that was given into this meathord. 
+        // returns true if the item was added to the playerInventory. 
+
+        public Boolean PickupItem(int num)
+        {
+            int newSlot;
+            Boolean toreturn = false;
+            Boolean check = Checkforitem(num);
+            if (check == false)
+            {
+                newSlot = FristEmptySlot();
+                if (newSlot == 55)
+                {
+                    return false;
+                }
+
+                SetInventoryItem(puzzleInventory.getInventorySlot(num), newSlot);
+                toreturn = true;
+            }
+
+            return toreturn;
+        }
+
+    }
+    static public inventoryItem getItemForTest()
+    {
+        return new inventoryItem(3, sprites[5], sprites[6]);
+    }
 }

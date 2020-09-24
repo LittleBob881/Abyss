@@ -54,10 +54,10 @@ public class FurnitureScript : MonoBehaviour
     public void RoomItemAction(int num)
     {
         Debug.Log("item button pressed: " +num);
-        if (roomitems[0].GetItem() != 0)
+        if (roomitems[num].GetItem() != 0)
         {
 
-            script.PickupItem(roomitems[num].GetItem());
+            script.GetPlayerInventory().PickupItem(roomitems[num].GetItem());
             
         }
     }
