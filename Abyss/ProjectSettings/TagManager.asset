@@ -50,3 +50,15 @@ TagManager:
   - name: Character
     uniqueID: 1077101285
     locked: 0
+  - name: Buttons
+    uniqueID: 3865678403
+    locked: 0
+  - name: 'furniture button '
+    uniqueID: 3529112503
+    locked: 0
+  - name: Notebook
+    uniqueID: 463983995
+    locked: 0
+  - name: Inventory
+    uniqueID: 519909993
+    locked: 0
