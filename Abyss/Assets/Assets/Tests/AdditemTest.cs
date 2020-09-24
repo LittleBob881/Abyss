@@ -15,7 +15,9 @@ namespace Tests
             //tests that the task of geting a item from an room item adds an item to a inventory. 
 
             //ARANGE
-            //var inventory = new PickupItem();
+            string[] Strings2 = { "Its chilly in here", "There is a tomato here, added to inventory" };
+            var fridge = (new AbyssLibrary.RoomItem("Kitchen", "Fridge", Strings2, 3, 0));
+            var tomatoe =
             //ACT
 
             //ASSERT
