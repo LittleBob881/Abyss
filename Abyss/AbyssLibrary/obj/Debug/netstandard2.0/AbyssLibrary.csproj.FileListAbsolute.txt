@@ -1,0 +1,9 @@
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\obj\Debug\netstandard2.0\AbyssLibrary.csprojAssemblyReference.cache
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\obj\Debug\netstandard2.0\AbyssLibrary.AssemblyInfoInputs.cache
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\obj\Debug\netstandard2.0\AbyssLibrary.AssemblyInfo.cs
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\bin\Debug\netstandard2.0\AbyssLibrary.deps.json
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\bin\Debug\netstandard2.0\AbyssLibrary.dll
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\bin\Debug\netstandard2.0\AbyssLibrary.pdb
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\obj\Debug\netstandard2.0\AbyssLibrary.dll
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\obj\Debug\netstandard2.0\AbyssLibrary.pdb
+C:\Users\Judith Kearney\Documents\GitHub\Abyss\Abyss\AbyssLibrary\obj\Debug\netstandard2.0\AbyssLibrary.csproj.CoreCompileInputs.cache
