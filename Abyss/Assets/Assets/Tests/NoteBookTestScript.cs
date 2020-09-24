@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -12,18 +13,34 @@ namespace Tests
         [Test]
         public void ForwardButtonTestScriptSimplePasses()
         {
-            // Use the Assert class to test conditions
-            
-        }
+            //ARRANGE
+            var noteBook = new NoteBook();
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator ForwardButtonTestScriptWithEnumeratorPasses()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+            //Making the Notebook
+            noteBook = new NoteBook();
+            Sprite[] sprites = Resources.LoadAll<Sprite>("Pagespage");
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                noteBookPage page = new noteBookPage(sprites[i], i);
+                noteBook.addNoteBookPage(page);
+
+                if (i == 1)
+                {
+                    noteBook.setActivePage(page);
+                }
+            }
+            noteBook.unlockPage(0);
+            noteBook.unlockPage(1);
+            noteBook.unlockPage(2);
+
+            var expectedPage = noteBook.getPage(2);
+
+            //ACT
+            noteBook.turnPageForward();
+            var currentPage = noteBook.getActivePage();
+
+            //ASSERT
+            Assert.That(expectedPage, Is.EqualTo(noteBook.getActivePage()));
         }
     }
 }
