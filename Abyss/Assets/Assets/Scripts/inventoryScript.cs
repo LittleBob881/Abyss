@@ -41,30 +41,30 @@ public class inventoryScript : MonoBehaviour
         exitBtu.onClick.AddListener(ExitTaskOnClick);
 
         Button Slot0L = Slot[0].GetComponent<Button>();
-        Slot0L.onClick.AddListener(slot1OnClick);
+        Slot0L.onClick.AddListener(slot0OnClick);
 
         Button Slot1L = Slot[1].GetComponent<Button>();
         Slot1L.onClick.AddListener(slot1OnClick);
         Button Slot2L = Slot[2].GetComponent<Button>();
-        Slot2L.onClick.AddListener(slot1OnClick);
+        Slot2L.onClick.AddListener(slot2OnClick);
         Button Slot3L = Slot[3].GetComponent<Button>();
-        Slot3L.onClick.AddListener(slot1OnClick);
+        Slot3L.onClick.AddListener(slot3OnClick);
         Button Slot4L = Slot[4].GetComponent<Button>();
-        Slot4L.onClick.AddListener(slot1OnClick);
+        Slot4L.onClick.AddListener(slot4OnClick);
         Button Slot5L = Slot[5].GetComponent<Button>();
-        Slot5L.onClick.AddListener(slot1OnClick);
+        Slot5L.onClick.AddListener(slot5OnClick);
         Button Slot6L = Slot[6].GetComponent<Button>();
-        Slot6L.onClick.AddListener(slot1OnClick);
+        Slot6L.onClick.AddListener(slot6OnClick);
         Button Slot7L = Slot[7].GetComponent<Button>();
-        Slot7L.onClick.AddListener(slot1OnClick);
+        Slot7L.onClick.AddListener(slot7OnClick);
         Button Slot8L = Slot[8].GetComponent<Button>();
-        Slot8L.onClick.AddListener(slot1OnClick);
+        Slot8L.onClick.AddListener(slot8OnClick);
         Button Slot9L = Slot[9].GetComponent<Button>();
-        Slot9L.onClick.AddListener(slot1OnClick);
+        Slot9L.onClick.AddListener(slot9OnClick);
         Button Slot10L = Slot[10].GetComponent<Button>();
-        Slot10L.onClick.AddListener(slot1OnClick);
+        Slot10L.onClick.AddListener(slot10OnClick);
         Button Slot11L = Slot[11].GetComponent<Button>();
-        Slot11L.onClick.AddListener(slot1OnClick);
+        Slot11L.onClick.AddListener(slot11OnClick);
 
         Debug.Log("You have clicked the button!");
 
@@ -187,18 +187,25 @@ public class inventoryScript : MonoBehaviour
     // sets player inventory's active item to empty item.
     private void SlotButtonAction(int num)
     {
+        Debug.Log("slotbutton activate start ");
+        Debug.Log(num);
+        Debug.Log(playerInventory.getInventorySlot(num).getID());
+
         if (playerInventory.getInventorySlot(num).getID() != 0)
         {
+            Debug.Log("if slot is not 0 ");
 
             if (playerInventory.getInventorySlot(num).getActive() == false)
             {
+                Debug.Log("slot item is not active");
                 updateactiveitem(num);
 
-                Button Slots1 = Slot[num].GetComponent<Button>();
-                Slots1.image.sprite = playerInventory.getActiveItemActiveimage();
+                Button Slots = Slot[num].GetComponent<Button>();
+                Slots.image.sprite = playerInventory.getActiveItemActiveimage();
             }
             else
             {
+                Debug.Log("else ");
                 playerInventory.getInventorySlot(num).setActive(false);
                 playerInventory.setActiveItemToEmpty();
             }
@@ -335,6 +342,7 @@ public class inventoryScript : MonoBehaviour
         {
             this.inventorySlots = slots;
             this.empty = Empty;
+            this.activeItem = this.empty;
         }
 
         //for Initializing iventory class when creating a new game.
@@ -342,7 +350,7 @@ public class inventoryScript : MonoBehaviour
         {
             inventorySlots = new List<inventoryItem>();
             this.empty = Empty;
-
+            this.activeItem = this.empty;
         }
 
      
