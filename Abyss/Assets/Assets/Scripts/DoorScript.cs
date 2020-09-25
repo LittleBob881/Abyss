@@ -6,29 +6,29 @@ using UnityEngine.UI;
 
 public class DoorScript : MonoBehaviour
 {
-    private bool showPopup = false;
-    private AssetBundle loadedAssets;
-    private string[] scenes;
+    
     public GameObject doorButton;
+    //Calls a string from unity to load a scene
     public string scene;
 
     void Start()
     {
-        loadedAssets = AssetBundle.LoadFromFile("C:\\users\\kiwik\\OneDrive\\Documents\\GitHub\\Abyss\\Abyss\\Assets\\Scenes");
-        scenes = loadedAssets.GetAllScenePaths();
-
+        //Instantiates a Door button
         Button next = doorButton.GetComponent<Button>();
         next.onClick.AddListener(loadscreen);
     }
 
     public void loadscreen() 
     {
+        //Loads a screen depending on string name
+        
         Debug.Log("Scene loading: " + scene);
         SceneManager.LoadScene(scene);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //Upon player collision, the button will be able to be interactable and print the player is within collision range.
         Debug.Log("Collision");
         if (collision.gameObject.tag == "Player")
         {
@@ -39,11 +39,12 @@ public class DoorScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        //Upon player leaving the collision zone, the button will not be interactable. 
         Debug.Log("LeavingCollision");
         if (collision.gameObject.tag == "Player")
         {
             GameObject.Find("doorButton").GetComponent<Button>().interactable = false;
-            Debug.Log("Entering Collision");
+            Debug.Log("EXiting Collision");
         }
     }
 }

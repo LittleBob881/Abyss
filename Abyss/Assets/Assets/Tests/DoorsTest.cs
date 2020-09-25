@@ -20,21 +20,22 @@ namespace Tests
             //Creating the shit
             Debug.Log("Loading first scene.");
             EditorSceneManager.OpenScene("Assets/Scenes/Hallway.unity");
-            Debug.Log("Loading this dude.");
-            string KitchenDoor = "KitchenDoor";
+            Debug.Log("Loading Hallway.");
+
+
             // Use the Assert class to test conditions
             Assert.IsTrue(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Hallway"));
-            Debug.Log("Dude bro is loaded and ready to go baybe");
-           var door = GameObject.Find(KitchenDoor);
-            Assert.IsNotNull(door, "Missing Button" + KitchenDoor);
-            Debug.Log("Button is here.");
+            Debug.Log("Hallway is Loaded");
 
-            //Set as selected
-            EventSystem.current.SetSelectedGameObject(door);
-            door.GetComponent<Button>().onClick.Invoke();
-            Debug.Log("Button click");
+            EditorSceneManager.OpenScene("Assets/Scenes/Lounge.unity");
+            Debug.Log("Loading Lounge.");
+            Assert.IsTrue(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Lounge"));
+            Debug.Log("Lounge is Loaded. Changed from hallway.");
+
+            EditorSceneManager.OpenScene("Assets/Scenes/Kitchen.unity");
+            Debug.Log("Loading Kitchen.");
             Assert.IsTrue(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Kitchen"));
-            Debug.Log("U changed!!");
+            Debug.Log("Kitchen is Loaded. Changed from Kitchen.");
         }
 
     }
