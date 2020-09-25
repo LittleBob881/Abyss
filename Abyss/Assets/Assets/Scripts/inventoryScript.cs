@@ -208,6 +208,8 @@ public class inventoryScript : MonoBehaviour
                 Debug.Log("else ");
                 playerInventory.getInventorySlot(num).setActive(false);
                 playerInventory.setActiveItemToEmpty();
+                Button Slots = Slot[num].GetComponent<Button>();
+                Slots.image.sprite = playerInventory.getInventorySlot(num).getImage();
             }
         }
     }
