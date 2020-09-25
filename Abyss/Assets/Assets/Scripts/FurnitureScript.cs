@@ -11,6 +11,7 @@ public class FurnitureScript : MonoBehaviour
     private AbyssLibrary.RoomItem[] roomitems;
     public inventoryScript invenScript;
     private PuzzleScript.PuzzleRefeanceItems list;
+    public GameObject speechbox;
 
     void Start()
     {
@@ -25,6 +26,8 @@ public class FurnitureScript : MonoBehaviour
 
         Button Roomitem2 = Unitybutton[4].GetComponent<Button>();
         Roomitem2.onClick.AddListener(OnClick4);
+
+        list = new PuzzleScript.PuzzleRefeanceItems();
     }
 
 
@@ -51,6 +54,10 @@ public class FurnitureScript : MonoBehaviour
     public void RoomItemAction(int num)
     {
         Debug.Log("item button pressed: " +num);
+
+        Text speech = speechbox.GetComponent<Text>();
+        String[] strings = roomitems[num].getStrings();
+        speech.text = strings[0];
         if (roomitems[num].GetItem() != 0)
         {
 
@@ -72,6 +79,7 @@ public class FurnitureScript : MonoBehaviour
         roomitems[2] = (new AbyssLibrary.RoomItem("Kitchen", "oven", Strings2, 0, 0));
         roomitems[3] = (new AbyssLibrary.RoomItem("Kitchen", "Pot", Strings3, 0, 0));
         roomitems[4] = (new AbyssLibrary.RoomItem("Kitchen", "Fridge", Strings4, 3, 0));
+
 
 
         Debug.Log("load rooom items done");
