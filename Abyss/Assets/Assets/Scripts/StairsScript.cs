@@ -15,6 +15,7 @@ public class StairsScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //Activates the pop up when the user is within the collision range.
         Debug.Log("Collision");
         if (collision.gameObject.tag == "Player")
         {
@@ -30,7 +31,7 @@ public class StairsScript : MonoBehaviour
         Debug.Log("LeavingCollision");
         if (collision.gameObject.tag == "Player")
         {
-
+            //Deactivates pop up once leaving the collision range.
             isInRange = true;
             Debug.Log("Entering Collision");
             showPopup = false;
@@ -40,6 +41,7 @@ public class StairsScript : MonoBehaviour
 
     void OnGUI()
     {
+        //Creates a pop up
         if (showPopup)
         {
             GUI.Window(0, new Rect((Screen.width / 2) - 150, (Screen.height / 2) - 75, 300, 250), ShowGUI, "Which way?");
@@ -48,16 +50,18 @@ public class StairsScript : MonoBehaviour
 
     void ShowGUI(int windowID)
     {
-        
+        //Creating assets within the pop, such as buttons and labels
             GUI.Label(new Rect(65, 40, 200, 30), "Would you like to go up or down?");
             if (GUI.Button(new Rect(50, 150, 75, 30), "Up"))
         {
+            //Loads the upper hallway upon interact
             Debug.Log("Scene loading: " + "Top Floor");
             SceneManager.LoadScene("UpperHallway");
         }
 
         if (GUI.Button(new Rect(150, 150, 75, 30), "Down"))
         {
+            //Loads the lower hallway upon interact
             Debug.Log("Scene loading: " + "Bottom Floor");
             SceneManager.LoadScene("hallway_Bottom");
         }
