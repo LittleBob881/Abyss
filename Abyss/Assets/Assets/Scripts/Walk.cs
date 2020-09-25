@@ -39,12 +39,6 @@ public class Walk : MonoBehaviour
         }
     }
 
-  /*  void FixedUpdate()
-    {
-        if UNITY_EDITOR
-            walkCharacter(Input.GetAxis("Horizontal"));
-    }*/
-
     private void walkCharacter(float horizontalInput)
     {
         characterBody.AddForce(new Vector2(horizontalInput * moveSpeed * Time.deltaTime, 0));
