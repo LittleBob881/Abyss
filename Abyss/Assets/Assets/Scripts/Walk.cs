@@ -5,43 +5,40 @@ using UnityEngine;
 
 public class Walk : MonoBehaviour
 {
-    public float moveSpeed = 500;
-    public GameObject character;
+    private Rigidbody2D rigid;
+    private float speed;
 
-    private Rigidbody2D characterBody;
-    private float ScreenWidth;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        ScreenWidth = Screen.width;
-        characterBody = character.GetComponent<Rigidbody2D>();
-
+        rigid = GetComponent<Rigidbody2D>();
+        speed = 10f;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        int i = 0;
-        while(i < Input.touchCount)
+        Vector2 characterScale = transform.localScale;
+        if (Input.touchCount > 0)
         {
-            if(Input.GetTouch(i).position.x > ScreenWidth / 2)
+            Touch touch = Input.GetTouch(0);
+            switch (touch.phase)
             {
-                //Right
-                walkCharacter(1.0f);
+                case TouchPhase.Began:
+                    //Left
+                    if (touch.position.x < Screen.width / 2)
+                        rigid.velocity = new Vector2(-speed, 0f);
+                    characterScale.x = 22;
+
+                    //Right
+                    if (touch.position.x > Screen.width / 2)
+                        rigid.velocity = new Vector2(speed, 0f);
+                    characterScale.x = -22;
+                    break;
+
+                case TouchPhase.Ended:
+                    rigid.velocity = new Vector2(0f, 0f);
+                    break;
             }
-            if(Input.GetTouch(i).position.x < ScreenWidth / 2)
-            {
-                //left
-                walkCharacter(-1.0f);
-            }
-            ++i;
         }
-    }
-
-    private void walkCharacter(float horizontalInput)
-    {
-        characterBody.AddForce(new Vector2(horizontalInput * moveSpeed * Time.deltaTime, 0));
-
+        //transform.localScale = characterScale;
     }
 }
