@@ -16,6 +16,7 @@ public class Walk : MonoBehaviour
 
     private void Update()
     {
+        Vector3 characterScale = transform.localScale;
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -24,11 +25,14 @@ public class Walk : MonoBehaviour
                 case TouchPhase.Began:
                     //Left
                     if (touch.position.x < Screen.width / 2)
+                        characterScale.x = -22;
                         rigid.velocity = new Vector2(-speed, 0f);
-                    
+
+
 
                     //Right
                     if (touch.position.x > Screen.width / 2)
+                        characterScale.x = 22;
                         rigid.velocity = new Vector2(speed, 0f);
                     break;
 
@@ -37,6 +41,6 @@ public class Walk : MonoBehaviour
                     break;
             }
         }
-        //transform.localScale = characterScale;
+        transform.localScale = characterScale;
     }
 }
