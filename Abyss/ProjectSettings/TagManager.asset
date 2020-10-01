@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: WayBack
+    uniqueID: 4171865705
+    locked: 0
   - name: Background
     uniqueID: 823049637
     locked: 0
