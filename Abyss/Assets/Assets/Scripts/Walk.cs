@@ -11,7 +11,7 @@ public class Walk : MonoBehaviour
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        speed = 10f;
+        speed = 5f;
     }
 
     private void Update()
