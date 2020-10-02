@@ -7,10 +7,12 @@ public class Walk : MonoBehaviour
 {
     private Rigidbody2D rigid;
     private float speed;
+    private AudioSource audioSrc;
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        audioSrc = GetComponent<AudioSource>();
         speed = 5f;
     }
 
@@ -28,6 +30,7 @@ public class Walk : MonoBehaviour
                     {
                         characterScale.x = -22;
                         rigid.velocity = new Vector2(-speed, 0f);
+                        audioSrc.Play();
                     }
 
                     //Right
@@ -35,11 +38,13 @@ public class Walk : MonoBehaviour
                     {
                         characterScale.x = 22;
                         rigid.velocity = new Vector2(speed, 0f);
+                        audioSrc.Play();
                     }
                     break;
 
                 case TouchPhase.Ended:
                     rigid.velocity = new Vector2(0f, 0f);
+                    audioSrc.Stop();
                     break;
             }
         }
