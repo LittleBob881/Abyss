@@ -25,15 +25,17 @@ public class Walk : MonoBehaviour
                 case TouchPhase.Began:
                     //Left
                     if (touch.position.x < Screen.width / 2)
+                    {
                         characterScale.x = -22;
                         rigid.velocity = new Vector2(-speed, 0f);
-
-
+                    }
 
                     //Right
                     if (touch.position.x > Screen.width / 2)
+                    {
                         characterScale.x = 22;
                         rigid.velocity = new Vector2(speed, 0f);
+                    }
                     break;
 
                 case TouchPhase.Ended:
