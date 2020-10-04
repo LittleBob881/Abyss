@@ -7,11 +7,13 @@ public class Walk : MonoBehaviour
 {
     private Rigidbody2D rigid;
     private float speed;
+    private AudioSource audioSrc;
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        speed = 10f;
+        audioSrc = GetComponent<AudioSource>();
+        speed = 5f;
     }
 
     private void Update()
@@ -25,19 +27,24 @@ public class Walk : MonoBehaviour
                 case TouchPhase.Began:
                     //Left
                     if (touch.position.x < Screen.width / 2)
+                    {
                         characterScale.x = -22;
                         rigid.velocity = new Vector2(-speed, 0f);
-
-
+                        audioSrc.Play();
+                    }
 
                     //Right
                     if (touch.position.x > Screen.width / 2)
+                    {
                         characterScale.x = 22;
                         rigid.velocity = new Vector2(speed, 0f);
+                        audioSrc.Play();
+                    }
                     break;
 
                 case TouchPhase.Ended:
                     rigid.velocity = new Vector2(0f, 0f);
+                    audioSrc.Stop();
                     break;
             }
         }
