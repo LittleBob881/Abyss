@@ -53,3 +53,15 @@ TagManager:
   - name: Character
     uniqueID: 1077101285
     locked: 0
+  - name: buttons
+    uniqueID: 3934024569
+    locked: 0
+  - name: notebook
+    uniqueID: 4051865851
+    locked: 0
+  - name: invetory
+    uniqueID: 2989507457
+    locked: 0
+  - name: New Layer
+    uniqueID: 824526563
+    locked: 0
