@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -6,9 +7,16 @@ using UnityEngine.Assertions.Must;
 public class MonsterMovement : MonoBehaviour
 {
     private float direction;
-    private float movement = 0.3f;
+    private float movement;
+    private const float walkingSpeed = 0.15f;
+    private const float chasingSpeed = 0.25f;
+    private const float DIRECTION_CONST = -22;
+    private float LOCAL_SCALE_CONST;
 
-    private Rigidbody2D rb;
+    private Rigidbody2D monster;
+    private GameObject player;
+    private Transform playerTransform;
+    private Transform monsterTransform;
     private Vector3 localScale;
     private bool facingR;
 
@@ -23,58 +31,76 @@ public class MonsterMovement : MonoBehaviour
     void Start()
     {
         localScale = transform.localScale;
-        rb = GetComponent<Rigidbody2D>();
-        direction = -22f;
-        facingR = false;
+        LOCAL_SCALE_CONST = localScale.x;
+        monster = GetComponent<Rigidbody2D>();
         wallLeft = 70f;
         wallRight = 100f;
+        movement = walkingSpeed;
+        direction = DIRECTION_CONST;
+
+        player = GameObject.Find("man_sheet1 (1)_0");
+        playerTransform = player.transform;
+        monsterTransform = monster.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
         walk();
+        //chase();
     }
 
     void walk()
     {
-        if(!(transform.position.x < wallRight && transform.position.x > wallLeft))
+        movement = walkingSpeed;
+        if(!(monsterTransform.position.x < wallRight && monsterTransform.position.x > wallLeft))
         {
-            direction *= -1;
-            localScale.x *= -1;
+            facingR = !facingR;
         }
         else
         {
-            int randomGen = rand.Next(1, 100);
+            int randomGen = rand.Next(1, 140);
             if (randomGen == 1)
             {
-                direction *= -1;
-                localScale.x *= -1;
+                facingR = !facingR;
             }
         }
-        transform.localScale = localScale;
+
+        if(facingR)
+        {
+            direction = -DIRECTION_CONST;
+            localScale.x = -LOCAL_SCALE_CONST;
+        }
+        else
+        {
+            direction = DIRECTION_CONST;
+            localScale.x = LOCAL_SCALE_CONST;
+        }
+
+        monsterTransform.localScale = localScale;
+        monster.velocity = new Vector2(direction * movement, monster.velocity.y);
     }
 
-    void FixedUpdate()
+    void chase()
     {
-        rb.velocity = new Vector2(direction * movement, rb.velocity.y);
+        movement = chasingSpeed;
+        float playerLocation = playerTransform.position.x;
+        if(playerLocation+1 >= monsterTransform.position.x && playerLocation-1 <= monsterTransform.position.x)
+        {
+            
+            player.SetActive(false);
+        }
+        else if(playerLocation > monsterTransform.position.x)
+        {
+            facingR = true;
+        }
+        else
+        {
+            facingR = false;
+        }
+
+        monsterTransform.localScale = localScale;
+        monster.velocity = new Vector2(direction * movement, monster.velocity.y);
     }
 
-    //void LateUpdate()
-    //{
-    //    facing();
-    //}
-
-    //void facing()
-    //{
-    //    if (direction > 0)
-    //        facingR = true;
-    //    else if (direction < 0)
-    //        facingR = false;
-
-    //    if ((facingR && localScale.x < 0) || (!facingR && localScale.x > 0));
-    //    localScale.x *= -1;
-
-    //    transform.localScale = localScale;
-    //}
 }

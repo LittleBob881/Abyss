@@ -8,6 +8,7 @@ public class Walk : MonoBehaviour
     private Rigidbody2D rigid;
     private float speed;
     private AudioSource audioSrc;
+    private bool alive = true;
 
     private void Start()
     {
@@ -49,5 +50,12 @@ public class Walk : MonoBehaviour
             }
         }
         transform.localScale = characterScale;
+    }
+
+    public void killPlayer()
+    {
+        alive = false;
+
+        //play death screen
     }
 }
