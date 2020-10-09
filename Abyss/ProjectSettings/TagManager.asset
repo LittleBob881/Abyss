@@ -47,11 +47,20 @@ TagManager:
   - name: Background
     uniqueID: 823049637
     locked: 0
+  - name: Character
+    uniqueID: 1077101285
+    locked: 0
+  - name: contolbuttons
+    uniqueID: 1952822433
+    locked: 0
   - name: Furnitures
     uniqueID: 4070949351
     locked: 0
-  - name: Character
-    uniqueID: 1077101285
+  - name: inventory
+    uniqueID: 1147999669
+    locked: 0
+  - name: notebook
+    uniqueID: 1348787167
     locked: 0
   - name: buttons
     uniqueID: 3934024569
