@@ -55,7 +55,7 @@ public class Walk : MonoBehaviour
     public void killPlayer()
     {
         alive = false;
-
+        Debug.Log("Player is dedad");
         //play death screen
     }
 }

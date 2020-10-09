@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 public class MonsterMovement : MonoBehaviour
 {
@@ -46,8 +47,8 @@ public class MonsterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        walk();
-        //chase();
+        //walk();
+        chase();
     }
 
     void walk()
@@ -87,7 +88,8 @@ public class MonsterMovement : MonoBehaviour
         float playerLocation = playerTransform.position.x;
         if(playerLocation+1 >= monsterTransform.position.x && playerLocation-1 <= monsterTransform.position.x)
         {
-            
+            Walk playerScript = (Walk)player.GetComponent(typeof(Walk));
+            playerScript.killPlayer();
             player.SetActive(false);
         }
         else if(playerLocation > monsterTransform.position.x)
