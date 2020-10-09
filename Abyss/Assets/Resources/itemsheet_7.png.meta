@@ -4,96 +4,9 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 3234198852348788500
-<<<<<<< HEAD
-    second: item0
+    second: 
   - first:
-      213: -9117770419975301361
-    second: item1
-  - first:
-      213: -4161180187775073474
-    second: item3
-  - first:
-      213: 103028567647506003
-    second: item5
-  - first:
-      213: 6612306945227824516
-    second: item7
-  - first:
-      213: -4456022719836207996
-    second: item9
-  - first:
-      213: 4583125611002478888
-    second: item11
-  - first:
-      213: 1816800311065541020
-    second: item13
-  - first:
-      213: -1555108558951421811
-    second: item15
-  - first:
-      213: -4514157000252576870
-    second: item17
-  - first:
-      213: 3460915072749883799
-    second: item19
-  - first:
-      213: -2577706945561108075
-    second: item21
-  - first:
-      213: 9202992526375870476
-    second: item23
-  - first:
-      213: -7110744375068785038
-    second: item2
-  - first:
-      213: 4672582066669120901
-    second: item4
-  - first:
-      213: -4604325636757834292
-    second: item6
-  - first:
-      213: 4639887226849647154
-    second: item8
-  - first:
-      213: 3339281684291945315
-    second: item10
-  - first:
-      213: 7126170415996652662
-    second: item12
-  - first:
-      213: 919935412633301963
-    second: item14
-  - first:
-      213: -2358559286650335658
-    second: item16
-  - first:
-      213: 5829573974829213858
-    second: item18
-  - first:
-      213: -1552497453489834376
-    second: item20
-  - first:
-      213: 9076120741040562525
-    second: item22
-  - first:
-      213: 8458370560377811440
-    second: item24
-  - first:
-      213: -4384230726050174479
-    second: house
-  - first:
-      213: -3756751992731908090
-    second: garden
-  - first:
-      213: 1870449525342051206
-    second: tree
-  - first:
-      213: 3037692119436454607
-    second: doghouse
-  - first:
-      213: 5401546576197311660
-    second: shead
-=======
+      213: 3234198852348788500
     second: itemsheet_7_0
   - first:
       213: -9117770419975301361
@@ -182,7 +95,6 @@ TextureImporter:
   - first:
       213: 5401546576197311660
     second: itemsheet_7_29
->>>>>>> master
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -218,7 +130,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -240,14 +152,14 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -259,7 +171,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -271,7 +183,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -282,11 +194,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item0
-=======
       name: itemsheet_7_0
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 0
@@ -307,11 +215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item1
-=======
       name: itemsheet_7_1
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 65
@@ -332,11 +236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item3
-=======
       name: itemsheet_7_2
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 130
@@ -357,11 +257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item5
-=======
       name: itemsheet_7_3
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 195
@@ -382,11 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item7
-=======
       name: itemsheet_7_4
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 260
@@ -407,11 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item9
-=======
       name: itemsheet_7_5
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 325
@@ -432,11 +320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item11
-=======
       name: itemsheet_7_6
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 390
@@ -457,11 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item13
-=======
       name: itemsheet_7_7
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 455
@@ -482,11 +362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item15
-=======
       name: itemsheet_7_8
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 520
@@ -507,11 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item17
-=======
       name: itemsheet_7_9
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 585
@@ -532,11 +404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item19
-=======
       name: itemsheet_7_10
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 650
@@ -557,11 +425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item21
-=======
       name: itemsheet_7_11
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 715
@@ -582,11 +446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item23
-=======
       name: itemsheet_7_12
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 780
@@ -607,11 +467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item2
-=======
       name: itemsheet_7_13
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 65
@@ -632,11 +488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item4
-=======
       name: itemsheet_7_14
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 130
@@ -657,11 +509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item6
-=======
       name: itemsheet_7_15
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 195
@@ -682,11 +530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item8
-=======
       name: itemsheet_7_16
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 260
@@ -707,11 +551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item10
-=======
       name: itemsheet_7_17
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 325
@@ -732,11 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item12
-=======
       name: itemsheet_7_18
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 390
@@ -757,19 +593,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item14
-      rect:
-        serializedVersion: 2
-        x: 458
-        y: 1285
-=======
       name: itemsheet_7_19
       rect:
         serializedVersion: 2
         x: 455
         y: 1288
->>>>>>> master
         width: 64
         height: 64
       alignment: 0
@@ -786,11 +614,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item16
-=======
       name: itemsheet_7_20
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 520
@@ -811,11 +635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item18
-=======
       name: itemsheet_7_21
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 585
@@ -836,11 +656,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item20
-=======
       name: itemsheet_7_22
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 650
@@ -861,11 +677,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item22
-=======
       name: itemsheet_7_23
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 715
@@ -886,11 +698,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: item24
-=======
       name: itemsheet_7_24
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 780
@@ -911,11 +719,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: house
-=======
       name: itemsheet_7_25
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 536
@@ -936,11 +740,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: garden
-=======
       name: itemsheet_7_26
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 649
@@ -961,11 +761,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: tree
-=======
       name: itemsheet_7_27
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 774
@@ -986,11 +782,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: doghouse
-=======
       name: itemsheet_7_28
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 886
@@ -1011,11 +803,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: shead
-=======
       name: itemsheet_7_29
->>>>>>> master
       rect:
         serializedVersion: 2
         x: 984
