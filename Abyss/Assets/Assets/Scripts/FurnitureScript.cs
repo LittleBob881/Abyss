@@ -188,27 +188,44 @@ public class FurnitureScript : MonoBehaviour
         RoomItemAction(num);
     }
 
+
+    
     public void RoomItemAction(int num)
     {
-        Debug.Log("item button pressed: " +num);
+        ViewItemSpeech(num);
 
+        if (roomitems[num].GetItem() != 0)
+        {
+            
+            bool AddedItemBool = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()));
+            if (AddedItemBool == true)
+            {
+                AddItemSpeech(num);
+            }
+            
+        }
+
+
+    }
+
+    void ViewItemSpeech(int num)
+    {
         Text speech = speechbox.GetComponent<Text>();
         String[] strings = roomitems[num].getStrings();
         speech.text = strings[0];
-        if (roomitems[num].GetItem() != 0)
-        {
-
-            _ = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()));
-
-        }
     }
-
+        public void AddItemSpeech(int num)
+    {
+        Text speech = speechbox.GetComponent<Text>();
+        String strings = "Picked up " + list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()).getName();
+        speech.text = strings;
+    }
 
     //create all 27 roomitems and fills with data
     void AddRoomItems()
     {
         roomitems = new AbyssLibrary.RoomItem[27];
-        string[] Strings0 = { "Chair for a child", "meh" };
+        string[] Strings0 = { "Chair for a child" };
         string[] Strings1 = { "Its a table", "There is a recipe on the table, added to notebook." };
         string[] Strings2 = { "Its an oven", "Its hot." };
         string[] Strings3 = { "Its a very large pot", "Added tomato to pot" };
