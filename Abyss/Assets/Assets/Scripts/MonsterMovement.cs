@@ -95,10 +95,14 @@ public class MonsterMovement : MonoBehaviour
         else if(playerLocation > monsterTransform.position.x)
         {
             facingR = true;
+            direction = -DIRECTION_CONST;
+            localScale.x = -LOCAL_SCALE_CONST;
         }
         else
         {
             facingR = false;
+            direction = DIRECTION_CONST;
+            localScale.x = LOCAL_SCALE_CONST;
         }
 
         monsterTransform.localScale = localScale;
