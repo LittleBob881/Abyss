@@ -50,22 +50,15 @@ public class NotebookScript : MonoBehaviour
         view.gameObject.SetActive(false);
     }
 
-    void Update()
-    {
-        
-    }
-
     void OpenOnClick()
     {
         view.gameObject.SetActive(true);
-
     }
 
     //Is called as the action listener for the exit button and will close the notebook
     void ExitTaskOnClick()
     {
         view.gameObject.SetActive(false);
-
     }
 
     //Is called as the action listener for the back button and will turn back the page if another page is unlocked previous to the active page
@@ -101,7 +94,7 @@ public class NotebookScript : MonoBehaviour
 
     }
 
-    //Is called at the start of a new game to make the notebook and initalise all the pages into an array
+    //Is called at the start of a new game to make the notebook and initialize all the pages into an array
     public void createNoteBook()
     {
         playerNoteBook = new NoteBook();
