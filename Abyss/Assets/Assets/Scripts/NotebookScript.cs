@@ -50,22 +50,15 @@ public class NotebookScript : MonoBehaviour
         view.gameObject.SetActive(false);
     }
 
-    void Update()
-    {
-        
-    }
-
     void OpenOnClick()
     {
         view.gameObject.SetActive(true);
-
     }
 
     //Is called as the action listener for the exit button and will close the notebook
     void ExitTaskOnClick()
     {
         view.gameObject.SetActive(false);
-
     }
 
     //Is called as the action listener for the back button and will turn back the page if another page is unlocked previous to the active page
