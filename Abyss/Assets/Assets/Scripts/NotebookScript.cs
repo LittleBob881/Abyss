@@ -94,7 +94,7 @@ public class NotebookScript : MonoBehaviour
 
     }
 
-    //Is called at the start of a new game to make the notebook and initalise all the pages into an array
+    //Is called at the start of a new game to make the notebook and initialize all the pages into an array
     public void createNoteBook()
     {
         playerNoteBook = new NoteBook();

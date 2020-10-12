@@ -269,7 +269,7 @@ public class inventoryScript : MonoBehaviour
 
     private void createNewGame()
     {
-        Empty = new inventoryItem(0, sprites[0], sprites[0]);
+        Empty = new inventoryItem("empty", 0, sprites[0], sprites[0]);
     
         List<inventoryItem> inventorySlots= new List<inventoryItem>();
         
@@ -291,20 +291,26 @@ public class inventoryScript : MonoBehaviour
 
     public class inventoryItem
     {
-
+        private String name;
         private Sprite image;
         private Sprite activeImage;
         private int id;
         private Boolean active; 
 
 
-        public inventoryItem(int id, Sprite image, Sprite active)
+        public inventoryItem(String name,int id, Sprite image, Sprite active)
         {
+            this.name = name;
             this.id = id;
             this.image = image;
             this.activeImage = active;
 
 
+        }
+
+        public String getName()
+        {
+            return this.name;
         }
 
         public int getID()
@@ -462,6 +468,8 @@ public class inventoryScript : MonoBehaviour
 
         public Boolean PickupItem(inventoryItem aItem)
         {
+
+
             int newSlot;
             Boolean toreturn = false;
             Boolean check = Checkforitem(aItem.getID());
@@ -472,18 +480,26 @@ public class inventoryScript : MonoBehaviour
                 {
                     return false;
                 }
+                else
+                {
+                    SetInventoryItem(aItem, newSlot);
+                    
+                    toreturn = true;
+                }
 
-                SetInventoryItem(aItem, newSlot);
-                toreturn = true;
             }
 
             return toreturn;
         }
 
+
     }
 
     static public inventoryItem getItemForTest()
     {
-        return new inventoryItem(3, sprites[5], sprites[6]);
+        return new inventoryItem("empty", 3, sprites[5], sprites[6]);
     }
+
+
+
 }
