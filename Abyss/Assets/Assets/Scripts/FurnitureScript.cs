@@ -196,7 +196,7 @@ public class FurnitureScript : MonoBehaviour
 
         if (invenScript.GetPlayerInventory().getActiveItemID() != 0)
         {
-
+            UseActiveItem(num);
         }
         else
         {
@@ -230,9 +230,9 @@ public class FurnitureScript : MonoBehaviour
     }
 
 
-    void UseActiveItem()
+    void UseActiveItem(int num)
     {
-
+        
     }
 
     //create all 27 roomitems and fills with data
