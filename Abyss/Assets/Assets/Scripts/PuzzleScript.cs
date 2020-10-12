@@ -10,9 +10,30 @@ public class PuzzleScript : MonoBehaviour
 
     private static PuzzleRefeanceItems puzzleMaster;
     private static int PuzzleItemProgress;
-    private static int PuzzleValue;
-    private Boolean[] unlocks;
+    private static int PuzzleProgress;
+    private Boolean[] Unlocks;
     private PuzzleItemCompareIndex PICIndex;
+
+    public static int empty = 0;
+    public static int bone = 1;
+    public static int pen = 2;
+    public static int tomato = 3;
+    public static int onion = 4;
+    public static int crayon = 5;
+    public static int key = 6;
+    public static int coffee = 7;
+    public static int money = 8;
+    public static int whisky = 9;
+    public static int kife = 10;
+    public static int poison = 11;
+    public static int hammer = 12;
+    public static int pot = 3;
+    public static int toyDog = 8;
+    public static int paper = 11;
+    public static int paintingMother = 14;
+    public static int paintingPlayer = 16;
+    public static int paitingGirl = 17;
+
 
 
     void Start()
@@ -21,11 +42,14 @@ public class PuzzleScript : MonoBehaviour
         PICIndex = new PuzzleItemCompareIndex();
     }
 
-        
 
-    public void ActiveItemPuzzleCheack(int RoomItemID, int ActiveItemID )
+
+
+
+
+    public void ActiveItemPuzzleCheack(int RoomItemID, int ActiveItemID)
     {
-        if(PuzzleItemProgress == 0)
+        if (PuzzleItemProgress == 0)
         {
             if (RoomItemID == PICIndex.getRoomItemIndex(0))
             {
@@ -55,7 +79,7 @@ public class PuzzleScript : MonoBehaviour
                 }
             }
         }
-        else if(PuzzleItemProgress == 3)
+        else if (PuzzleItemProgress == 3)
         {
 
 
@@ -65,7 +89,7 @@ public class PuzzleScript : MonoBehaviour
 
 
         }
-        else if(PuzzleItemProgress == 5)
+        else if (PuzzleItemProgress == 5)
         {
 
 
@@ -75,22 +99,28 @@ public class PuzzleScript : MonoBehaviour
 
 
         }
-     }
-        
+    }
 
 
 
-        
-        
-     public int GetPuzzleItemValue()
-     {
-         return PuzzleItemProgress;
-     }
 
-      public int GetPuzzleValue()
-      {
-          return PuzzleValue;
-      }
+
+
+    public int GetPuzzleItemValue()
+    {
+        return PuzzleItemProgress;
+    }
+
+    public int GetPuzzleValue()
+    {
+        return PuzzleProgress;
+    }
+
+    public Boolean[] GetUnlock()
+    {
+        return Unlocks;
+    }
+
 
       public class PuzzleRefeanceItems
       {
