@@ -18,6 +18,10 @@ using UnityEngine;
         }
 
         
+
+
+        
+        
         
         public int GetPuzzleItemValue()
         {

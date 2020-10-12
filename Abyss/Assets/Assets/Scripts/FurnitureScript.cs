@@ -12,6 +12,7 @@ public class FurnitureScript : MonoBehaviour
     public inventoryScript invenScript;
     private PuzzleScript.PuzzleRefeanceItems list;
     public GameObject speechbox;
+    public PuzzleScript PuzzleScript;
 
     void Start()
     {
@@ -192,19 +193,26 @@ public class FurnitureScript : MonoBehaviour
     
     public void RoomItemAction(int num)
     {
-        ViewItemSpeech(num);
 
-        if (roomitems[num].GetItem() != 0)
+        if (invenScript.GetPlayerInventory().getActiveItemID() != 0)
         {
-            
-            bool AddedItemBool = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()));
-            if (AddedItemBool == true)
-            {
-                AddItemSpeech(num);
-            }
-            
-        }
 
+        }
+        else
+        {
+            ViewItemSpeech(num);
+
+            if (roomitems[num].GetItem() != 0)
+            {
+
+                bool AddedItemBool = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()));
+                if (AddedItemBool == true)
+                {
+                    AddItemSpeech(num);
+                }
+
+            }
+        }
 
     }
 
@@ -219,6 +227,12 @@ public class FurnitureScript : MonoBehaviour
         Text speech = speechbox.GetComponent<Text>();
         String strings = "Picked up " + list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()).getName();
         speech.text = strings;
+    }
+
+
+    void UseActiveItem()
+    {
+
     }
 
     //create all 27 roomitems and fills with data
