@@ -1,40 +1,99 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 
-    public class PuzzleScript : MonoBehaviour
+public class PuzzleScript : MonoBehaviour
+{
+
+    private static PuzzleRefeanceItems puzzleMaster;
+    private static int PuzzleItemProgress;
+    private static int PuzzleValue;
+    private Boolean[] unlocks;
+    private PuzzleItemCompareIndex PICIndex;
+
+
+    void Start()
     {
+        PuzzleItemProgress = 0;
+        PICIndex = new PuzzleItemCompareIndex();
+    }
 
-        private static PuzzleRefeanceItems puzzleMaster;
-        private static int PuzzleItemValue;
-        private static int PuzzleValue;
+        
 
-       
-        void Start()
+    public void ActiveItemPuzzleCheack(int RoomItemID, int ActiveItemID )
+    {
+        if(PuzzleItemProgress == 0)
         {
+            if (RoomItemID == PICIndex.getRoomItemIndex(0))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(0))
+                {
+
+                }
+                else if (ActiveItemID == PICIndex.getItemIndex(1))
+                {
+
+                }
+
+            }
 
         }
-
-        
-
-
-        
-        
-        
-        public int GetPuzzleItemValue()
+        else if (PuzzleItemProgress == 2)
         {
-            return PuzzleItemValue;
+            if (RoomItemID == PICIndex.getRoomItemIndex(2))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(2))
+                {
+
+                }
+                else if (ActiveItemID == PICIndex.getItemIndex(3))
+                {
+
+                }
+            }
         }
-
-        public int GetPuzzleValue()
+        else if(PuzzleItemProgress == 3)
         {
-            return PuzzleValue;
+
+
         }
-
-        public class PuzzleRefeanceItems
+        else if (PuzzleItemProgress == 4)
         {
+
+
+        }
+        else if(PuzzleItemProgress == 5)
+        {
+
+
+        }
+        else if (PuzzleItemProgress == 6)
+        {
+
+
+        }
+     }
+        
+
+
+
+        
+        
+     public int GetPuzzleItemValue()
+     {
+         return PuzzleItemProgress;
+     }
+
+      public int GetPuzzleValue()
+      {
+          return PuzzleValue;
+      }
+
+      public class PuzzleRefeanceItems
+      {
             inventoryScript.inventory puzzleInventory;
             //add story array here 
 
@@ -81,5 +140,51 @@ using UnityEngine;
             {
                 return puzzleInventory;
             }
+      }
+
+
+    public class PuzzleItemCompareIndex
+    {
+        int[] ItemIndex;
+        int[] RoomItemIndex;
+
+        public PuzzleItemCompareIndex()
+        {
+            ItemIndex = new int[9];
+            ItemIndex[0] = 3;
+            ItemIndex[1] = 4;
+            ItemIndex[2] = 7;
+            ItemIndex[3] = 11;
+            ItemIndex[4] = 2;
+            ItemIndex[5] = 5;
+            ItemIndex[6] = 1;
+            ItemIndex[7] = 12;
+            ItemIndex[8] = 10;
+
+            RoomItemIndex = new int[9];
+            RoomItemIndex[0] = 3;
+            RoomItemIndex[1] = 3;
+            RoomItemIndex[2] = 14;
+            RoomItemIndex[3] = 14;
+            RoomItemIndex[4] = 11;
+            RoomItemIndex[5] = 17;
+            RoomItemIndex[6] = 20;
+            RoomItemIndex[7] = 8;
+            RoomItemIndex[8] = 16;
+
         }
+
+        public int getRoomItemIndex(int num)
+        {
+            return RoomItemIndex[num];
+        }
+
+        public int getItemIndex(int num)
+        {
+            return ItemIndex[num];
+        }
+
     }
+
+
+}
