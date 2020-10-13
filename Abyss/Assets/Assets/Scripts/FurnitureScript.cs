@@ -8,7 +8,7 @@ public class FurnitureScript : MonoBehaviour
 {
 
     public Button[] Unitybutton;
-    private AbyssLibrary.RoomItem[] roomitems;
+    private RoomItem[] roomitems;
     public inventoryScript invenScript;
     private PuzzleScript.PuzzleRefeanceItems list;
     public GameObject speechbox;
@@ -221,8 +221,9 @@ public class FurnitureScript : MonoBehaviour
     void ViewItemSpeech(int num)
     {
         Text speech = speechbox.GetComponent<Text>();
-        String[] strings = roomitems[num].getStrings();
-        speech.text = strings[0];
+        roomitems[num].SetOutput(0);
+        String strings = roomitems[num].GetOutput();
+        speech.text = strings;
     }
         public void AddItemSpeech(int num)
     {
@@ -244,12 +245,16 @@ public class FurnitureScript : MonoBehaviour
         {
             ItemActionString = list.GetPuzzleInventory().getActiveItemName() + " used on " + roomitems[RoomItemID].GetName();
         }
+
+        Text speech = speechbox.GetComponent<Text>();
+        speech.text = ItemActionString;
+
     }
 
     //create all 27 roomitems and fills with data
     void AddRoomItems()
     {
-        roomitems = new AbyssLibrary.RoomItem[27];
+        roomitems = new RoomItem[27];
         string[] Strings0 = { "Chair for a child" };
         string[] Strings1 = { "Its a table", "There is a recipe on the table, added to notebook." };
         string[] Strings2 = { "Its an oven", "Its hot." };
@@ -279,38 +284,38 @@ public class FurnitureScript : MonoBehaviour
         string[] Strings26 = { "It looks like I could hide here" };
 
 
-        roomitems[0] = new AbyssLibrary.RoomItem("Kitchen", "Highchair", Strings0, 0, 0);
-        roomitems[1] = new AbyssLibrary.RoomItem("Kitchen", "Table", Strings1, 0, 0);
-        roomitems[2] = (new AbyssLibrary.RoomItem("Kitchen", "Oven", Strings2, 0, 0));
-        roomitems[3] = (new AbyssLibrary.RoomItem("Kitchen", "Pot", Strings3, 0, 0));
-        roomitems[4] = (new AbyssLibrary.RoomItem("Kitchen", "Sink", Strings4, 0, 0));
+        roomitems[0] = new RoomItem("Kitchen", "Highchair", Strings0, 0, 0);
+        roomitems[1] = new RoomItem("Kitchen", "Table", Strings1, 0, 0);
+        roomitems[2] = (new RoomItem("Kitchen", "Oven", Strings2, 0, 0));
+        roomitems[3] = (new RoomItem("Kitchen", "Pot", Strings3, 0, 0));
+        roomitems[4] = (new RoomItem("Kitchen", "Sink", Strings4, 0, 0));
 
-        roomitems[5] = new AbyssLibrary.RoomItem("Kitchen", "Fridge", Strings5, 3, 0);
-        roomitems[6] = new AbyssLibrary.RoomItem("Kitchen", "Sink", Strings6, 11, 2);
-        roomitems[7] = (new AbyssLibrary.RoomItem("Kitchen", "Bed", Strings7, 1, 0));
-        roomitems[8] = (new AbyssLibrary.RoomItem("Kitchen", "Toy dog ", Strings8, 0, 0));
-        roomitems[9] = (new AbyssLibrary.RoomItem("Kitchen", "Side table", Strings9, 0, 0));
+        roomitems[5] = new RoomItem("Kitchen", "Fridge", Strings5, 3, 0);
+        roomitems[6] = new RoomItem("Kitchen", "Sink", Strings6, 11, 2);
+        roomitems[7] = (new RoomItem("Kitchen", "Bed", Strings7, 1, 0));
+        roomitems[8] = (new RoomItem("Kitchen", "Toy dog ", Strings8, 0, 0));
+        roomitems[9] = (new RoomItem("Kitchen", "Side table", Strings9, 0, 0));
 
-        roomitems[10] = new AbyssLibrary.RoomItem("Kitchen", "Cupboard", Strings10, 5, 0);
-        roomitems[11] = new AbyssLibrary.RoomItem("Kitchen", "Paper", Strings11, 0, 0);
-        roomitems[12] = (new AbyssLibrary.RoomItem("Kitchen", "Closet", Strings12, 0, 0));
-        roomitems[13] = (new AbyssLibrary.RoomItem("Kitchen", "Mirror", Strings13, 0, 0));
-        roomitems[14] = (new AbyssLibrary.RoomItem("Kitchen", "Painting of Mother", Strings14, 0, 0));
+        roomitems[10] = new RoomItem("Kitchen", "Cupboard", Strings10, 5, 0);
+        roomitems[11] = new RoomItem("Kitchen", "Paper", Strings11, 0, 0);
+        roomitems[12] = (new RoomItem("Kitchen", "Closet", Strings12, 0, 0));
+        roomitems[13] = (new RoomItem("Kitchen", "Mirror", Strings13, 0, 0));
+        roomitems[14] = (new RoomItem("Kitchen", "Painting of Mother", Strings14, 0, 0));
 
-        roomitems[15] = new AbyssLibrary.RoomItem("Kitchen", "Safe", Strings15, 8, 0);
-        roomitems[16] = new AbyssLibrary.RoomItem("Kitchen", "Painting of Frank", Strings16, 0, 0);
-        roomitems[17] = (new AbyssLibrary.RoomItem("Kitchen", "Painting of little girl", Strings17, 0, 0));
-        roomitems[18] = (new AbyssLibrary.RoomItem("Kitchen", "Garden", Strings18, 4, 0));
-        roomitems[19] = (new AbyssLibrary.RoomItem("Kitchen", "Tree", Strings19, 7, 0));
+        roomitems[15] = new RoomItem("Kitchen", "Safe", Strings15, 8, 0);
+        roomitems[16] = new RoomItem("Kitchen", "Painting of Frank", Strings16, 0, 0);
+        roomitems[17] = (new RoomItem("Kitchen", "Painting of little girl", Strings17, 0, 0));
+        roomitems[18] = (new RoomItem("Kitchen", "Garden", Strings18, 4, 0));
+        roomitems[19] = (new RoomItem("Kitchen", "Tree", Strings19, 7, 0));
 
-        roomitems[20] = new AbyssLibrary.RoomItem("Kitchen", "Dog house", Strings20, 0, 0);
-        roomitems[21] = new AbyssLibrary.RoomItem("Kitchen", "Old Tools", Strings21, 12, 0);
-        roomitems[22] = (new AbyssLibrary.RoomItem("Kitchen", "Shelf", Strings22, 0, 0));
-        roomitems[23] = (new AbyssLibrary.RoomItem("Kitchen", "Treadmill", Strings23, 0, 0));
-        roomitems[24] = (new AbyssLibrary.RoomItem("Kitchen", "Tv", Strings24, 10, 0));
+        roomitems[20] = new RoomItem("Kitchen", "Dog house", Strings20, 0, 0);
+        roomitems[21] = new RoomItem("Kitchen", "Old Tools", Strings21, 12, 0);
+        roomitems[22] = (new RoomItem("Kitchen", "Shelf", Strings22, 0, 0));
+        roomitems[23] = (new RoomItem("Kitchen", "Treadmill", Strings23, 0, 0));
+        roomitems[24] = (new RoomItem("Kitchen", "Tv", Strings24, 10, 0));
 
-        roomitems[25] = new AbyssLibrary.RoomItem("Kitchen", "Couch", Strings25, 2, 0);
-        roomitems[26] = new AbyssLibrary.RoomItem("Kitchen", "Closet", Strings26, 0, 0);
+        roomitems[25] = new RoomItem("Kitchen", "Couch", Strings25, 2, 0);
+        roomitems[26] = new RoomItem("Kitchen", "Closet", Strings26, 0, 0);
         
         
     }
@@ -398,5 +403,71 @@ public class FurnitureScript : MonoBehaviour
 
         Button Roomitem26 = Unitybutton[26].GetComponent<Button>();
         Roomitem26.onClick.AddListener(OnClick26);
+    }
+
+
+    public class RoomItem
+    {
+        private String room;
+        private String name;
+        private String output;
+        private string[] dialog;
+        private int item;
+        private int page;
+        private int dialogNumber;
+
+        public RoomItem(String room, String name, string[] textlines, int item, int page)
+        {
+            this.room = room;
+            this.name = name;
+            this.output = "  ";
+            this.dialog = textlines;
+            this.item = item;
+            this.page = page;
+            this.dialogNumber = 0;
+        }
+
+
+
+        public String GetName()
+        {
+            return name;
+
+        }
+
+
+        //returns output as a string
+        public String GetOutput()
+        {
+            return this.output;
+        }
+
+        // sets output from the diaglog list. int chooses which dialog is used.
+
+        public void SetOutput(int num)
+        {
+            this.output = dialog[num];
+        }
+
+
+        // returns item (not sure how this will work with the item getting.)
+        public int GetItem()
+        {
+            return item;
+
+        }
+
+        // returns item (not sure how this will work with the page getting.)
+        public int GetPage()
+        {
+            return page;
+
+        }
+
+        // sets the Dialog number. 
+        public void SetDialogNum(int num)
+        {
+            this.dialogNumber = num;
+        }
     }
 }
