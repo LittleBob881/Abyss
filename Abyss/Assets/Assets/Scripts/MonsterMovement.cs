@@ -47,8 +47,8 @@ public class MonsterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //walk();
-        chase();
+        walk();
+        //chase();
     }
 
     void walk()
