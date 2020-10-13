@@ -15,8 +15,9 @@ public class PuzzleScript : MonoBehaviour
     private PuzzleItemCompareIndex PICIndex;
 
 
-    // vairbles 
-    
+    // enum varibles  
+
+    //Inventory items
     public static int BONE = 6;
     public static int PEN = 4;
     public static int TOMATO = 0;
@@ -26,6 +27,7 @@ public class PuzzleScript : MonoBehaviour
     public static int KNIFE = 8;
     public static int POISON = 3;
     public static int HAMMER = 7;
+    //Room items
     public static int POT = 0;
     public static int TOYDOG = 7;
     public static int PAPER = 4;
@@ -33,111 +35,164 @@ public class PuzzleScript : MonoBehaviour
     public static int PAINTINGPLAYER = 8;
     public static int PAINTINGGIRL = 5;
     public static int DOGHOUSE = 6;
-
+    
+    //unlocks
+    //in code so everything not reveled
+    public static int TAP = 0;
+    public static int OAP = 1;
+    public static int PC = 2;
+    public static int CUOM = 3;
+    public static int PUOM = 4;
+    public static int MK = 5;
+    public static int PUOP = 6;
+    public static int CUOC = 7;
+    public static int CHC = 8;
+    public static int BUOD = 9;
+    public static int HUOT = 10;
+    public static int DK = 11;
+    public static int KUOP = 12;
 
     void Start()
     {
         PuzzleItemProgress = 0;
         PICIndex = new PuzzleItemCompareIndex();
+        
+
+
+    }
+
+
+    // sets all unlocks to false
+    void loadUnlocks()
+    {
+        Unlocks = new Boolean[13];
+        Unlocks[TAP] = false;
+        Unlocks[OAP] = false;
+        Unlocks[PC] = false;
+        Unlocks[CUOM] = false;
+        Unlocks[PUOM] = false;
+        Unlocks[MK] = false;
+        Unlocks[PUOP] = false;
+        Unlocks[CUOC] = false;
+        Unlocks[CHC] = false;
+        Unlocks[BUOD] = false;
+        Unlocks[HUOT] = false;
+        Unlocks[DK] = false;
+        Unlocks[KUOP] = false;
+        
     }
 
 
 
-
-
     // checks if the right room item is pressed and if the player has the by itemPuzzleProgress stage 
-    public void ActiveItemPuzzleCheack(int RoomItemID, int ActiveItemID)
+    public Boolean ActiveItemPuzzleCheck(int RoomItemID, int ActiveItemID)
     {
+        Boolean ItemUsed = false; 
         if (PuzzleItemProgress == 0)
         {
             if (RoomItemID == PICIndex.getRoomItemIndex(POT))
             {
                 if (ActiveItemID == PICIndex.getItemIndex(TOMATO))
                 {
-
+                    Unlocks[TAP] = true;
+                    ItemUsed = true;
                 }
                 else if (ActiveItemID == PICIndex.getItemIndex(ONION))
                 {
-
+                    Unlocks[OAP] = true;
+                    ItemUsed = true;
                 }
 
             }
 
         }
-        else if (PuzzleItemProgress == 2)
+        else if (PuzzleItemProgress == 10)
         {
             if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGMOTHER))
             {
                 if (ActiveItemID == PICIndex.getItemIndex(COFFEE))
                 {
-
+                    Unlocks[CUOM] = true;
+                    ItemUsed = true;
                 }
                 else if (ActiveItemID == PICIndex.getItemIndex(POISON))
                 {
-
+                    Unlocks[PUOM] = true;
+                    ItemUsed = true;
                 }
             }
         }
-        else if (PuzzleItemProgress == 3)
+        else if (PuzzleItemProgress == 20)
         {
             if (RoomItemID == PICIndex.getRoomItemIndex(PAPER))
             {
                 if (ActiveItemID == PICIndex.getItemIndex(PEN))
                 {
-
+                    Unlocks[PUOP] = true;
+                    ItemUsed = true;
                 }
-
             }
         }
-        else if (PuzzleItemProgress == 4)
+        else if (PuzzleItemProgress == 30)
         {
             if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGGIRL))
             {
                 if (ActiveItemID == PICIndex.getItemIndex(CRAYON))
                 {
-
+                    Unlocks[CUOC] = true;
+                    ItemUsed = true;
                 }
-
             }
 
         }
-        else if (PuzzleItemProgress == 5)
+        else if (PuzzleItemProgress == 40)
         {
             if (RoomItemID == PICIndex.getRoomItemIndex(DOGHOUSE))
             {
                 if (ActiveItemID == PICIndex.getItemIndex(BONE))
                 {
-
+                    Unlocks[BUOD] = true;
+                    ItemUsed = true;
                 }
-
             }
 
         }
-        else if (PuzzleItemProgress == 6)
+        else if (PuzzleItemProgress == 50)
         {
 
             if (RoomItemID == PICIndex.getRoomItemIndex(TOYDOG))
             {
                 if (ActiveItemID == PICIndex.getItemIndex(HAMMER))
                 {
-
+                    Unlocks[HUOT] = true;
+                    ItemUsed = true;
                 }
-
             }
         }
-        else if (PuzzleItemProgress == 7)
+        else if (PuzzleItemProgress == 60)
         {
 
             if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGPLAYER))
             {
                 if (ActiveItemID == PICIndex.getItemIndex(KNIFE))
                 {
-
+                    Unlocks[KUOP] = true;
+                    ItemUsed = true;
                 }
-
             }
         }
+        return ItemUsed;
     }
+
+
+    // sets the unlock variable assioated with puzzle progess to be unlocked.
+    // updates the puzzle item progress varible. 
+    private void PuzzleActionupdate()
+    {
+        
+    }
+
+
 
 
     // gets
@@ -161,8 +216,6 @@ public class PuzzleScript : MonoBehaviour
       public class PuzzleRefeanceItems
       {
             inventoryScript.inventory puzzleInventory;
-            //add story array here 
-
 
             public PuzzleRefeanceItems()
             {
@@ -181,9 +234,6 @@ public class PuzzleScript : MonoBehaviour
                 inventoryScript.inventoryItem item10 = new inventoryScript.inventoryItem("knife", 10, sprites[10], sprites[22]);
                 inventoryScript.inventoryItem item11 = new inventoryScript.inventoryItem("poison", 11, sprites[11], sprites[23]);
                 inventoryScript.inventoryItem item12 = new inventoryScript.inventoryItem("hammer", 12, sprites[12], sprites[24]);
-           
-
-
 
                 puzzleInventory.addInventoryItem(Empty);
                 puzzleInventory.addInventoryItem(item1);
@@ -200,7 +250,6 @@ public class PuzzleScript : MonoBehaviour
                 puzzleInventory.addInventoryItem(item12);
                 
             }
-
 
             public inventoryScript.inventory GetPuzzleInventory()
             {
@@ -237,7 +286,6 @@ public class PuzzleScript : MonoBehaviour
             RoomItemIndex[6] = 20;
             RoomItemIndex[7] = 8;
             RoomItemIndex[8] = 16;
-
         }
 
         public int getRoomItemIndex(int num)
