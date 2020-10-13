@@ -9,6 +9,7 @@ public class Walk : MonoBehaviour
     private float speed;
     private AudioSource audioSrc;
     private float walkSound = 2f;
+    private bool alive = true;
 
     private void Start()
     {
@@ -53,5 +54,12 @@ public class Walk : MonoBehaviour
             }
         }
         transform.localScale = characterScale;
+    }
+
+    public void killPlayer()
+    {
+        alive = false;
+        Debug.Log("Player is dedad");
+        //play death screen
     }
 }
