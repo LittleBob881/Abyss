@@ -84,7 +84,8 @@ public class PuzzleScript : MonoBehaviour
 
 
 
-    // checks if the right room item is pressed and if the player has the by itemPuzzleProgress stage 
+    // checks if the right room item is pressed and if the player has the by itemPuzzleProgress stage
+    // returns a bool depenednt if an item is used or not.
     public Boolean ActiveItemPuzzleCheck(int RoomItemID, int ActiveItemID)
     {
         Boolean ItemUsed = false; 

@@ -420,6 +420,10 @@ public class inventoryScript : MonoBehaviour
         {
             return this.activeItem.getID();
         }
+        public String getActiveItemName()
+        {
+            return this.activeItem.getName();
+        }
 
         //retuns the string held in empty
         public inventoryItem getEmptyImage()

@@ -196,7 +196,9 @@ public class FurnitureScript : MonoBehaviour
 
         if (invenScript.GetPlayerInventory().getActiveItemID() != 0)
         {
-            UseActiveItem(num);
+            UseActiveItem(num, invenScript.GetPlayerInventory().getActiveItemID());
+            
+            
         }
         else
         {
@@ -230,9 +232,18 @@ public class FurnitureScript : MonoBehaviour
     }
 
 
-    void UseActiveItem(int num)
+    void UseActiveItem(int RoomItemID,int ActiveItemID )
     {
-        
+        Boolean ItemUsed =PuzzleScript.ActiveItemPuzzleCheck(RoomItemID,ActiveItemID);
+        String ItemActionString = " ";
+        if(ItemUsed == false)
+        {
+            ItemActionString = list.GetPuzzleInventory().getActiveItemName() +" doesn't seem to go here";
+        }
+        else
+        {
+            ItemActionString = list.GetPuzzleInventory().getActiveItemName() + " used on " + roomitems[RoomItemID].GetName();
+        }
     }
 
     //create all 27 roomitems and fills with data
@@ -299,7 +310,7 @@ public class FurnitureScript : MonoBehaviour
         roomitems[24] = (new AbyssLibrary.RoomItem("Kitchen", "Tv", Strings24, 10, 0));
 
         roomitems[25] = new AbyssLibrary.RoomItem("Kitchen", "Couch", Strings25, 2, 0);
-        roomitems[26] = new AbyssLibrary.RoomItem("Kitchen", "CLoset", Strings26, 0, 0);
+        roomitems[26] = new AbyssLibrary.RoomItem("Kitchen", "Closet", Strings26, 0, 0);
         
         
     }
