@@ -14,26 +14,25 @@ public class PuzzleScript : MonoBehaviour
     private Boolean[] Unlocks;
     private PuzzleItemCompareIndex PICIndex;
 
-    public static int empty = 0;
-    public static int bone = 1;
-    public static int pen = 2;
-    public static int tomato = 3;
-    public static int onion = 4;
-    public static int crayon = 5;
-    public static int key = 6;
-    public static int coffee = 7;
-    public static int money = 8;
-    public static int whisky = 9;
-    public static int kife = 10;
-    public static int poison = 11;
-    public static int hammer = 12;
-    public static int pot = 3;
-    public static int toyDog = 8;
-    public static int paper = 11;
-    public static int paintingMother = 14;
-    public static int paintingPlayer = 16;
-    public static int paitingGirl = 17;
 
+    // vairbles 
+    
+    public static int BONE = 6;
+    public static int PEN = 4;
+    public static int TOMATO = 0;
+    public static int ONION = 1;
+    public static int CRAYON = 5;
+    public static int COFFEE = 2;
+    public static int KNIFE = 8;
+    public static int POISON = 3;
+    public static int HAMMER = 7;
+    public static int POT = 0;
+    public static int TOYDOG = 7;
+    public static int PAPER = 4;
+    public static int PAINTINGMOTHER = 2;
+    public static int PAINTINGPLAYER = 8;
+    public static int PAINTINGGIRL = 5;
+    public static int DOGHOUSE = 6;
 
 
     void Start()
@@ -46,7 +45,7 @@ public class PuzzleScript : MonoBehaviour
 
 
 
-
+    // checks if the right room item is pressed and if the player has the by itemPuzzleProgress stage 
     public void ActiveItemPuzzleCheack(int RoomItemID, int ActiveItemID)
     {
         if (PuzzleItemProgress == 0)
@@ -102,9 +101,7 @@ public class PuzzleScript : MonoBehaviour
     }
 
 
-
-
-
+    // gets
 
     public int GetPuzzleItemValue()
     {
