@@ -39,7 +39,7 @@ public class MonsterMovement : MonoBehaviour
         movement = walkingSpeed;
         direction = DIRECTION_CONST;
 
-        player = GameObject.Find("man_sheet1 (1)_0");
+        player = GameObject.Find("Player");
         playerTransform = player.transform;
         monsterTransform = monster.transform;
     }
