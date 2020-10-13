@@ -104,9 +104,10 @@ public class NotebookScript : MonoBehaviour
         {
             noteBookPage page = new noteBookPage(sprites[i], i);
             playerNoteBook.addNoteBookPage(page);
+            playerNoteBook.unlockPage(i); //Unlocking all pages for this sprint
 
             //Sets the first page to the active page
-            if(i == 1)
+            if (i == 1)
             {
                 playerNoteBook.setActivePage(page);
             }
