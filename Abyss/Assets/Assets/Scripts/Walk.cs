@@ -8,16 +8,18 @@ public class Walk : MonoBehaviour
     private Rigidbody2D rigid;
     private float speed;
     private AudioSource audioSrc;
+    private float walkSound = 2f;
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        audioSrc = GetComponent<AudioSource>();
+       // audioSrc = GetComponent<AudioSource>();
         speed = 5f;
     }
 
     private void Update()
     {
+        audioSrc = GetComponent<AudioSource>();
         Vector3 characterScale = transform.localScale;
         if (Input.touchCount > 0)
         {
@@ -31,6 +33,7 @@ public class Walk : MonoBehaviour
                         characterScale.x = -22;
                         rigid.velocity = new Vector2(-speed, 0f);
                         audioSrc.Play();
+                        audioSrc.pitch = walkSound;
                     }
 
                     //Right
@@ -39,6 +42,7 @@ public class Walk : MonoBehaviour
                         characterScale.x = 22;
                         rigid.velocity = new Vector2(speed, 0f);
                         audioSrc.Play();
+                        audioSrc.pitch = walkSound;
                     }
                     break;
 
