@@ -50,13 +50,13 @@ public class PuzzleScript : MonoBehaviour
     {
         if (PuzzleItemProgress == 0)
         {
-            if (RoomItemID == PICIndex.getRoomItemIndex(0))
+            if (RoomItemID == PICIndex.getRoomItemIndex(POT))
             {
-                if (ActiveItemID == PICIndex.getItemIndex(0))
+                if (ActiveItemID == PICIndex.getItemIndex(TOMATO))
                 {
 
                 }
-                else if (ActiveItemID == PICIndex.getItemIndex(1))
+                else if (ActiveItemID == PICIndex.getItemIndex(ONION))
                 {
 
                 }
@@ -66,13 +66,13 @@ public class PuzzleScript : MonoBehaviour
         }
         else if (PuzzleItemProgress == 2)
         {
-            if (RoomItemID == PICIndex.getRoomItemIndex(2))
+            if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGMOTHER))
             {
-                if (ActiveItemID == PICIndex.getItemIndex(2))
+                if (ActiveItemID == PICIndex.getItemIndex(COFFEE))
                 {
 
                 }
-                else if (ActiveItemID == PICIndex.getItemIndex(3))
+                else if (ActiveItemID == PICIndex.getItemIndex(POISON))
                 {
 
                 }
@@ -80,23 +80,62 @@ public class PuzzleScript : MonoBehaviour
         }
         else if (PuzzleItemProgress == 3)
         {
+            if (RoomItemID == PICIndex.getRoomItemIndex(PAPER))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(PEN))
+                {
 
+                }
 
+            }
         }
         else if (PuzzleItemProgress == 4)
         {
+            if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGGIRL))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(CRAYON))
+                {
 
+                }
+
+            }
 
         }
         else if (PuzzleItemProgress == 5)
         {
+            if (RoomItemID == PICIndex.getRoomItemIndex(DOGHOUSE))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(BONE))
+                {
 
+                }
+
+            }
 
         }
         else if (PuzzleItemProgress == 6)
         {
 
+            if (RoomItemID == PICIndex.getRoomItemIndex(TOYDOG))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(HAMMER))
+                {
 
+                }
+
+            }
+        }
+        else if (PuzzleItemProgress == 7)
+        {
+
+            if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGPLAYER))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(KNIFE))
+                {
+
+                }
+
+            }
         }
     }
 
@@ -140,7 +179,7 @@ public class PuzzleScript : MonoBehaviour
                 inventoryScript.inventoryItem item8 = new inventoryScript.inventoryItem("money", 8, sprites[8], sprites[20]);
                 inventoryScript.inventoryItem item9 = new inventoryScript.inventoryItem("whisky", 9, sprites[9], sprites[21]);
                 inventoryScript.inventoryItem item10 = new inventoryScript.inventoryItem("knife", 10, sprites[10], sprites[22]);
-                inventoryScript.inventoryItem item11 = new inventoryScript.inventoryItem("posion", 11, sprites[11], sprites[23]);
+                inventoryScript.inventoryItem item11 = new inventoryScript.inventoryItem("poison", 11, sprites[11], sprites[23]);
                 inventoryScript.inventoryItem item12 = new inventoryScript.inventoryItem("hammer", 12, sprites[12], sprites[24]);
            
 
