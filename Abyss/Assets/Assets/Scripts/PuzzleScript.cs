@@ -57,7 +57,7 @@ public class PuzzleScript : MonoBehaviour
     {
         PuzzleItemProgress = 0;
         PICIndex = new PuzzleItemCompareIndex();
-        
+        loadUnlocks();
 
 
     }
@@ -86,16 +86,18 @@ public class PuzzleScript : MonoBehaviour
 
 
     // checks if the right room item is pressed and if the player has the by itemPuzzleProgress stage
-    // returns a bool depenednt if an item is used or not.
+    // returns a bool dependent if an item is used or not.
     public Boolean ActiveItemPuzzleCheck(int RoomItemID, int ActiveItemID)
     {
         Boolean ItemUsed = false;
-
+        
+        
+        //for testing 
         if (RoomItemID == PICIndex.getRoomItemIndex(TOYDOG))
         {
             if (ActiveItemID == PICIndex.getItemIndex(BONE))
             {
-               // Unlocks[BUOD] = true;
+                Unlocks[BUOD] = true;
                 ItemUsed = true;
                 InventoryScript.RemoveItemFromInventory(1);
             }

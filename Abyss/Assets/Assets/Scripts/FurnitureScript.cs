@@ -218,14 +218,17 @@ public class FurnitureScript : MonoBehaviour
     //checks if item is unlocked and is able to be picked up. 
     private void PickupItemCheck(int RoomItemID)
     {
-        if (roomitems[RoomItemID].GetItem() != 0)
+        int itemID = roomitems[RoomItemID].GetItem();
+        if (itemID != 0)
         {
-
-            // add item to inventory
-            bool AddedItemBool = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(roomitems[RoomItemID].GetItem()));
-            if (AddedItemBool == true)
+            if (PuzzleScript.ItemlockedCheck(itemID))
             {
-                AddItemSpeech(RoomItemID);
+                // adds item to inventory
+                bool AddedItemBool = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(itemID));
+                if (AddedItemBool == true)
+                {
+                    AddItemSpeech(RoomItemID);
+                }
             }
 
         }
@@ -254,16 +257,17 @@ public class FurnitureScript : MonoBehaviour
     // if it is the right item then it sets the speech box to the a string that says that item name was used on roomitem name 
     void UseActiveItem(int RoomItemID,int ActiveItemID )
     {
+        String ActiveItemName = invenScript.GetPlayerInventory().getActiveItemName();
         Boolean ItemUsed = PuzzleScript.ActiveItemPuzzleCheck(RoomItemID,ActiveItemID);
         String ItemActionString = " ";
         if(ItemUsed == false)
         {
             Debug.Log("useactive item:" +invenScript.GetPlayerInventory().getActiveItemID());
-            ItemActionString = invenScript.GetPlayerInventory().getActiveItemName() + " doesn't seem to go here";
+            ItemActionString = ActiveItemName + " doesn't seem to go here";
         }
         else
         {
-            ItemActionString = invenScript.GetPlayerInventory().getActiveItemName() + " used on " + roomitems[RoomItemID].GetName();
+            ItemActionString = ActiveItemName + " used on " + roomitems[RoomItemID].GetName();
         }
 
         Text speech = speechbox.GetComponent<Text>();
