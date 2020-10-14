@@ -164,7 +164,7 @@ public class inventoryScript : MonoBehaviour
 
     private void slot10OnClick()
     {
-        int num = 1;
+        int num = 10;
         SlotButtonAction(num);
     }
 
@@ -173,7 +173,7 @@ public class inventoryScript : MonoBehaviour
 
     private void slot11OnClick()
     {
-        int num = 1;
+        int num = 11;
         SlotButtonAction(num);
     }
 
@@ -231,8 +231,6 @@ public class inventoryScript : MonoBehaviour
         }
         playerInventory.setActiveItem(slot);
         playerInventory.getInventorySlot(slot).setActive(true);
-        
-        //to add: set player active item
 
     }
 
@@ -245,7 +243,6 @@ public class inventoryScript : MonoBehaviour
 
     void ExitTaskOnClick()
     {
-        Debug.Log("You have clicked the button!");
         view.gameObject.SetActive(false);
 
     }
@@ -254,16 +251,27 @@ public class inventoryScript : MonoBehaviour
     {
         Debug.Log("You have clicked the button!");
    
-        for(int a = 0; a<11; a++)
+        for(int a = 0; a<=11; a++)
         {
             Debug.Log(a);
             Button Slots = Slot[a].GetComponent<Button>();
             Slots.image.sprite = playerInventory.getInventorySlot(a).getImage();
         }
-   
+        
+        if (playerInventory.getActiveItemID() != 0)
+        {
+           
+            for(int k = 0; k <= 11; k++)
+            {
+                if (playerInventory.getActiveItemID() == playerInventory.getInventorySlot(k).getID())
+                {
+                    Button Slots = Slot[k].GetComponent<Button>();
+                    Slots.image.sprite = playerInventory.getActiveItemActiveimage();
+                }
+            }
 
-
-        view.gameObject.SetActive(true);
+        } 
+            view.gameObject.SetActive(true);
 
     }
 
@@ -422,6 +430,8 @@ public class inventoryScript : MonoBehaviour
         }
         public String getActiveItemName()
         {
+            Debug.Log(activeItem.getName());
+            Debug.Log(this.activeItem.getID());
             return this.activeItem.getName();
         }
 

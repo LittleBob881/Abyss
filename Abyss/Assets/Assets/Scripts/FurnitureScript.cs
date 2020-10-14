@@ -190,15 +190,19 @@ public class FurnitureScript : MonoBehaviour
     }
 
 
-    
+    //action if a room item is pressed 
+    // checks if an invetory item is active in inventory.
+    //      if there is an active item, it sends room item ID and active item ID with the useActiveItem fuction.
+    // if there is no active item then ViewItemSpeech is called which updates the speech game object with the string discribing the roomItem.
+    // if there is an item to pick up then the item is placed in the inventory and the speech box is updated to say what item was picked up. 
     public void RoomItemAction(int num)
     {
+        Debug.Log("starting room item action ");
 
         if (invenScript.GetPlayerInventory().getActiveItemID() != 0)
         {
+            Debug.Log(invenScript.GetPlayerInventory().getActiveItemID());
             UseActiveItem(num, invenScript.GetPlayerInventory().getActiveItemID());
-            
-            
         }
         else
         {
@@ -218,6 +222,7 @@ public class FurnitureScript : MonoBehaviour
 
     }
 
+    // sets the speech box string to the string from the first string in the string array from the seleceted roomItem
     void ViewItemSpeech(int num)
     {
         Text speech = speechbox.GetComponent<Text>();
@@ -225,6 +230,8 @@ public class FurnitureScript : MonoBehaviour
         String strings = roomitems[num].GetOutput();
         speech.text = strings;
     }
+
+    // sets the speech box to the a string that says the player picked up name of item. 
         public void AddItemSpeech(int num)
     {
         Text speech = speechbox.GetComponent<Text>();
@@ -233,17 +240,21 @@ public class FurnitureScript : MonoBehaviour
     }
 
 
+    // itemUsed checks if the right item is being added to the right room object
+    // if it is the wrong item then sets the speech box to the a string that says that item name doesnt go here.
+    // if it is the right item then it sets the speech box to the a string that says that item name was used on roomitem name 
     void UseActiveItem(int RoomItemID,int ActiveItemID )
     {
-        Boolean ItemUsed =PuzzleScript.ActiveItemPuzzleCheck(RoomItemID,ActiveItemID);
+        Boolean ItemUsed = PuzzleScript.ActiveItemPuzzleCheck(RoomItemID,ActiveItemID);
         String ItemActionString = " ";
         if(ItemUsed == false)
         {
-            ItemActionString = list.GetPuzzleInventory().getActiveItemName() +" doesn't seem to go here";
+            Debug.Log("useactive item:" +invenScript.GetPlayerInventory().getActiveItemID());
+            ItemActionString = invenScript.GetPlayerInventory().getActiveItemName() + " doesn't seem to go here";
         }
         else
         {
-            ItemActionString = list.GetPuzzleInventory().getActiveItemName() + " used on " + roomitems[RoomItemID].GetName();
+            ItemActionString = invenScript.GetPlayerInventory().getActiveItemName() + " used on " + roomitems[RoomItemID].GetName();
         }
 
         Text speech = speechbox.GetComponent<Text>();
