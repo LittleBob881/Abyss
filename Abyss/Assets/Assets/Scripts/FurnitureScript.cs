@@ -29,56 +29,56 @@ public class FurnitureScript : MonoBehaviour
     // calls room item action
     private void OnClick0()
     {
-        int num = 0;
-        RoomItemAction(num);
+        int RoomitemID = 0;
+        RoomItemAction(RoomitemID);
     }
 
     private void OnClick1()
     {
-        int num = 1;
-        RoomItemAction(num);
+        int RoomItemID = 1;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick2()
     {
-        int num = 2;
-        RoomItemAction(num);
+        int RoomItemID = 2;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick3()
     {
-        int num = 3;
-        RoomItemAction(num);
+        int RoomItemID = 3;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick4()
     {
-        int num = 4;
-        RoomItemAction(num);
+        int RoomItemID = 4;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick5()
     {
-        int num = 5;
-        RoomItemAction(num);
+        int RoomItemID = 5;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick6()
     {
-        int num = 6;
-        RoomItemAction(num);
+        int RoomItemID = 6;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick7()
     {
-        int num = 7;
-        RoomItemAction(num);
+        int RoomItemID = 7;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick8()
     {
-        int num = 8;
-        RoomItemAction(num);
+        int RoomItemID = 8;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick9()
@@ -195,47 +195,56 @@ public class FurnitureScript : MonoBehaviour
     //      if there is an active item, it sends room item ID and active item ID with the useActiveItem fuction.
     // if there is no active item then ViewItemSpeech is called which updates the speech game object with the string discribing the roomItem.
     // if there is an item to pick up then the item is placed in the inventory and the speech box is updated to say what item was picked up. 
-    public void RoomItemAction(int num)
+    public void RoomItemAction(int RoomItemID)
     {
         Debug.Log("starting room item action ");
 
         if (invenScript.GetPlayerInventory().getActiveItemID() != 0)
         {
             Debug.Log(invenScript.GetPlayerInventory().getActiveItemID());
-            UseActiveItem(num, invenScript.GetPlayerInventory().getActiveItemID());
+            UseActiveItem(RoomItemID, invenScript.GetPlayerInventory().getActiveItemID());
         }
         else
         {
-            ViewItemSpeech(num);
+            ViewItemSpeech(RoomItemID);
 
-            if (roomitems[num].GetItem() != 0)
-            {
-
-                bool AddedItemBool = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()));
-                if (AddedItemBool == true)
-                {
-                    AddItemSpeech(num);
-                }
-
-            }
+            PickupItemCheck(RoomItemID);
         }
 
     }
 
+
+    //if there is an item to pick up then the item is placed in the inventory and the speech box is updated to say what item was picked up.
+    //checks if item is unlocked and is able to be picked up. 
+    private void PickupItemCheck(int RoomItemID)
+    {
+        if (roomitems[RoomItemID].GetItem() != 0)
+        {
+
+            // add item to inventory
+            bool AddedItemBool = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(roomitems[RoomItemID].GetItem()));
+            if (AddedItemBool == true)
+            {
+                AddItemSpeech(RoomItemID);
+            }
+
+        }
+    }
+
     // sets the speech box string to the string from the first string in the string array from the seleceted roomItem
-    void ViewItemSpeech(int num)
+    void ViewItemSpeech(int RoomItemID)
     {
         Text speech = speechbox.GetComponent<Text>();
-        roomitems[num].SetOutput(0);
-        String strings = roomitems[num].GetOutput();
+        roomitems[RoomItemID].SetOutput(0);
+        String strings = roomitems[RoomItemID].GetOutput();
         speech.text = strings;
     }
 
     // sets the speech box to the a string that says the player picked up name of item. 
-        public void AddItemSpeech(int num)
+        public void AddItemSpeech(int RoomItemID)
     {
         Text speech = speechbox.GetComponent<Text>();
-        String strings = "Picked up " + list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()).getName();
+        String strings = "Picked up " + list.GetPuzzleInventory().getInventorySlot(roomitems[RoomItemID].GetItem()).getName();
         speech.text = strings;
     }
 
