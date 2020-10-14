@@ -19,19 +19,12 @@ public class inventoryScript : MonoBehaviour
     static public Sprite[] sprites;
     static public inventoryItem Empty;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        Debug.Log("start loaded");
-
         sprites = Resources.LoadAll<Sprite>("Itemsheet_6");
-        //if
         alist = new PuzzleScript.PuzzleRefeanceItems();
         createNewGame();
-        //else 
-        //add continue game load
-
-       
 
         Button openBtu = IOpenButton.GetComponent<Button>();
         openBtu.onClick.AddListener(OpenTaskOnClick);
@@ -65,9 +58,6 @@ public class inventoryScript : MonoBehaviour
         Slot10L.onClick.AddListener(slot10OnClick);
         Button Slot11L = Slot[11].GetComponent<Button>();
         Slot11L.onClick.AddListener(slot11OnClick);
-
-        Debug.Log("You have clicked the button!");
-
 
         // hides the inventory at start of game. 
         view.gameObject.SetActive(false);
@@ -187,25 +177,16 @@ public class inventoryScript : MonoBehaviour
     // sets player inventory's active item to empty item.
     private void SlotButtonAction(int num)
     {
-        Debug.Log("slotbutton activate start ");
-        Debug.Log(num);
-        Debug.Log(playerInventory.getInventorySlot(num).getID());
-
         if (playerInventory.getInventorySlot(num).getID() != 0)
         {
-            Debug.Log("if slot is not 0 ");
-
             if (playerInventory.getInventorySlot(num).getActive() == false)
             {
-                Debug.Log("slot item is not active");
                 updateactiveitem(num);
-
                 Button Slots = Slot[num].GetComponent<Button>();
                 Slots.image.sprite = playerInventory.getActiveItemActiveimage();
             }
             else
             {
-                Debug.Log("else ");
                 playerInventory.getInventorySlot(num).setActive(false);
                 playerInventory.setActiveItemToEmpty();
                 Button Slots = Slot[num].GetComponent<Button>();
@@ -240,13 +221,14 @@ public class inventoryScript : MonoBehaviour
         return playerInventory;
     }
 
-
+    // closes the inventory
     void ExitTaskOnClick()
     {
         view.gameObject.SetActive(false);
 
     }
 
+    // open the invetory and updates the items in inventory.
     void OpenTaskOnClick()
     {
         Debug.Log("You have clicked the button!");
@@ -275,6 +257,7 @@ public class inventoryScript : MonoBehaviour
 
     }
 
+    //sets the inventory to empty
     private void createNewGame()
     {
         Empty = new inventoryItem("empty", 0, sprites[0], sprites[0]);
