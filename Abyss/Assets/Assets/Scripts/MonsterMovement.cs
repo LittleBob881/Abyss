@@ -25,7 +25,9 @@ public class MonsterMovement : MonoBehaviour
     private float floorPosition;
     private float wallLeft;
     private float wallRight;
-    private float doorPosition;
+    private float door1Position;
+    private float door2Position;
+    private float door3Position;
     private System.Random rand = new System.Random();
 
     // Start is called before the first frame update
@@ -34,10 +36,12 @@ public class MonsterMovement : MonoBehaviour
         localScale = transform.localScale;
         LOCAL_SCALE_CONST = localScale.x;
         monster = GetComponent<Rigidbody2D>();
-        wallLeft = 70f;
+        wallLeft = 65f;
         wallRight = 100f;
         movement = walkingSpeed;
         direction = DIRECTION_CONST;
+        door1Position = 67.5f;
+        floorPosition = -32f;
 
         player = GameObject.Find("Player");
         playerTransform = player.transform;
@@ -54,17 +58,30 @@ public class MonsterMovement : MonoBehaviour
     void walk()
     {
         movement = walkingSpeed;
-        if(!(monsterTransform.position.x < wallRight && monsterTransform.position.x > wallLeft))
+        if (monsterTransform.position.x <= door1Position+1 && monsterTransform.position.x >= door1Position - 1)
+        {
+            int randomGen = rand.Next(1, 3);
+            if (randomGen == 1)
+            {
+                throughDoor();
+                monsterTransform.position = new Vector3(door1Position, floorPosition);
+            }
+            else
+            {
+                facingR = !facingR;
+            }
+        }
+        else if (!(monsterTransform.position.x < wallRight && monsterTransform.position.x > wallLeft))
         {
             facingR = !facingR;
         }
         else
         {
-            int randomGen = rand.Next(1, 140);
-            if (randomGen == 1)
-            {
-                facingR = !facingR;
-            }
+            //int randomGen = rand.Next(1, 140);
+            //if (randomGen == 1)
+            //{
+            //    facingR = !facingR;
+            //}
         }
 
         if(facingR)
@@ -109,4 +126,22 @@ public class MonsterMovement : MonoBehaviour
         monster.velocity = new Vector2(direction * movement, monster.velocity.y);
     }
 
+    void throughDoor()
+    {
+        float monsterX = monsterTransform.position.x;
+        float monsterY = monsterTransform.position.y;
+
+        if(monsterY == -32f && monsterX <= 68.5f && monsterX >= 66.5f)
+        {
+            Debug.Log("Going from Lounge to Green Hall");
+            door1Position = 77f;
+            floorPosition = -18f;
+            wallLeft = 64.5f;
+            wallRight = 96.3f;
+        }
+        if(monsterY == -18 && monsterX <= 78 && monsterX >= 78)
+        {
+            Debug.Log("Going from Green Hall to Lounge");
+        }
+    }
 }
