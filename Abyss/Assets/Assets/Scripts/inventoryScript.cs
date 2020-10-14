@@ -287,15 +287,24 @@ public class inventoryScript : MonoBehaviour
         }
         
         playerInventory = new inventory(inventorySlots);
-
-
-       
-
-        // set player aciveitem to notitemactive 
-
     }
 
- 
+
+    // removes item from inventory by itemId 
+    // checks if the to remove itemId is the same as 
+    public void RemoveItemFromInventory(int ItemID)
+    {
+
+        for (int k = 0; k <= 11; k++)
+        {
+            if (ItemID == playerInventory.getInventorySlot(k).getID())
+            {
+                playerInventory.getInventorySlot(k).
+            }
+        }
+    }
+
+
 
     public class inventoryItem
     {
@@ -374,8 +383,28 @@ public class inventoryScript : MonoBehaviour
         //gets an iventory item at the slot location given to the method
         public inventoryItem getInventorySlot(int slot)
         {
-            inventoryItem toreturn = this.inventorySlots[slot];
-            return toreturn;
+            
+            return inventorySlots[slot];
+        }
+
+
+        // creates a new list without the item that needs to be removed. 
+        //The items that were behind the removed item is moved up a slot.
+        // the last slots is filled with an empty item.
+        public void RemoveInventoryItem(int slot)
+        {
+            List<inventoryItem> NewSLots = new List<inventoryItem>();
+            for (int k=0; k<=10; k++)
+            {
+                if(k != slot)
+                {
+                    NewSLots.Add( this.inventorySlots[k]);
+                }
+            }
+
+            NewSLots.Add(empty);
+
+            this.inventorySlots = NewSLots;
         }
 
         // adds and item to the inventorySlots list
