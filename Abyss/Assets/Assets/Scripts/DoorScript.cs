@@ -29,17 +29,77 @@ public class DoorScript : MonoBehaviour
         Debug.Log("Loaded click");
     }
 
+    private void Update()
+    {
+        if (enable_camera) { 
+        walkcontroller.enabled = false;
+        player.transform.position = new Vector3(x, y);
+        
+        
+        if (player.transform.position == transform.position) {
+            walkcontroller.enabled = true;
+            enable_camera = false;
+        }
+        }
+    }
+
     public void Loadscreen()
     {
         Debug.Log("Clicked");
-
-        walkcontroller.enabled = false;
-        player.transform.position = new Vector3(x, y);
-
-        if (player.transform.position == transform.position)
+        
+        enable_camera = true;
+        if (enable_camera)
         {
-            walkcontroller.enabled = true;
-            Debug.Log("Are you listening??");
+            //player.transform.Translate(endDest.position);
+           // Camera.main.transform.Translate(new Vector3(4110, -33, 0));
+            
+            if (player.transform.position == transform.position)
+            {
+                enable_camera = false;
+            }
+            else {
+                enable_camera = true;
+            }
         }
+        Debug.Log("Are you listening??");
     }
+
+    /* public void Loadscreen() 
+     {
+         //Loads a screen depending on string name
+         Debug.Log("Clicked");
+         GameObject.Find("Main Camera").transform.position = new Vector3(4110, -33, 0);
+         
+
+
+     }*/
+
+
+
+    /* void OnTriggerEnter2D(Collider2D collision)
+     {
+         //Upon player collision, the button will be able to be interactable and print the player is within collision range.
+         Debug.Log("Collision");
+         if (collision.gameObject.CompareTag("Player"))
+         {
+             Debug.Log("Entering Collision");
+             GameObject.Find("doorButton").GetComponent<Button>().interactable = true;
+             trigger = true;
+             enable_camera = true;
+
+         }
+     }
+
+     private void OnTriggerExit2D(Collider2D collision)
+     {
+         //Upon player leaving the collision zone, the button will not be interactable. 
+         Debug.Log("LeavingCollision");
+         if (collision.gameObject.tag == "Player")
+         {
+             trigger = false;
+             enable_camera = false;
+             GameObject.Find("doorButton").GetComponent<Button>().interactable = false;
+             Debug.Log("EXiting Collision");
+         }
+     }*/
 }
