@@ -251,7 +251,7 @@ public class inventoryScript : MonoBehaviour
     {
         Debug.Log("You have clicked the button!");
    
-        for(int a = 0; a<=11; a++)
+        for(int a = 0; a<11; a++)
         {
             Debug.Log(a);
             Button Slots = Slot[a].GetComponent<Button>();
@@ -261,7 +261,7 @@ public class inventoryScript : MonoBehaviour
         if (playerInventory.getActiveItemID() != 0)
         {
            
-            for(int k = 0; k <= 11; k++)
+            for(int k = 0; k < 11; k++)
             {
                 if (playerInventory.getActiveItemID() == playerInventory.getInventorySlot(k).getID())
                 {
@@ -295,13 +295,15 @@ public class inventoryScript : MonoBehaviour
     public void RemoveItemFromInventory(int ItemID)
     {
 
-        for (int k = 0; k <= 11; k++)
+        for (int k = 0; k < 11; k++)
         {
             if (ItemID == playerInventory.getInventorySlot(k).getID())
             {
-                playerInventory.getInventorySlot(k).
+                playerInventory.RemoveInventoryItem(k);
             }
         }
+
+       
     }
 
 
@@ -391,6 +393,7 @@ public class inventoryScript : MonoBehaviour
         // creates a new list without the item that needs to be removed. 
         //The items that were behind the removed item is moved up a slot.
         // the last slots is filled with an empty item.
+        // sets active item to empty
         public void RemoveInventoryItem(int slot)
         {
             List<inventoryItem> NewSLots = new List<inventoryItem>();
@@ -403,7 +406,7 @@ public class inventoryScript : MonoBehaviour
             }
 
             NewSLots.Add(empty);
-
+            setActiveItemToEmpty();
             this.inventorySlots = NewSLots;
         }
 

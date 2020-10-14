@@ -13,6 +13,7 @@ public class PuzzleScript : MonoBehaviour
     private static int PuzzleProgress;
     private Boolean[] Unlocks;
     private PuzzleItemCompareIndex PICIndex;
+    public inventoryScript InventoryScript;
 
 
     // enum varibles  
@@ -88,8 +89,20 @@ public class PuzzleScript : MonoBehaviour
     // returns a bool depenednt if an item is used or not.
     public Boolean ActiveItemPuzzleCheck(int RoomItemID, int ActiveItemID)
     {
-        Boolean ItemUsed = false; 
-        if (PuzzleItemProgress == 0)
+        Boolean ItemUsed = false;
+
+        if (RoomItemID == PICIndex.getRoomItemIndex(TOYDOG))
+        {
+            if (ActiveItemID == PICIndex.getItemIndex(BONE))
+            {
+               // Unlocks[BUOD] = true;
+                ItemUsed = true;
+                InventoryScript.RemoveItemFromInventory(1);
+            }
+        }
+
+
+            if (PuzzleItemProgress == 0)
         {
             if (RoomItemID == PICIndex.getRoomItemIndex(POT))
             {
@@ -97,11 +110,13 @@ public class PuzzleScript : MonoBehaviour
                 {
                     Unlocks[TAP] = true;
                     ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(3);
                 }
                 else if (ActiveItemID == PICIndex.getItemIndex(ONION))
                 {
                     Unlocks[OAP] = true;
                     ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(4);
                 }
 
             }
@@ -115,11 +130,13 @@ public class PuzzleScript : MonoBehaviour
                 {
                     Unlocks[CUOM] = true;
                     ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(7);
                 }
                 else if (ActiveItemID == PICIndex.getItemIndex(POISON))
                 {
                     Unlocks[PUOM] = true;
                     ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(11);
                 }
             }
         }
@@ -131,6 +148,7 @@ public class PuzzleScript : MonoBehaviour
                 {
                     Unlocks[PUOP] = true;
                     ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(2);
                 }
             }
         }
@@ -142,6 +160,7 @@ public class PuzzleScript : MonoBehaviour
                 {
                     Unlocks[CUOC] = true;
                     ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(5);
                 }
             }
 
@@ -154,6 +173,7 @@ public class PuzzleScript : MonoBehaviour
                 {
                     Unlocks[BUOD] = true;
                     ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(1);
                 }
             }
 
@@ -167,6 +187,7 @@ public class PuzzleScript : MonoBehaviour
                 {
                     Unlocks[HUOT] = true;
                     ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(12);
                 }
             }
         }
@@ -179,6 +200,7 @@ public class PuzzleScript : MonoBehaviour
                 {
                     Unlocks[KUOP] = true;
                     ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(10);
                 }
             }
         }
