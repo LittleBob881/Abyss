@@ -208,11 +208,38 @@ public class PuzzleScript : MonoBehaviour
     }
 
 
-    // sets the unlock variable assioated with puzzle progess to be unlocked.
-    // updates the puzzle item progress varible. 
-    private void PuzzleActionupdate()
+    public Boolean ItemlockedCheck(int ItemId)
     {
+        Boolean toreturn = false;
         
+        if (PuzzleItemProgress == 0)
+        {
+            if(Unlocks[PC] == true )
+            {
+                if(ItemId == 3)
+                {
+                    if(Unlocks[TAP] == false)
+                    {
+                        // if at PuzzleItemProgress 0 
+                        //and itemId is tomato 
+                        //and tomato has not been used 
+                        //then return true. 
+                        toreturn = true;
+                    }
+                }
+                else if(ItemId == 4)
+                {
+                    if (Unlocks[OAP] == false)
+                    {
+                        // same as tomato but for onion.
+                        toreturn = true;
+                    }
+                }
+            }
+        }
+        
+
+        return toreturn;
     }
 
 
