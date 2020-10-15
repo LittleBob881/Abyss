@@ -10,7 +10,7 @@ public class PuzzleScript : MonoBehaviour
 
     private static PuzzleRefeanceItems puzzleMaster;
     private static int PuzzleItemProgress;
-    private static int PuzzleProgress;
+    private static int PuzzleProgress;// to remove
     private Boolean[] Unlocks;
     private PuzzleItemCompareIndex PICIndex;
     public inventoryScript InventoryScript;
@@ -206,7 +206,61 @@ public class PuzzleScript : MonoBehaviour
                 }
             }
         }
+
+        PuzzleItemProgression();
+
         return ItemUsed;
+    }
+
+    void PuzzleItemProgression()
+    {
+        if(PuzzleItemProgress==0&&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
+        {
+            Unlocks[PC] = true;
+            PuzzleItemProgress = 10;
+            //Add effect unlock
+        }
+        if(PuzzleItemProgress == 10 && (Unlocks[CUOM] == true))
+        {
+            PuzzleItemProgress = 15;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 15 && (Unlocks[PUOM] == true))
+        {
+            Unlocks[MK] = true;
+            PuzzleItemProgress = 20;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 20 && (Unlocks[PUOP] == true))
+        {
+            
+            PuzzleItemProgress = 30;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 30 && (Unlocks[CUOC] == true))
+        {
+            Unlocks[CHC] = true;
+            PuzzleItemProgress = 40;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 40 && (Unlocks[BUOD] == true))
+        {
+
+            PuzzleItemProgress = 50;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 50 && (Unlocks[HUOT] == true))
+        {
+            Unlocks[DK] = true;
+            PuzzleItemProgress = 60;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 60 && (Unlocks[KUOP] == true))
+        {
+
+            PuzzleItemProgress = 70;
+            //Add effect unlock
+        }
     }
 
 
@@ -216,13 +270,14 @@ public class PuzzleScript : MonoBehaviour
         
         if (PuzzleItemProgress == 0)
         {
-            if(Unlocks[PC] == true )
+            if(Unlocks[PC] == false )
             {
                 if(ItemId == 3)
                 {
                     if(Unlocks[TAP] == false)
                     {
                         // if at PuzzleItemProgress 0 
+                        // and PC is false
                         //and itemId is tomato 
                         //and tomato has not been used 
                         //then return true. 
@@ -239,8 +294,107 @@ public class PuzzleScript : MonoBehaviour
                 }
             }
         }
-        
 
+        if (PuzzleItemProgress == 10)
+        {
+             if (ItemId == 7)
+             {
+                if (Unlocks[CUOM] == false)
+                {
+                    // if at PuzzleItemProgress 10 
+                    //and itemId is Coffee's 
+                    //and coffee has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+             }
+        }
+
+        if (PuzzleItemProgress == 15)
+        {
+            if (ItemId == 11)
+            {
+                if (Unlocks[PUOM] == false)
+                {
+                    // if at PuzzleItemProgress 15 
+                    //and itemId is Poison's 
+                    //and poison has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
+        if (PuzzleItemProgress == 20)
+        {
+            if (ItemId == 2)
+            {
+                if (Unlocks[PUOP] == false)
+                {
+                    // if at PuzzleItemProgress 20 
+                    //and itemId is Pen's 
+                    //and pen has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
+
+        if (PuzzleItemProgress == 30)
+        {
+            if (ItemId == 5)
+            {
+                if (Unlocks[CUOC] == false)
+                {
+                    // if at PuzzleItemProgress 30 
+                    //and itemId is Crayon's 
+                    //and crayon has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
+        if (PuzzleItemProgress == 40)
+        {
+            if (ItemId == 1)
+            {
+                if (Unlocks[BUOD] == false)
+                {
+                    // if at PuzzleItemProgress 40
+                    //and itemId is bone's 
+                    //and Bone has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
+        if (PuzzleItemProgress == 50)
+        {
+            if (ItemId == 12)
+            {
+                if (Unlocks[HUOT] == false)
+                {
+                    // if at PuzzleItemProgress 50 
+                    //and itemId is Hammer's 
+                    //and hammer has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
+        if (PuzzleItemProgress == 60)
+        {
+            if (ItemId == 10)
+            {
+                if (Unlocks[KUOP] == false)
+                {
+                    // if at PuzzleItemProgress 60 
+                    //and itemId is Kife's 
+                    //and Kinfe has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
         return toreturn;
     }
 

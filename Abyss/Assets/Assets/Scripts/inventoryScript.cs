@@ -497,8 +497,6 @@ public class inventoryScript : MonoBehaviour
 
         public Boolean PickupItem(inventoryItem aItem)
         {
-
-
             int newSlot;
             Boolean toreturn = false;
             Boolean check = Checkforitem(aItem.getID());
