@@ -395,6 +395,20 @@ public class PuzzleScript : MonoBehaviour
                 }
             }
         }
+        if (PuzzleItemProgress == 70)
+        {
+            if (ItemId == 8)
+            {
+                if (Unlocks[KUOP] == true)
+                {
+                    // if at PuzzleItemProgress 60 
+                    //and itemId is money's 
+                    //and Kinfe has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
         return toreturn;
     }
 
