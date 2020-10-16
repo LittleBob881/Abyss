@@ -58,17 +58,14 @@ public class MonsterMovement : MonoBehaviour
     void walk()
     {
         movement = walkingSpeed;
-        if (monsterTransform.position.x <= door1Position+1 && monsterTransform.position.x >= door1Position - 1)
+        if (monsterTransform.position.x <= door1Position + 0.1f && monsterTransform.position.x >= door1Position)
         {
             int randomGen = rand.Next(1, 3);
             if (randomGen == 1)
             {
                 throughDoor();
                 monsterTransform.position = new Vector3(door1Position, floorPosition);
-            }
-            else
-            {
-                facingR = !facingR;
+                monster.velocity = new Vector2(direction * movement, monster.velocity.y);
             }
         }
         else if (!(monsterTransform.position.x < wallRight && monsterTransform.position.x > wallLeft))
@@ -139,9 +136,13 @@ public class MonsterMovement : MonoBehaviour
             wallLeft = 64.5f;
             wallRight = 96.3f;
         }
-        if(monsterY == -18 && monsterX <= 78 && monsterX >= 78)
+        else if(monsterY == -18 && monsterX <= 78 && monsterX >= 76)
         {
             Debug.Log("Going from Green Hall to Lounge");
+            door1Position = 67.5f;
+            floorPosition = -32f;
+            wallLeft = 65f;
+            wallRight = 100f;
         }
     }
 }
