@@ -26,8 +26,8 @@ public class MonsterMovement : MonoBehaviour
     private float wallLeft;
     private float wallRight;
     private float door1Position;
-    private float door2Position;
-    private float door3Position;
+    private float door2Position = 0;
+    private float door3Position = 0;
     private System.Random rand = new System.Random();
 
     // Start is called before the first frame update
@@ -60,6 +60,17 @@ public class MonsterMovement : MonoBehaviour
         movement = walkingSpeed;
         if (monsterTransform.position.x <= door1Position + 0.1f && monsterTransform.position.x >= door1Position)
         {
+            int randomGen = rand.Next(1, 3);
+            if (randomGen == 1)
+            {
+                throughDoor();
+                monsterTransform.position = new Vector3(door1Position, floorPosition);
+                monster.velocity = new Vector2(direction * movement, monster.velocity.y);
+            }
+        }
+        else if (door2Position != 0 && monsterTransform.position.x <= door2Position + 0.1f && monsterTransform.position.x >= door2Position)
+        {
+            Debug.Log("WALKING PAST SECOND DOOR");
             int randomGen = rand.Next(1, 3);
             if (randomGen == 1)
             {
@@ -135,6 +146,7 @@ public class MonsterMovement : MonoBehaviour
             floorPosition = -18f;
             wallLeft = 64.5f;
             wallRight = 96.3f;
+            door2Position = 92f;
         }
         else if(monsterY == -18 && monsterX <= 78 && monsterX >= 76)
         {
@@ -143,6 +155,7 @@ public class MonsterMovement : MonoBehaviour
             floorPosition = -32f;
             wallLeft = 65f;
             wallRight = 100f;
+            door2Position = 0;
         }
     }
 }
