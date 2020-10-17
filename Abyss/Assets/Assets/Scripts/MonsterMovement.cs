@@ -59,25 +59,11 @@ public class MonsterMovement : MonoBehaviour
         movement = walkingSpeed;
         if (monsterTransform.position.x <= door1Position + 0.1f && monsterTransform.position.x >= door1Position)
         {
-            Debug.Log("Walking Past First Door");
-            int randomGen = rand.Next(1, 3);
-            if (randomGen == 1)
-            {
-                throughDoor();
-                monsterTransform.position = new Vector3(door1Position, floorPosition);
-                monster.velocity = new Vector2(direction * movement, monster.velocity.y);
-            }
+            AtDoor();
         }
         else if (door2Position != 0 && monsterTransform.position.x <= door2Position + 0.1f && monsterTransform.position.x >= door2Position)
         {
-            Debug.Log("WALKING PAST SECOND DOOR");
-            int randomGen = rand.Next(1, 3);
-            if (randomGen == 1)
-            {
-                throughDoor();
-                monsterTransform.position = new Vector3(door1Position, floorPosition);
-                monster.velocity = new Vector2(direction * movement, monster.velocity.y);
-            }
+            AtDoor();
         }
         else if (!(monsterTransform.position.x < wallRight && monsterTransform.position.x > wallLeft))
         {
@@ -85,13 +71,15 @@ public class MonsterMovement : MonoBehaviour
         }
         else
         {
-            int randomGen = rand.Next(1, 140);
+            //Chooses a random number 1-200 and will turn if the random number is 200
+            int randomGen = rand.Next(1, 200);
             if (randomGen == 1)
             {
                 facingR = !facingR;
             }
         }
 
+        //Checks which way the monster is facing and changes which way it is walking to match
         if(facingR)
         {
             direction = -DIRECTION_CONST;
@@ -103,8 +91,21 @@ public class MonsterMovement : MonoBehaviour
             localScale.x = LOCAL_SCALE_CONST;
         }
 
+        //Refreshes the image and velocity to the direction
         monsterTransform.localScale = localScale;
         monster.velocity = new Vector2(direction * movement, monster.velocity.y);
+    }
+
+    private void AtDoor()
+    {
+        //Has a 1 in 3 chance of going through the door
+        int randomGen = rand.Next(1, 3);
+        if (randomGen == 1)
+        {
+            throughDoor();
+            monsterTransform.position = new Vector3(door1Position, floorPosition);
+            monster.velocity = new Vector2(direction * movement, monster.velocity.y);
+        }
     }
 
     void chase()
@@ -136,6 +137,7 @@ public class MonsterMovement : MonoBehaviour
 
     void throughDoor()
     {
+        //This sets the new doors and floor position for the monster when it goes through each door
         float monsterX = monsterTransform.position.x;
         float monsterY = monsterTransform.position.y;
 
