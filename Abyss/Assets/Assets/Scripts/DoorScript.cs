@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Android;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,7 +18,7 @@ public class DoorScript : MonoBehaviour
     public GameObject player;
     public Walk walkcontroller;
 
-    
+
 
     void Start()
     {
