@@ -44,7 +44,7 @@ public class DoorScript : MonoBehaviour
         if (player.transform.position == transform.position)
         {
             walkcontroller.enabled = true;
-            transform.position = player.transform.position + offset;
+           // transform.position = player.transform.position + offset;
         }
         Debug.Log("Are you listening??");
     }

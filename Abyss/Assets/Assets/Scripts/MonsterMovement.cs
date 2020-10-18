@@ -20,6 +20,7 @@ public class MonsterMovement : MonoBehaviour
     private Transform monsterTransform;
     private Vector3 localScale;
     private bool facingR;
+    private AudioSource monsterSound;
 
     //Variables for randomized walking
     private float floorPosition;
@@ -32,6 +33,7 @@ public class MonsterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        monsterSound = GetComponent<AudioSource>();
         localScale = transform.localScale;
         LOCAL_SCALE_CONST = localScale.x;
         monster = GetComponent<Rigidbody2D>();
