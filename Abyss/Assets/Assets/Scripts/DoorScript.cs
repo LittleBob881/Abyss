@@ -17,6 +17,7 @@ public class DoorScript : MonoBehaviour
     public float y;
     public GameObject player;
     public Walk walkcontroller;
+    private Vector3 offset;
 
 
 
@@ -28,39 +29,22 @@ public class DoorScript : MonoBehaviour
         Button next = doorButton.GetComponent<Button>();
         next.onClick.AddListener(Loadscreen);
         Debug.Log("Loaded click");
+        offset = transform.position - player.transform.position;
     }
 
-    private void Update()
-    {
-        if (enable_camera) { 
-        walkcontroller.enabled = false;
-        player.transform.position = new Vector3(x, y);
-        
-        
-        if (player.transform.position == transform.position) {
-            walkcontroller.enabled = true;
-            enable_camera = false;
-        }
-        }
-    }
+    
 
     public void Loadscreen()
     {
         Debug.Log("Clicked");
-        
-        enable_camera = true;
-        if (enable_camera)
+
+        walkcontroller.enabled = false;
+        player.transform.position = new Vector3(x, y);
+
+        if (player.transform.position == transform.position)
         {
-            //player.transform.Translate(endDest.position);
-           // Camera.main.transform.Translate(new Vector3(4110, -33, 0));
-            
-            if (player.transform.position == transform.position)
-            {
-                enable_camera = false;
-            }
-            else {
-                enable_camera = true;
-            }
+            walkcontroller.enabled = true;
+            transform.position = player.transform.position + offset;
         }
         Debug.Log("Are you listening??");
     }
