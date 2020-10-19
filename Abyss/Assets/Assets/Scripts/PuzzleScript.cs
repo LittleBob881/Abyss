@@ -2,18 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+
 public class PuzzleScript : MonoBehaviour
 {
 
     private static PuzzleRefeanceItems puzzleMaster;
     private static int PuzzleItemProgress;
-    private static int PuzzleProgress;
+    private static int PuzzleProgress;// to remove
     private Boolean[] Unlocks;
     private PuzzleItemCompareIndex PICIndex;
+    public inventoryScript InventoryScript;
 
 
-    // vairbles 
+    // enum varibles  
 
+    //Inventory items
     public static int BONE = 6;
     public static int PEN = 4;
     public static int TOMATO = 0;
@@ -23,6 +28,7 @@ public class PuzzleScript : MonoBehaviour
     public static int KNIFE = 8;
     public static int POISON = 3;
     public static int HAMMER = 7;
+    //Room items
     public static int POT = 0;
     public static int TOYDOG = 7;
     public static int PAPER = 4;
@@ -30,72 +36,383 @@ public class PuzzleScript : MonoBehaviour
     public static int PAINTINGPLAYER = 8;
     public static int PAINTINGGIRL = 5;
     public static int DOGHOUSE = 6;
-
+    
+    //unlocks
+    //in code so everything not reveled
+    public static int TAP = 0;
+    public static int OAP = 1;
+    public static int PC = 2;
+    public static int CUOM = 3;
+    public static int PUOM = 4;
+    public static int MK = 5;
+    public static int PUOP = 6;
+    public static int CUOC = 7;
+    public static int CHC = 8;
+    public static int BUOD = 9;
+    public static int HUOT = 10;
+    public static int DK = 11;
+    public static int KUOP = 12;
 
     void Start()
     {
         PuzzleItemProgress = 0;
         PICIndex = new PuzzleItemCompareIndex();
+        loadUnlocks();
+
+
+    }
+
+
+    // sets all unlocks to false
+    void loadUnlocks()
+    {
+        Unlocks = new Boolean[13];
+        Unlocks[TAP] = false;
+        Unlocks[OAP] = false;
+        Unlocks[PC] = false;
+        Unlocks[CUOM] = false;
+        Unlocks[PUOM] = false;
+        Unlocks[MK] = false;
+        Unlocks[PUOP] = false;
+        Unlocks[CUOC] = false;
+        Unlocks[CHC] = false;
+        Unlocks[BUOD] = false;
+        Unlocks[HUOT] = false;
+        Unlocks[DK] = false;
+        Unlocks[KUOP] = false;
+        
     }
 
 
 
-
-
-    // checks if the right room item is pressed and if the player has the by itemPuzzleProgress stage 
-    public void ActiveItemPuzzleCheack(int RoomItemID, int ActiveItemID)
+    // checks if the right room item is pressed and if the player has the by itemPuzzleProgress stage
+    // returns a bool dependent if an item is used or not.
+    public Boolean ActiveItemPuzzleCheck(int RoomItemID, int ActiveItemID)
     {
+        Boolean ItemUsed = false;
+        
+        
+        //for testing 
+        if (RoomItemID == PICIndex.getRoomItemIndex(TOYDOG))
+        {
+            if (ActiveItemID == PICIndex.getItemIndex(BONE))
+            {
+                Unlocks[BUOD] = true;
+                ItemUsed = true;
+                InventoryScript.RemoveItemFromInventory(1);
+            }
+        }
+
+
+            if (PuzzleItemProgress == 0)
+        {
+            if (RoomItemID == PICIndex.getRoomItemIndex(POT))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(TOMATO))
+                {
+                    Unlocks[TAP] = true;
+                    ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(3);
+                }
+                else if (ActiveItemID == PICIndex.getItemIndex(ONION))
+                {
+                    Unlocks[OAP] = true;
+                    ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(4);
+                }
+
+            }
+
+        }
+        else if (PuzzleItemProgress == 10)
+        {
+            if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGMOTHER))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(COFFEE))
+                {
+                    Unlocks[CUOM] = true;
+                    ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(7);
+                }
+                else if (ActiveItemID == PICIndex.getItemIndex(POISON))
+                {
+                    Unlocks[PUOM] = true;
+                    ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(11);
+                }
+            }
+        }
+        else if (PuzzleItemProgress == 20)
+        {
+            if (RoomItemID == PICIndex.getRoomItemIndex(PAPER))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(PEN))
+                {
+                    Unlocks[PUOP] = true;
+                    ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(2);
+                }
+            }
+        }
+        else if (PuzzleItemProgress == 30)
+        {
+            if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGGIRL))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(CRAYON))
+                {
+                    Unlocks[CUOC] = true;
+                    ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(5);
+                }
+            }
+
+        }
+        else if (PuzzleItemProgress == 40)
+        {
+            if (RoomItemID == PICIndex.getRoomItemIndex(DOGHOUSE))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(BONE))
+                {
+                    Unlocks[BUOD] = true;
+                    ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(1);
+                }
+            }
+
+        }
+        else if (PuzzleItemProgress == 50)
+        {
+
+            if (RoomItemID == PICIndex.getRoomItemIndex(TOYDOG))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(HAMMER))
+                {
+                    Unlocks[HUOT] = true;
+                    ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(12);
+                }
+            }
+        }
+        else if (PuzzleItemProgress == 60)
+        {
+
+            if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGPLAYER))
+            {
+                if (ActiveItemID == PICIndex.getItemIndex(KNIFE))
+                {
+                    Unlocks[KUOP] = true;
+                    ItemUsed = true;
+                    InventoryScript.RemoveItemFromInventory(10);
+                }
+            }
+        }
+
+        PuzzleItemProgression();
+
+        return ItemUsed;
+    }
+
+    void PuzzleItemProgression()
+    {
+        if(PuzzleItemProgress==0&&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
+        {
+            Unlocks[PC] = true;
+            PuzzleItemProgress = 10;
+            //Add effect unlock
+        }
+        if(PuzzleItemProgress == 10 && (Unlocks[CUOM] == true))
+        {
+            PuzzleItemProgress = 15;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 15 && (Unlocks[PUOM] == true))
+        {
+            Unlocks[MK] = true;
+            PuzzleItemProgress = 20;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 20 && (Unlocks[PUOP] == true))
+        {
+            
+            PuzzleItemProgress = 30;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 30 && (Unlocks[CUOC] == true))
+        {
+            Unlocks[CHC] = true;
+            PuzzleItemProgress = 40;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 40 && (Unlocks[BUOD] == true))
+        {
+
+            PuzzleItemProgress = 50;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 50 && (Unlocks[HUOT] == true))
+        {
+            Unlocks[DK] = true;
+            PuzzleItemProgress = 60;
+            //Add effect unlock
+        }
+        if (PuzzleItemProgress == 60 && (Unlocks[KUOP] == true))
+        {
+
+            PuzzleItemProgress = 70;
+            //Add effect unlock
+        }
+    }
+
+
+    public Boolean ItemlockedCheck(int ItemId)
+    {
+        Boolean toreturn = false;
+        
         if (PuzzleItemProgress == 0)
         {
-            if (RoomItemID == PICIndex.getRoomItemIndex(0))
+            if(Unlocks[PC] == false )
             {
-                if (ActiveItemID == PICIndex.getItemIndex(0))
+                if(ItemId == 3)
                 {
-
+                    if(Unlocks[TAP] == false)
+                    {
+                        // if at PuzzleItemProgress 0 
+                        // and PC is false
+                        //and itemId is tomato 
+                        //and tomato has not been used 
+                        //then return true. 
+                        toreturn = true;
+                    }
                 }
-                else if (ActiveItemID == PICIndex.getItemIndex(1))
+                else if(ItemId == 4)
                 {
-
-                }
-
-            }
-
-        }
-        else if (PuzzleItemProgress == 2)
-        {
-            if (RoomItemID == PICIndex.getRoomItemIndex(2))
-            {
-                if (ActiveItemID == PICIndex.getItemIndex(2))
-                {
-
-                }
-                else if (ActiveItemID == PICIndex.getItemIndex(3))
-                {
-
+                    if (Unlocks[OAP] == false)
+                    {
+                        // same as tomato but for onion.
+                        toreturn = true;
+                    }
                 }
             }
         }
-        else if (PuzzleItemProgress == 3)
+
+        if (PuzzleItemProgress == 10)
         {
-
-
+             if (ItemId == 7)
+             {
+                if (Unlocks[CUOM] == false)
+                {
+                    // if at PuzzleItemProgress 10 
+                    //and itemId is Coffee's 
+                    //and coffee has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+             }
         }
-        else if (PuzzleItemProgress == 4)
+
+        if (PuzzleItemProgress == 15)
         {
-
-
+            if (ItemId == 11)
+            {
+                if (Unlocks[PUOM] == false)
+                {
+                    // if at PuzzleItemProgress 15 
+                    //and itemId is Poison's 
+                    //and poison has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
         }
-        else if (PuzzleItemProgress == 5)
+        if (PuzzleItemProgress == 20)
         {
-
-
+            if (ItemId == 2)
+            {
+                if (Unlocks[PUOP] == false)
+                {
+                    // if at PuzzleItemProgress 20 
+                    //and itemId is Pen's 
+                    //and pen has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
         }
-        else if (PuzzleItemProgress == 6)
+
+        if (PuzzleItemProgress == 30)
         {
-
-
+            if (ItemId == 5)
+            {
+                if (Unlocks[CUOC] == false)
+                {
+                    // if at PuzzleItemProgress 30 
+                    //and itemId is Crayon's 
+                    //and crayon has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
         }
+        if (PuzzleItemProgress == 40)
+        {
+            if (ItemId == 1)
+            {
+                if (Unlocks[BUOD] == false)
+                {
+                    // if at PuzzleItemProgress 40
+                    //and itemId is bone's 
+                    //and Bone has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
+        if (PuzzleItemProgress == 50)
+        {
+            if (ItemId == 12)
+            {
+                if (Unlocks[HUOT] == false)
+                {
+                    // if at PuzzleItemProgress 50 
+                    //and itemId is Hammer's 
+                    //and hammer has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
+        if (PuzzleItemProgress == 60)
+        {
+            if (ItemId == 10)
+            {
+                if (Unlocks[KUOP] == false)
+                {
+                    // if at PuzzleItemProgress 60 
+                    //and itemId is Kife's 
+                    //and Kinfe has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
+        if (PuzzleItemProgress == 70)
+        {
+            if (ItemId == 8)
+            {
+                if (Unlocks[KUOP] == true)
+                {
+                    // if at PuzzleItemProgress 60 
+                    //and itemId is money's 
+                    //and Kinfe has not been used 
+                    //then return true. 
+                    toreturn = true;
+                }
+            }
+        }
+        return toreturn;
     }
+
+
 
 
     // gets
@@ -116,55 +433,49 @@ public class PuzzleScript : MonoBehaviour
     }
 
 
-    public class PuzzleRefeanceItems
-    {
-        inventoryScript.inventory puzzleInventory;
-        //add story array here 
+      public class PuzzleRefeanceItems
+      {
+            inventoryScript.inventory puzzleInventory;
 
+            public PuzzleRefeanceItems()
+            {
+                puzzleInventory = new inventoryScript.inventory();
+                Sprite[] sprites = Resources.LoadAll<Sprite>("itemsheet_7");
+                inventoryScript.inventoryItem Empty = new inventoryScript.inventoryItem("Empty", 0, sprites[0], sprites[0]);
+                inventoryScript.inventoryItem item1 = new inventoryScript.inventoryItem("bone", 1, sprites[1], sprites[13]);
+                inventoryScript.inventoryItem item2 = new inventoryScript.inventoryItem("pen", 2, sprites[2], sprites[14]);
+                inventoryScript.inventoryItem item3 = new inventoryScript.inventoryItem("tomato", 3, sprites[3], sprites[15]);
+                inventoryScript.inventoryItem item4 = new inventoryScript.inventoryItem("onion", 4, sprites[4], sprites[16]);
+                inventoryScript.inventoryItem item5 = new inventoryScript.inventoryItem("crayon", 5, sprites[5], sprites[17]);
+                inventoryScript.inventoryItem item6 = new inventoryScript.inventoryItem("key", 6, sprites[6], sprites[18]);
+                inventoryScript.inventoryItem item7 = new inventoryScript.inventoryItem("coffee", 7, sprites[7], sprites[19]);
+                inventoryScript.inventoryItem item8 = new inventoryScript.inventoryItem("money", 8, sprites[8], sprites[20]);
+                inventoryScript.inventoryItem item9 = new inventoryScript.inventoryItem("whisky", 9, sprites[9], sprites[21]);
+                inventoryScript.inventoryItem item10 = new inventoryScript.inventoryItem("knife", 10, sprites[10], sprites[22]);
+                inventoryScript.inventoryItem item11 = new inventoryScript.inventoryItem("poison", 11, sprites[11], sprites[23]);
+                inventoryScript.inventoryItem item12 = new inventoryScript.inventoryItem("hammer", 12, sprites[12], sprites[24]);
 
-        public PuzzleRefeanceItems()
-        {
-            puzzleInventory = new inventoryScript.inventory();
-            Sprite[] sprites = Resources.LoadAll<Sprite>("itemsheet_7");
-            inventoryScript.inventoryItem Empty = new inventoryScript.inventoryItem("Empty", 0, sprites[0], sprites[0]);
-            inventoryScript.inventoryItem item1 = new inventoryScript.inventoryItem("bone", 1, sprites[1], sprites[13]);
-            inventoryScript.inventoryItem item2 = new inventoryScript.inventoryItem("pen", 2, sprites[2], sprites[14]);
-            inventoryScript.inventoryItem item3 = new inventoryScript.inventoryItem("tomato", 3, sprites[3], sprites[15]);
-            inventoryScript.inventoryItem item4 = new inventoryScript.inventoryItem("onion", 4, sprites[4], sprites[16]);
-            inventoryScript.inventoryItem item5 = new inventoryScript.inventoryItem("crayon", 5, sprites[5], sprites[17]);
-            inventoryScript.inventoryItem item6 = new inventoryScript.inventoryItem("key", 6, sprites[6], sprites[18]);
-            inventoryScript.inventoryItem item7 = new inventoryScript.inventoryItem("coffee", 7, sprites[7], sprites[19]);
-            inventoryScript.inventoryItem item8 = new inventoryScript.inventoryItem("money", 8, sprites[8], sprites[20]);
-            inventoryScript.inventoryItem item9 = new inventoryScript.inventoryItem("whisky", 9, sprites[9], sprites[21]);
-            inventoryScript.inventoryItem item10 = new inventoryScript.inventoryItem("knife", 10, sprites[10], sprites[22]);
-            inventoryScript.inventoryItem item11 = new inventoryScript.inventoryItem("posion", 11, sprites[11], sprites[23]);
-            inventoryScript.inventoryItem item12 = new inventoryScript.inventoryItem("hammer", 12, sprites[12], sprites[24]);
+                puzzleInventory.addInventoryItem(Empty);
+                puzzleInventory.addInventoryItem(item1);
+                puzzleInventory.addInventoryItem(item2);
+                puzzleInventory.addInventoryItem(item3);
+                puzzleInventory.addInventoryItem(item4);
+                puzzleInventory.addInventoryItem(item5);
+                puzzleInventory.addInventoryItem(item6);
+                puzzleInventory.addInventoryItem(item7);
+                puzzleInventory.addInventoryItem(item8);
+                puzzleInventory.addInventoryItem(item9);
+                puzzleInventory.addInventoryItem(item10);
+                puzzleInventory.addInventoryItem(item11);
+                puzzleInventory.addInventoryItem(item12);
+                
+            }
 
-
-
-
-            puzzleInventory.addInventoryItem(Empty);
-            puzzleInventory.addInventoryItem(item1);
-            puzzleInventory.addInventoryItem(item2);
-            puzzleInventory.addInventoryItem(item3);
-            puzzleInventory.addInventoryItem(item4);
-            puzzleInventory.addInventoryItem(item5);
-            puzzleInventory.addInventoryItem(item6);
-            puzzleInventory.addInventoryItem(item7);
-            puzzleInventory.addInventoryItem(item8);
-            puzzleInventory.addInventoryItem(item9);
-            puzzleInventory.addInventoryItem(item10);
-            puzzleInventory.addInventoryItem(item11);
-            puzzleInventory.addInventoryItem(item12);
-
-        }
-
-
-        public inventoryScript.inventory GetPuzzleInventory()
-        {
-            return puzzleInventory;
-        }
-    }
+            public inventoryScript.inventory GetPuzzleInventory()
+            {
+                return puzzleInventory;
+            }
+      }
 
 
     public class PuzzleItemCompareIndex
@@ -195,7 +506,6 @@ public class PuzzleScript : MonoBehaviour
             RoomItemIndex[6] = 20;
             RoomItemIndex[7] = 8;
             RoomItemIndex[8] = 16;
-
         }
 
         public int getRoomItemIndex(int num)
