@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 48456340}
   - component: {fileID: 48456339}
   m_Layer: 5
-  m_Name: Shed Door
+  m_Name: 'Shed to Kitchen '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,7 +416,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1407,6 +1407,15 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 123
       m_TileSpriteIndex: 123
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 188
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -124, y: 36, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 122
+      m_TileSpriteIndex: 122
       m_TileMatrixIndex: 0
       m_TileColorIndex: 188
       m_TileObjectToInstantiateIndex: 65535
@@ -2872,7 +2881,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 6b36caab8c9156d47a509b9ae3f46675, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: b37b872e812b0114e90a5eb58e33b39f, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: e2802c8855426244a9142ca7a13362fc, type: 2}
@@ -3251,7 +3260,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -7558944070259107848, guid: 358d171636b2337438b23364efccdc55, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 1efa53f576e46274a8d5c8786113f5e5, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 6716576369491640200, guid: 358d171636b2337438b23364efccdc55, type: 3}
@@ -3386,7 +3395,7 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: -8430252692724120473, guid: 358d171636b2337438b23364efccdc55, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 201
+  - m_RefCount: 202
     m_Data:
       e00: 1
       e01: 0
@@ -3781,13 +3790,13 @@ Tilemap:
     m_Data: {r: 4.741798e-10, g: 4.741798e-10, b: 4.741798e-10, a: 4.741798e-10}
   - m_RefCount: 0
     m_Data: {r: 4.741798e-10, g: 4.741798e-10, b: 4.741798e-10, a: 4.741798e-10}
-  - m_RefCount: 201
+  - m_RefCount: 202
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -73, y: -1, z: 0}
-  m_Size: {x: 114, y: 71, z: 1}
+  m_Origin: {x: -124, y: -1, z: 0}
+  m_Size: {x: 165, y: 71, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -3893,7 +3902,7 @@ Transform:
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 16
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &81781490
 MonoBehaviour:
@@ -3907,7 +3916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 228539411}
+  doorButton: {fileID: 576280895}
   enable_camera: 0
   trigger: 0
   x: 8.72
@@ -4058,11 +4067,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136715455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -207, y: -158, z: -6845.2964}
+  m_LocalPosition: {x: -206.99992, y: -158.00003, z: -6845.2964}
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 19
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &136715457
 MonoBehaviour:
@@ -4076,11 +4085,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 228539411}
+  doorButton: {fileID: 580894481}
   enable_camera: 0
   trigger: 0
-  x: 77.19
-  y: -17.58
+  x: 15.7
+  y: -17.7
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &159663210
@@ -4473,7 +4482,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4696,7 +4705,7 @@ GameObject:
   - component: {fileID: 228539414}
   - component: {fileID: 228539413}
   m_Layer: 5
-  m_Name: Green Hallway to Kitchen
+  m_Name: Green Hallway to Kids BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4714,7 +4723,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5231,6 +5240,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &251336493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 251336494}
+  - component: {fileID: 251336495}
+  m_Layer: 0
+  m_Name: Door Controller (Blue Hallway Stairs)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &251336494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251336493}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -207, y: -158, z: -6845.2964}
+  m_LocalScale: {x: 48, y: 48, z: 48}
+  m_Children: []
+  m_Father: {fileID: 625355722}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &251336495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251336493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorButton: {fileID: 2133547867}
+  enable_camera: 0
+  trigger: 0
+  x: -3.51
+  y: -17.58
+  player: {fileID: 1162800535}
+  walkcontroller: {fileID: 1162800536}
 --- !u!1 &254509604
 GameObject:
   m_ObjectHideFlags: 0
@@ -9688,7 +9747,7 @@ Transform:
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 20
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &546528371
 MonoBehaviour:
@@ -9702,11 +9761,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 228539411}
+  doorButton: {fileID: 48456337}
   enable_camera: 0
   trigger: 0
-  x: 31.8
-  y: 0.5
+  x: 40.2
+  y: -32.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &566836907
@@ -10216,11 +10275,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 599, y: 1333}
+  m_AnchoredPosition: {x: -2150, y: 1320}
   m_SizeDelta: {x: 246.44196, y: 468.41254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &580894483
@@ -11057,23 +11116,29 @@ RectTransform:
   - {fileID: 1492810626}
   - {fileID: 576280896}
   - {fileID: 1267614550}
+  - {fileID: 2133547873}
   - {fileID: 1649184241}
+  - {fileID: 1507222517}
   - {fileID: 228539412}
   - {fileID: 190589561}
   - {fileID: 580894482}
   - {fileID: 1156012863}
   - {fileID: 1455205318}
   - {fileID: 48456338}
+  - {fileID: 2027930047}
+  - {fileID: 251336494}
+  - {fileID: 1776363800}
   - {fileID: 763067801}
   - {fileID: 861858907}
   - {fileID: 1467879530}
   - {fileID: 1687136072}
   - {fileID: 1705790666}
   - {fileID: 81781489}
+  - {fileID: 136715456}
   - {fileID: 1797845793}
   - {fileID: 1296516680}
-  - {fileID: 136715456}
   - {fileID: 546528370}
+  - {fileID: 1359663748}
   - {fileID: 1831721246}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -12969,7 +13034,7 @@ Transform:
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 11
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &800684846
 GameObject:
@@ -13411,7 +13476,7 @@ Transform:
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 12
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &861858908
 MonoBehaviour:
@@ -17847,7 +17912,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18204,7 +18269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162800535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.27, y: -30.82, z: 0.0000076293945}
+  m_LocalPosition: {x: 68.4, y: -17.9, z: 0.0000076293945}
   m_LocalScale: {x: 21.999998, y: 21.999998, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 0}
@@ -21003,11 +21068,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296516679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -207, y: -158, z: -6845.2964}
+  m_LocalPosition: {x: -87, y: -188, z: -6845.2964}
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 18
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1296516681
 MonoBehaviour:
@@ -21021,7 +21086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 228539411}
+  doorButton: {fileID: 1156012862}
   enable_camera: 0
   trigger: 0
   x: 80.7
@@ -21483,6 +21548,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1359663747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1359663748}
+  - component: {fileID: 1359663749}
+  m_Layer: 0
+  m_Name: Door Controller (Shed to Green Hallway)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1359663748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359663747}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -207, y: -158, z: -6845.2964}
+  m_LocalScale: {x: 48, y: 48, z: 48}
+  m_Children: []
+  m_Father: {fileID: 625355722}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1359663749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359663747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorButton: {fileID: 48456337}
+  enable_camera: 0
+  trigger: 0
+  x: 24
+  y: -17.5
+  player: {fileID: 1162800535}
+  walkcontroller: {fileID: 1162800536}
 --- !u!1 &1363647122
 GameObject:
   m_ObjectHideFlags: 0
@@ -22816,7 +22931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454066563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.27, y: -30.82, z: -9.999992}
+  m_LocalPosition: {x: 68.4, y: -17.9, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -22855,7 +22970,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -23230,7 +23345,7 @@ Transform:
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 13
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1467879531
 MonoBehaviour:
@@ -24732,6 +24847,186 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1507222511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507222517}
+  - component: {fileID: 1507222516}
+  - component: {fileID: 1507222515}
+  - component: {fileID: 1507222514}
+  - component: {fileID: 1507222513}
+  - component: {fileID: 1507222512}
+  m_Layer: 5
+  m_Name: Green Hallway Stairs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1507222512
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507222511}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 191.27512, y: -63.367447}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 688.9648, y: 783.15454}
+  m_EdgeRadius: 0
+--- !u!50 &1507222513
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507222511}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1507222514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507222511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.8962264, g: 0.14091605, b: 0.14091605, a: 0}
+    m_HighlightedColor: {r: 0.8018868, g: 0.10338786, b: 0.10338786, a: 0}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1507222515}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1776363801}
+        m_TargetAssemblyTypeName: DoorScript, Main
+        m_MethodName: Loadscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1507222515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507222511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.29803923, g: 0.29803923, b: 0.29803923, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6248177878126115766, guid: f907a5720ced32a40babb8ed8a8b3c7a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1507222516
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507222511}
+  m_CullTransparentMesh: 0
+--- !u!224 &1507222517
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507222511}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 625355722}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3410, y: -1}
+  m_SizeDelta: {x: 324.9308, y: 600.8172}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1546008261
 GameObject:
   m_ObjectHideFlags: 0
@@ -28181,7 +28476,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -28575,7 +28870,7 @@ Transform:
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 14
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1687136073
 MonoBehaviour:
@@ -28589,7 +28884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 228539411}
+  doorButton: {fileID: 190589560}
   enable_camera: 0
   trigger: 0
   x: 80.7
@@ -28744,7 +29039,7 @@ Transform:
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 15
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1705790667
 MonoBehaviour:
@@ -28758,7 +29053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 228539411}
+  doorButton: {fileID: 1492810625}
   enable_camera: 0
   trigger: 0
   x: -18.2
@@ -28957,7 +29252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741331005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.27, y: -30.82, z: -9.999992}
+  m_LocalPosition: {x: 68.4, y: -17.9, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 352460535}
@@ -29234,6 +29529,56 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1776363799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1776363800}
+  - component: {fileID: 1776363801}
+  m_Layer: 0
+  m_Name: 'Door Controller (Green Hallway Stairs) '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1776363800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776363799}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -207, y: -158, z: -6845.2964}
+  m_LocalScale: {x: 48, y: 48, z: 48}
+  m_Children: []
+  m_Father: {fileID: 625355722}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776363801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776363799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorButton: {fileID: 1507222511}
+  enable_camera: 0
+  trigger: 0
+  x: 68.1
+  y: -17.58
+  player: {fileID: 1162800535}
+  walkcontroller: {fileID: 1162800536}
 --- !u!1 &1776520132
 GameObject:
   m_ObjectHideFlags: 0
@@ -30845,7 +31190,7 @@ Transform:
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 17
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1797845794
 MonoBehaviour:
@@ -30859,7 +31204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 228539411}
+  doorButton: {fileID: 1267614549}
   enable_camera: 0
   trigger: 0
   x: -4.3
@@ -32143,7 +32488,7 @@ Transform:
   m_LocalScale: {x: 48, y: 48, z: 48}
   m_Children: []
   m_Father: {fileID: 625355722}
-  m_RootOrder: 21
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1831721247
 MonoBehaviour:
@@ -32157,7 +32502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 228539411}
+  doorButton: {fileID: 1168359072}
   enable_camera: 0
   trigger: 0
   x: 15.4
@@ -34830,6 +35175,164 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2027930046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2027930047}
+  - component: {fileID: 2027930051}
+  - component: {fileID: 2027930050}
+  - component: {fileID: 2027930049}
+  - component: {fileID: 2027930048}
+  m_Layer: 5
+  m_Name: Shed to Hallway
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2027930047
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027930046}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 625355722}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3203.1, y: -1105.4}
+  m_SizeDelta: {x: 322.28888, y: 539.20264}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!61 &2027930048
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027930046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.80259705, y: -10.413139}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 162.38379, y: 289.38428}
+  m_EdgeRadius: 0
+--- !u!114 &2027930049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027930046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.8962264, g: 0.14091605, b: 0.14091605, a: 0}
+    m_HighlightedColor: {r: 0.8018868, g: 0.10338786, b: 0.10338786, a: 0}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2027930050}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 546528371}
+        m_TargetAssemblyTypeName: DoorScript, Main
+        m_MethodName: Loadscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2027930050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027930046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.29803923, g: 0.29803923, b: 0.29803923, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1056385dfde80ed469cefee377d003aa, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2027930051
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027930046}
+  m_CullTransparentMesh: 0
 --- !u!1 &2055788371
 GameObject:
   m_ObjectHideFlags: 0
@@ -34905,6 +35408,186 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055788371}
   m_CullTransparentMesh: 0
+--- !u!1 &2133547867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2133547873}
+  - component: {fileID: 2133547872}
+  - component: {fileID: 2133547871}
+  - component: {fileID: 2133547870}
+  - component: {fileID: 2133547869}
+  - component: {fileID: 2133547868}
+  m_Layer: 5
+  m_Name: Blue Hallway Stairs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &2133547868
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133547867}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 191.27512, y: -63.367447}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 688.9648, y: 783.15454}
+  m_EdgeRadius: 0
+--- !u!50 &2133547869
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133547867}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2133547870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133547867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.8962264, g: 0.14091605, b: 0.14091605, a: 0}
+    m_HighlightedColor: {r: 0.8018868, g: 0.10338786, b: 0.10338786, a: 0}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2133547871}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 251336495}
+        m_TargetAssemblyTypeName: DoorScript, Main
+        m_MethodName: Loadscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2133547871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133547867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.29803923, g: 0.29803923, b: 0.29803923, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6248177878126115766, guid: f907a5720ced32a40babb8ed8a8b3c7a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2133547872
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133547867}
+  m_CullTransparentMesh: 0
+--- !u!224 &2133547873
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133547867}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 625355722}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2111, y: 3}
+  m_SizeDelta: {x: 324.9308, y: 600.8172}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2140373702
 GameObject:
   m_ObjectHideFlags: 0
