@@ -116,7 +116,16 @@ public class NotebookScript : MonoBehaviour
         playerNoteBook.unlockPage(0);
         playerNoteBook.unlockPage(1);
     }
+
+    //Changes pageImage by number 
+    public void ChangePageImage(Sprite image, int pageNumber)
+    {
+        sprites[pageNumber] = image;
+    }
 }
+
+
+
 
 //Notebook Page Class - Has the information that each page needs and the needed getters and setters for each attribute
 public class noteBookPage
