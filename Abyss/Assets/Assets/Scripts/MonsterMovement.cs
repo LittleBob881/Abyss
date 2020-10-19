@@ -50,8 +50,14 @@ public class MonsterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        walk();
-        //chase();
+        if(playerTransform.position.y <= floorPosition+2 && playerTransform.position.y >= floorPosition-2)
+        {
+            chase();
+        }
+        else
+        {
+            walk();
+        }
     }
 
     void walk()
