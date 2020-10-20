@@ -6,10 +6,16 @@ using UnityEngine.UI;
 public class PuzzleworldChangesScript : MonoBehaviour
 {
     public NotebookScript notebook;
-    public GameObject WorldObject1; 
+    public GameObject WorldObject1;
+    public GameObject WorldObject2;
     // all refence and names are in code please refer to Puzzles.doc  
 
-    
+
+     void Start()
+    {
+        WorldObject2.gameObject.SetActive(false);
+    }
+
     public void Effect0()
     {
         Sprite image = Resources.Load<Sprite>("update page1");
@@ -24,9 +30,17 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     public void Effect15()
     {
-        Button ObjectChange = WorldObject1.GetComponent<Button>(); ;
+        Button ObjectChange = WorldObject1.GetComponent<Button>(); 
         ObjectChange.image.sprite = Resources.Load<Sprite>("roomitemsheet_2_1");
     }
+
+    public void Effect20()
+    {
+        WorldObject2.SetActive(false);
+    }
+
+
+
 
 
 
