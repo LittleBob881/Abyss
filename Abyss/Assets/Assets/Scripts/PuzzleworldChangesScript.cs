@@ -8,12 +8,14 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public NotebookScript notebook;
     public GameObject WorldObject1;
     public GameObject WorldObject2;
+    public GameObject WorldObject3;
     // all refence and names are in code please refer to Puzzles.doc  
 
 
-     void Start()
+    void Start()
     {
         WorldObject2.gameObject.SetActive(false);
+        WorldObject3.gameObject.SetActive(false);
     }
 
     public void Effect0()
@@ -37,6 +39,10 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public void Effect20()
     {
         WorldObject2.SetActive(false);
+    }
+    public void Effect30()
+    {
+        WorldObject3.SetActive(false);
     }
 
 
