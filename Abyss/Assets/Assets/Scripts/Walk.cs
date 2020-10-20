@@ -60,7 +60,7 @@ public class Walk : MonoBehaviour
     public void killPlayer()
     {
         alive = false;
-        Debug.Log("Player is dedad");
+        Debug.Log("Player is dead");
         DeathScript.PlayerDeath();
     }
 }

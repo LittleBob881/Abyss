@@ -21,7 +21,7 @@ public class MonsterMovement : MonoBehaviour
     private Vector3 localScale;
     private bool facingR;
     private AudioSource monsterSound;
-    
+    private bool playerAlive = true;
 
     //Variables for randomized walking
     private float floorPosition;
@@ -121,10 +121,11 @@ public class MonsterMovement : MonoBehaviour
     {
         movement = chasingSpeed;
         float playerLocation = playerTransform.position.x;
-        if(playerLocation+1 >= monsterTransform.position.x && playerLocation-1 <= monsterTransform.position.x)
+        if(playerLocation+1 >= monsterTransform.position.x && playerLocation-1 <= monsterTransform.position.x && playerAlive)
         {
             Walk playerScript = (Walk)player.GetComponent(typeof(Walk));
             playerScript.killPlayer();
+            playerAlive = false;
             player.SetActive(false);
             
         }
