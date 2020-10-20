@@ -10777,6 +10777,7 @@ GameObject:
   - component: {fileID: 610935260}
   - component: {fileID: 610935259}
   - component: {fileID: 610935258}
+  - component: {fileID: 610935261}
   m_Layer: 5
   m_Name: Death Animation
   m_TagString: Untagged
@@ -10860,6 +10861,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610935256}
   m_CullTransparentMesh: 0
+--- !u!114 &610935261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610935256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d23158ebe83864faa9d49e3724f13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathAnimation: {fileID: 610935256}
+  DeathMenu: {fileID: 1185907506}
 --- !u!1 &613936604
 GameObject:
   m_ObjectHideFlags: 0
