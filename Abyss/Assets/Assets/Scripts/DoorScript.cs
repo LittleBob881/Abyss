@@ -46,13 +46,13 @@ public class DoorScript : MonoBehaviour
         walkcontroller.enabled = false;
         //Transforms the player to the desired location, that is set within the door controller.
         player.transform.position = new Vector3(x, y);
-
+        walkcontroller.enabled = true;
         //Checks if user is within the desire location
-        if (player.transform.position == transform.position)
-        {
-            //Enables the player to walk again.
-            walkcontroller.enabled = true;
-        }
+        // if (player.transform.position == transform.position)
+        // {
+        //Enables the player to walk again.
+
+        // }
     }
 
 }
