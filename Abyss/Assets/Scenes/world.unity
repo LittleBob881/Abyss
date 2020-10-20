@@ -269,7 +269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf8e511106154a4488b8d602799c001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathScript: {fileID: 374358102}
 --- !u!95 &20813631
 Animator:
   serializedVersion: 3
@@ -18712,6 +18711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978949122e574f04ab97d2ca11759252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathScript: {fileID: 610935261}
 --- !u!82 &1162800537
 AudioSource:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class MonsterMovement : MonoBehaviour
     private Vector3 localScale;
     private bool facingR;
     private AudioSource monsterSound;
-    public DeathScript DeathScript;
+    
 
     //Variables for randomized walking
     private float floorPosition;
@@ -126,7 +126,7 @@ public class MonsterMovement : MonoBehaviour
             Walk playerScript = (Walk)player.GetComponent(typeof(Walk));
             playerScript.killPlayer();
             player.SetActive(false);
-            DeathScript.PlayerDeath();
+            
         }
         else if(playerLocation > monsterTransform.position.x)
         {
