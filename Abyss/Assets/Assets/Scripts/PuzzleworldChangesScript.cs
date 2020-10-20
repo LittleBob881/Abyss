@@ -17,8 +17,8 @@ public class PuzzleworldChangesScript : MonoBehaviour
     void Start()
     {
         LoadNewGame();
-
     }
+
     //undo all changes for new new game and hides game objects that need to be hidden 
     private void LoadNewGame()
     {
