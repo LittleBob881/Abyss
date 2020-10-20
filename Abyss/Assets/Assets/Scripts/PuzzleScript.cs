@@ -14,6 +14,7 @@ public class PuzzleScript : MonoBehaviour
     private Boolean[] Unlocks;
     private PuzzleItemCompareIndex PICIndex;
     public inventoryScript InventoryScript;
+    public PuzzleworldChangesScript changesScript;
 
 
     // enum varibles  
