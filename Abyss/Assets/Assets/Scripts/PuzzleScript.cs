@@ -10,7 +10,6 @@ public class PuzzleScript : MonoBehaviour
 
     private static PuzzleRefeanceItems puzzleMaster;
     private static int PuzzleItemProgress;
-    private static int PuzzleProgress;// to remove
     private Boolean[] Unlocks;
     private PuzzleItemCompareIndex PICIndex;
     public inventoryScript InventoryScript;
@@ -37,9 +36,10 @@ public class PuzzleScript : MonoBehaviour
     public static int PAINTINGPLAYER = 8;
     public static int PAINTINGGIRL = 5;
     public static int DOGHOUSE = 6;
-    
+
     //unlocks
     //in code so everything not reveled
+    // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello 
     public static int TAP = 0;
     public static int OAP = 1;
     public static int PC = 2;
@@ -88,6 +88,7 @@ public class PuzzleScript : MonoBehaviour
 
     // checks if the right room item is pressed and if the player has the by itemPuzzleProgress stage
     // returns a bool dependent if an item is used or not.
+    // for refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello 
     public Boolean ActiveItemPuzzleCheck(int RoomItemID, int ActiveItemID)
     {
         Boolean ItemUsed = false;
@@ -213,42 +214,46 @@ public class PuzzleScript : MonoBehaviour
         return ItemUsed;
     }
 
+
+    // Checks the progress to see if thinks need to be unlocked.
+    // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello 
+    // need to be called for load game
     void PuzzleItemProgression()
     {
         if(PuzzleItemProgress==0&&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
         {
             Unlocks[PC] = true;
             PuzzleItemProgress = 10;
-            //Add effect unlock
+            changesScript.Effect0();
         }
         if(PuzzleItemProgress == 10 && (Unlocks[CUOM] == true))
         {
             PuzzleItemProgress = 15;
-            //Add effect unlock
+            changesScript.Effect10();
         }
         if (PuzzleItemProgress == 15 && (Unlocks[PUOM] == true))
         {
             Unlocks[MK] = true;
             PuzzleItemProgress = 20;
-            //Add effect unlock
+            changesScript.Effect15();
         }
         if (PuzzleItemProgress == 20 && (Unlocks[PUOP] == true))
         {
             
             PuzzleItemProgress = 30;
-            //Add effect unlock
+            changesScript.Effect20();
         }
         if (PuzzleItemProgress == 30 && (Unlocks[CUOC] == true))
         {
             Unlocks[CHC] = true;
             PuzzleItemProgress = 40;
-            //Add effect unlock
+            changesScript.Effect30();
         }
         if (PuzzleItemProgress == 40 && (Unlocks[BUOD] == true))
         {
 
             PuzzleItemProgress = 50;
-            //Add effect unlock
+            changesScript.Effect40();
         }
         if (PuzzleItemProgress == 50 && (Unlocks[HUOT] == true))
         {
@@ -260,7 +265,7 @@ public class PuzzleScript : MonoBehaviour
         {
 
             PuzzleItemProgress = 70;
-            //Add effect unlock
+            changesScript.Effect60();
         }
     }
 
@@ -423,10 +428,7 @@ public class PuzzleScript : MonoBehaviour
         return PuzzleItemProgress;
     }
 
-    public int GetPuzzleValue()
-    {
-        return PuzzleProgress;
-    }
+
 
     public Boolean[] GetUnlock()
     {
