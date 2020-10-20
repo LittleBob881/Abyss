@@ -6,12 +6,14 @@ public class DeathScript : MonoBehaviour
 {
     public GameObject DeathAnimation;
     public GameObject DeathMenu;
+    public GameObject Deathtext;
 
     // Start is called before the first frame update
     void Start()
     {
         DeathMenu.gameObject.SetActive(false);
         DeathAnimation.gameObject.SetActive(false);
+        
     }
 
 
