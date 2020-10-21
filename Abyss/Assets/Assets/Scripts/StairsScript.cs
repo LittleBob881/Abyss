@@ -7,6 +7,8 @@ public class StairsScript : MonoBehaviour
 {
     private bool showPopup = false;
     public bool isInRange;
+    public GameObject player;
+    public Walk walkcontroller;
 
     void Start()
     {
@@ -52,18 +54,18 @@ public class StairsScript : MonoBehaviour
     {
         //Creating assets within the pop, such as buttons and labels
             GUI.Label(new Rect(65, 40, 200, 30), "Would you like to go up or down?");
-            if (GUI.Button(new Rect(50, 150, 75, 30), "Up"))
+            if (GUI.Button(new Rect(50, 150, 75, 30), "Down"))
         {
             //Loads the upper hallway upon interact
-            Debug.Log("Scene loading: " + "Top Floor");
-            SceneManager.LoadScene("UpperHallway");
-        }
-
-        if (GUI.Button(new Rect(150, 150, 75, 30), "Down"))
-        {
-            //Loads the lower hallway upon interact
+            Debug.Log("Clicked");
             Debug.Log("Scene loading: " + "Bottom Floor");
-            SceneManager.LoadScene("hallway_Bottom");
+            walkcontroller.enabled = false;
+           // player.transform.position = new Vector3(x, y);
+
+            if (player.transform.position == transform.position)
+            {
+                walkcontroller.enabled = true;
+            }
         }
     }
 }

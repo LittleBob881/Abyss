@@ -71,6 +71,9 @@ TagManager:
   - name: invetory
     uniqueID: 2989507457
     locked: 0
-  - name: New Layer
+  - name: DeathAnimation
     uniqueID: 824526563
+    locked: 0
+  - name: DeathMenu
+    uniqueID: 3099623833
     locked: 0

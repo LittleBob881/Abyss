@@ -21,7 +21,7 @@ public class NotebookScript : MonoBehaviour
     void Start()
     {
         //Makes a sprite array of all of the pages 
-        sprites = Resources.LoadAll<Sprite>("Pagespage");
+        loadPages();
 
         //Makes the notebook with all the pages
         createNoteBook();
@@ -48,6 +48,18 @@ public class NotebookScript : MonoBehaviour
         active.sprite = sprites[1];
 
         view.gameObject.SetActive(false);
+    }
+    //Loads the sprites into an array for the notebook pages 
+    private void loadPages()
+    {
+        sprites = new Sprite[10];
+        Sprite[] spritesload = Resources.LoadAll<Sprite>("Pagespage");
+        for (int k = 0; k < 8; k++)
+        {
+            sprites[k] = spritesload[k];
+        }
+        sprites[8] = Resources.Load<Sprite>("dogNews");
+        sprites[9] = Resources.Load<Sprite>("dogPage");
     }
 
     void OpenOnClick()
@@ -116,7 +128,16 @@ public class NotebookScript : MonoBehaviour
         playerNoteBook.unlockPage(0);
         playerNoteBook.unlockPage(1);
     }
+
+    //Changes pageImage by number 
+    public void ChangePageImage(Sprite image, int pageNumber)
+    {
+        sprites[pageNumber] = image;
+    }
 }
+
+
+
 
 //Notebook Page Class - Has the information that each page needs and the needed getters and setters for each attribute
 public class noteBookPage

@@ -18,7 +18,7 @@ namespace Tests
             //ARANGE
             //Creates the room item
             string[] Strings2 = { "Its chilly in here", "There is a tomato here, added to inventory" };
-            var fridge = (new AbyssLibrary.RoomItem("Kitchen", "Fridge", Strings2, 3, 0));
+            var fridge = (new FurnitureScript.RoomItem("Kitchen", "Fridge", Strings2, 3, 0));
             //creates the item
             PuzzleScript.PuzzleRefeanceItems puzzle = new PuzzleScript.PuzzleRefeanceItems();
             inventoryScript.inventoryItem TestTomato = puzzle.GetPuzzleInventory().getInventorySlot(3);     // creates the invetory 

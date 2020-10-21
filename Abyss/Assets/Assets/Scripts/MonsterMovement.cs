@@ -20,6 +20,8 @@ public class MonsterMovement : MonoBehaviour
     private Transform monsterTransform;
     private Vector3 localScale;
     private bool facingR;
+    private AudioSource monsterSound;
+    private bool playerAlive = true;
 
     //Variables for randomized walking
     private float floorPosition;
@@ -32,6 +34,7 @@ public class MonsterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        monsterSound = GetComponent<AudioSource>();
         localScale = transform.localScale;
         LOCAL_SCALE_CONST = localScale.x;
         monster = GetComponent<Rigidbody2D>();
@@ -40,7 +43,7 @@ public class MonsterMovement : MonoBehaviour
         movement = walkingSpeed;
         direction = DIRECTION_CONST;
         door1Position = 67.5f;
-        floorPosition = -32f;
+        floorPosition = -30.82f;
 
         player = GameObject.Find("Player");
         playerTransform = player.transform;
@@ -118,11 +121,13 @@ public class MonsterMovement : MonoBehaviour
     {
         movement = chasingSpeed;
         float playerLocation = playerTransform.position.x;
-        if(playerLocation+1 >= monsterTransform.position.x && playerLocation-1 <= monsterTransform.position.x)
+        if(playerLocation+0.5f >= monsterTransform.position.x && playerLocation-0.5f <= monsterTransform.position.x && playerAlive)
         {
             Walk playerScript = (Walk)player.GetComponent(typeof(Walk));
             playerScript.killPlayer();
+            playerAlive = false;
             player.SetActive(false);
+            
         }
         else if(playerLocation > monsterTransform.position.x)
         {
@@ -147,38 +152,38 @@ public class MonsterMovement : MonoBehaviour
         float monsterX = monsterTransform.position.x;
         float monsterY = monsterTransform.position.y;
 
-        if(monsterY == -32f && monsterX <= 68.5f && monsterX >= 66.5f)
+        if(monsterY == -30.82f && monsterX <= 68.5f && monsterX >= 66.5f)
         {
             Debug.Log("Going from Lounge to Green Hall");
             door1Position = 77f;
-            floorPosition = -18f;
+            floorPosition = -17.58f;
             wallLeft = 64.5f;
             wallRight = 96.3f;
             door2Position = 92f;
         }
-        else if(monsterY == -18 && monsterX <= 78 && monsterX >= 76)
+        else if(monsterY == -17.58f && monsterX <= 78 && monsterX >= 76)
         {
             Debug.Log("Going from Green Hall to Lounge");
             door1Position = 67.5f;
-            floorPosition = -32f;
+            floorPosition = -30.82f;
             wallLeft = 65f;
             wallRight = 100f;
             door2Position = 0;
         }
-        else if (monsterY == -18 && monsterX <= 93 && monsterX >= 91)
+        else if (monsterY == -17.58f && monsterX <= 93 && monsterX >= 91)
         {
             Debug.Log("Going from Green Hall to Bedroom");
             door1Position = 80.7f;
-            floorPosition = 0.5f;
+            floorPosition = 1.62f;
             wallLeft = 64.5f;
             wallRight = 99.5f;
             door2Position = 0;
         }
-        else if (monsterY == 0.5f && monsterX <= 81.7f && monsterX >= 79.7f)
+        else if (monsterY == 1.62f && monsterX <= 81.7f && monsterX >= 79.7f)
         {
             Debug.Log("Going from Bedroom to Green Hall");
             door1Position = 92f;
-            floorPosition = -18f;
+            floorPosition = -17.58f;
             wallLeft = 64.5f;
             wallRight = 96.3f;
             door2Position = 77f;

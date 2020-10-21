@@ -10,6 +10,7 @@ public class Walk : MonoBehaviour
     private AudioSource audioSrc;
     private float walkSound = 2f;
     private bool alive = true;
+    public DeathScript DeathScript;
 
     private void Start()
     {
@@ -59,7 +60,7 @@ public class Walk : MonoBehaviour
     public void killPlayer()
     {
         alive = false;
-        Debug.Log("Player is dedad");
-        //play death screen
+        Debug.Log("Player is dead");
+        DeathScript.PlayerDeath();
     }
 }

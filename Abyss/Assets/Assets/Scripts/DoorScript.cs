@@ -7,15 +7,17 @@ using UnityEngine.UI;
 
 public class DoorScript : MonoBehaviour
 {
-    
+    //The door button that will be used for the process.
     public GameObject doorButton;
-    //public Transform Camera;
-    //Calls a string from unity to load a scene
-    public bool enable_camera = true;
-    public bool trigger = true;
+
+    // Vector variables that can be set within the door controller to make it easier to use, and are set within the door controller.
     public float x;
     public float y;
+
+    //The gameobject that represents the player.
     public GameObject player;
+
+    //The walk controller function, that allows the player to walk. Taken from the walk script.
     public Walk walkcontroller;
 
 
@@ -23,84 +25,34 @@ public class DoorScript : MonoBehaviour
     void Start()
     {
         Debug.Log("Starting");
+        // Prints out the original position of the player
         Debug.Log("X:" + player.transform.position.x + "Y:" + player.transform.position.y + "Z:" + player.transform.position.z);
         //Instantiates a Door button
         Button next = doorButton.GetComponent<Button>();
+        //When the user taps on the button, loads the Loadscreen function
         next.onClick.AddListener(Loadscreen);
         Debug.Log("Loaded click");
     }
 
-    private void Update()
-    {
-        if (enable_camera) { 
-        walkcontroller.enabled = false;
-        player.transform.position = new Vector3(x, y);
-        
-        
-        if (player.transform.position == transform.position) {
-            walkcontroller.enabled = true;
-            enable_camera = false;
-        }
-        }
-    }
-
+    
+    /*The Load screen function is used to transform the player to the desired vector/room, this is done by disabling the walkcontroller so that the player cannot move during the tansformation
+     and then checking if the character is in the desired location, before enabling the character controller once again. The vector is set through a Door Controller that is then added to the 
+    door button.*/
     public void Loadscreen()
     {
         Debug.Log("Clicked");
-        
-        enable_camera = true;
-        if (enable_camera)
-        {
-            //player.transform.Translate(endDest.position);
-           // Camera.main.transform.Translate(new Vector3(4110, -33, 0));
-            
-            if (player.transform.position == transform.position)
-            {
-                enable_camera = false;
-            }
-            else {
-                enable_camera = true;
-            }
-        }
-        Debug.Log("Are you listening??");
+
+        //Disables the walkcontroller so that the player cant move forward during the transform to the next room.
+        walkcontroller.enabled = false;
+        //Transforms the player to the desired location, that is set within the door controller.
+        player.transform.position = new Vector3(x, y);
+        walkcontroller.enabled = true;
+        //Checks if user is within the desire location
+        // if (player.transform.position == transform.position)
+        // {
+        //Enables the player to walk again.
+
+        // }
     }
 
-    /* public void Loadscreen() 
-     {
-         //Loads a screen depending on string name
-         Debug.Log("Clicked");
-         GameObject.Find("Main Camera").transform.position = new Vector3(4110, -33, 0);
-         
-
-
-     }*/
-
-
-
-    /* void OnTriggerEnter2D(Collider2D collision)
-     {
-         //Upon player collision, the button will be able to be interactable and print the player is within collision range.
-         Debug.Log("Collision");
-         if (collision.gameObject.CompareTag("Player"))
-         {
-             Debug.Log("Entering Collision");
-             GameObject.Find("doorButton").GetComponent<Button>().interactable = true;
-             trigger = true;
-             enable_camera = true;
-
-         }
-     }
-
-     private void OnTriggerExit2D(Collider2D collision)
-     {
-         //Upon player leaving the collision zone, the button will not be interactable. 
-         Debug.Log("LeavingCollision");
-         if (collision.gameObject.tag == "Player")
-         {
-             trigger = false;
-             enable_camera = false;
-             GameObject.Find("doorButton").GetComponent<Button>().interactable = false;
-             Debug.Log("EXiting Collision");
-         }
-     }*/
 }

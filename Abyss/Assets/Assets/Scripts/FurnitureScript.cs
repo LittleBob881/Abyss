@@ -8,10 +8,11 @@ public class FurnitureScript : MonoBehaviour
 {
 
     public Button[] Unitybutton;
-    private AbyssLibrary.RoomItem[] roomitems;
+    private RoomItem[] roomitems;
     public inventoryScript invenScript;
     private PuzzleScript.PuzzleRefeanceItems list;
     public GameObject speechbox;
+    public PuzzleScript PuzzleScript;
 
     void Start()
     {
@@ -28,56 +29,56 @@ public class FurnitureScript : MonoBehaviour
     // calls room item action
     private void OnClick0()
     {
-        int num = 0;
-        RoomItemAction(num);
+        int RoomitemID = 0;
+        RoomItemAction(RoomitemID);
     }
 
     private void OnClick1()
     {
-        int num = 1;
-        RoomItemAction(num);
+        int RoomItemID = 1;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick2()
     {
-        int num = 2;
-        RoomItemAction(num);
+        int RoomItemID = 2;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick3()
     {
-        int num = 3;
-        RoomItemAction(num);
+        int RoomItemID = 3;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick4()
     {
-        int num = 4;
-        RoomItemAction(num);
+        int RoomItemID = 4;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick5()
     {
-        int num = 5;
-        RoomItemAction(num);
+        int RoomItemID = 5;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick6()
     {
-        int num = 6;
-        RoomItemAction(num);
+        int RoomItemID = 6;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick7()
     {
-        int num = 7;
-        RoomItemAction(num);
+        int RoomItemID = 7;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick8()
     {
-        int num = 8;
-        RoomItemAction(num);
+        int RoomItemID = 8;
+        RoomItemAction(RoomItemID);
     }
 
     private void OnClick9()
@@ -189,42 +190,95 @@ public class FurnitureScript : MonoBehaviour
     }
 
 
-    
-    public void RoomItemAction(int num)
+    //action if a room item is pressed 
+    // checks if an invetory item is active in inventory.
+    //      if there is an active item, it sends room item ID and active item ID with the useActiveItem fuction.
+    // if there is no active item then ViewItemSpeech is called which updates the speech game object with the string discribing the roomItem.
+    // if there is an item to pick up then the item is placed in the inventory and the speech box is updated to say what item was picked up. 
+    public void RoomItemAction(int RoomItemID)
     {
-        ViewItemSpeech(num);
+        Debug.Log("starting room item action ");
 
-        if (roomitems[num].GetItem() != 0)
+        if (invenScript.GetPlayerInventory().getActiveItemID() != 0)
         {
-            
-            bool AddedItemBool = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()));
-            if (AddedItemBool == true)
-            {
-                AddItemSpeech(num);
-            }
-            
+            Debug.Log(invenScript.GetPlayerInventory().getActiveItemID());
+            UseActiveItem(RoomItemID, invenScript.GetPlayerInventory().getActiveItemID());
+        }
+        else
+        {
+            ViewItemSpeech(RoomItemID);
+
+            PickupItemCheck(RoomItemID);
         }
 
-
     }
 
-    void ViewItemSpeech(int num)
+
+    //if there is an item to pick up then the item is placed in the inventory and the speech box is updated to say what item was picked up.
+    //checks if item is unlocked and is able to be picked up. 
+    private void PickupItemCheck(int RoomItemID)
     {
-        Text speech = speechbox.GetComponent<Text>();
-        String[] strings = roomitems[num].getStrings();
-        speech.text = strings[0];
+        int itemID = roomitems[RoomItemID].GetItem();
+        if (itemID != 0)
+        {
+            if (PuzzleScript.ItemlockedCheck(itemID))
+            {
+                // adds item to inventory
+                bool AddedItemBool = invenScript.GetPlayerInventory().PickupItem(list.GetPuzzleInventory().getInventorySlot(itemID));
+                if (AddedItemBool == true)
+                {
+                    AddItemSpeech(RoomItemID);
+                }
+            }
+
+        }
     }
-        public void AddItemSpeech(int num)
+
+    // sets the speech box string to the string from the first string in the string array from the seleceted roomItem
+    void ViewItemSpeech(int RoomItemID)
     {
         Text speech = speechbox.GetComponent<Text>();
-        String strings = "Picked up " + list.GetPuzzleInventory().getInventorySlot(roomitems[num].GetItem()).getName();
+        roomitems[RoomItemID].SetOutput(0);
+        String strings = roomitems[RoomItemID].GetOutput();
         speech.text = strings;
+    }
+
+    // sets the speech box to the a string that says the player picked up name of item. 
+        public void AddItemSpeech(int RoomItemID)
+    {
+        Text speech = speechbox.GetComponent<Text>();
+        String strings = "Picked up " + list.GetPuzzleInventory().getInventorySlot(roomitems[RoomItemID].GetItem()).getName();
+        speech.text = strings;
+    }
+
+
+    // itemUsed checks if the right item is being added to the right room object
+    // if it is the wrong item then sets the speech box to the a string that says that item name doesnt go here.
+    // if it is the right item then it sets the speech box to the a string that says that item name was used on roomitem name 
+    void UseActiveItem(int RoomItemID,int ActiveItemID )
+    {
+        String ActiveItemName = invenScript.GetPlayerInventory().getActiveItemName();
+        Boolean ItemUsed = PuzzleScript.ActiveItemPuzzleCheck(RoomItemID,ActiveItemID);
+        String ItemActionString = " ";
+        if(ItemUsed == false)
+        {
+            Debug.Log("useactive item:" +invenScript.GetPlayerInventory().getActiveItemID());
+            ItemActionString = ActiveItemName + " doesn't seem to go here";
+        }
+        else
+        {
+            ItemActionString = ActiveItemName + " used on " + roomitems[RoomItemID].GetName();
+        }
+
+        Text speech = speechbox.GetComponent<Text>();
+        speech.text = ItemActionString;
+
     }
 
     //create all 27 roomitems and fills with data
     void AddRoomItems()
     {
-        roomitems = new AbyssLibrary.RoomItem[27];
+        roomitems = new RoomItem[27];
         string[] Strings0 = { "Chair for a child" };
         string[] Strings1 = { "Its a table", "There is a recipe on the table, added to notebook." };
         string[] Strings2 = { "Its an oven", "Its hot." };
@@ -254,38 +308,38 @@ public class FurnitureScript : MonoBehaviour
         string[] Strings26 = { "It looks like I could hide here" };
 
 
-        roomitems[0] = new AbyssLibrary.RoomItem("Kitchen", "Highchair", Strings0, 0, 0);
-        roomitems[1] = new AbyssLibrary.RoomItem("Kitchen", "Table", Strings1, 0, 0);
-        roomitems[2] = (new AbyssLibrary.RoomItem("Kitchen", "Oven", Strings2, 0, 0));
-        roomitems[3] = (new AbyssLibrary.RoomItem("Kitchen", "Pot", Strings3, 0, 0));
-        roomitems[4] = (new AbyssLibrary.RoomItem("Kitchen", "Sink", Strings4, 0, 0));
+        roomitems[0] = new RoomItem("Kitchen", "Highchair", Strings0, 0, 0);
+        roomitems[1] = new RoomItem("Kitchen", "Table", Strings1, 0, 0);
+        roomitems[2] = (new RoomItem("Kitchen", "Oven", Strings2, 0, 0));
+        roomitems[3] = (new RoomItem("Kitchen", "Pot", Strings3, 0, 0));
+        roomitems[4] = (new RoomItem("Kitchen", "Sink", Strings4, 0, 0));
 
-        roomitems[5] = new AbyssLibrary.RoomItem("Kitchen", "Fridge", Strings5, 3, 0);
-        roomitems[6] = new AbyssLibrary.RoomItem("Kitchen", "Sink", Strings6, 11, 2);
-        roomitems[7] = (new AbyssLibrary.RoomItem("Kitchen", "Bed", Strings7, 1, 0));
-        roomitems[8] = (new AbyssLibrary.RoomItem("Kitchen", "Toy dog ", Strings8, 0, 0));
-        roomitems[9] = (new AbyssLibrary.RoomItem("Kitchen", "Side table", Strings9, 0, 0));
+        roomitems[5] = new RoomItem("Kitchen", "Fridge", Strings5, 3, 0);
+        roomitems[6] = new RoomItem("Kitchen", "Sink", Strings6, 11, 2);
+        roomitems[7] = (new RoomItem("Kitchen", "Bed", Strings7, 1, 0));
+        roomitems[8] = (new RoomItem("Kitchen", "Toy dog ", Strings8, 0, 0));
+        roomitems[9] = (new RoomItem("Kitchen", "Side table", Strings9, 0, 0));
 
-        roomitems[10] = new AbyssLibrary.RoomItem("Kitchen", "Cupboard", Strings10, 5, 0);
-        roomitems[11] = new AbyssLibrary.RoomItem("Kitchen", "Paper", Strings11, 0, 0);
-        roomitems[12] = (new AbyssLibrary.RoomItem("Kitchen", "Closet", Strings12, 0, 0));
-        roomitems[13] = (new AbyssLibrary.RoomItem("Kitchen", "Mirror", Strings13, 0, 0));
-        roomitems[14] = (new AbyssLibrary.RoomItem("Kitchen", "Painting of Mother", Strings14, 0, 0));
+        roomitems[10] = new RoomItem("Kitchen", "Cupboard", Strings10, 5, 0);
+        roomitems[11] = new RoomItem("Kitchen", "Paper", Strings11, 0, 0);
+        roomitems[12] = (new RoomItem("Kitchen", "Closet", Strings12, 0, 0));
+        roomitems[13] = (new RoomItem("Kitchen", "Mirror", Strings13, 0, 0));
+        roomitems[14] = (new RoomItem("Kitchen", "Painting of Mother", Strings14, 0, 0));
 
-        roomitems[15] = new AbyssLibrary.RoomItem("Kitchen", "Safe", Strings15, 8, 0);
-        roomitems[16] = new AbyssLibrary.RoomItem("Kitchen", "Painting of Frank", Strings16, 0, 0);
-        roomitems[17] = (new AbyssLibrary.RoomItem("Kitchen", "Painting of little girl", Strings17, 0, 0));
-        roomitems[18] = (new AbyssLibrary.RoomItem("Kitchen", "Garden", Strings18, 4, 0));
-        roomitems[19] = (new AbyssLibrary.RoomItem("Kitchen", "Tree", Strings19, 7, 0));
+        roomitems[15] = new RoomItem("Kitchen", "Safe", Strings15, 8, 0);
+        roomitems[16] = new RoomItem("Kitchen", "Painting of Frank", Strings16, 0, 0);
+        roomitems[17] = (new RoomItem("Kitchen", "Painting of little girl", Strings17, 0, 0));
+        roomitems[18] = (new RoomItem("Kitchen", "Garden", Strings18, 4, 0));
+        roomitems[19] = (new RoomItem("Kitchen", "Tree", Strings19, 7, 0));
 
-        roomitems[20] = new AbyssLibrary.RoomItem("Kitchen", "Dog house", Strings20, 0, 0);
-        roomitems[21] = new AbyssLibrary.RoomItem("Kitchen", "Old Tools", Strings21, 12, 0);
-        roomitems[22] = (new AbyssLibrary.RoomItem("Kitchen", "Shelf", Strings22, 0, 0));
-        roomitems[23] = (new AbyssLibrary.RoomItem("Kitchen", "Treadmill", Strings23, 0, 0));
-        roomitems[24] = (new AbyssLibrary.RoomItem("Kitchen", "Tv", Strings24, 10, 0));
+        roomitems[20] = new RoomItem("Kitchen", "Dog house", Strings20, 0, 0);
+        roomitems[21] = new RoomItem("Kitchen", "Old Tools", Strings21, 12, 0);
+        roomitems[22] = (new RoomItem("Kitchen", "Shelf", Strings22, 0, 0));
+        roomitems[23] = (new RoomItem("Kitchen", "Treadmill", Strings23, 0, 0));
+        roomitems[24] = (new RoomItem("Kitchen", "Tv", Strings24, 10, 0));
 
-        roomitems[25] = new AbyssLibrary.RoomItem("Kitchen", "Couch", Strings25, 2, 0);
-        roomitems[26] = new AbyssLibrary.RoomItem("Kitchen", "CLoset", Strings26, 0, 0);
+        roomitems[25] = new RoomItem("Kitchen", "Couch", Strings25, 2, 0);
+        roomitems[26] = new RoomItem("Kitchen", "Closet", Strings26, 0, 0);
         
         
     }
@@ -373,5 +427,71 @@ public class FurnitureScript : MonoBehaviour
 
         Button Roomitem26 = Unitybutton[26].GetComponent<Button>();
         Roomitem26.onClick.AddListener(OnClick26);
+    }
+
+
+    public class RoomItem
+    {
+        private String room;
+        private String name;
+        private String output;
+        private string[] dialog;
+        private int item;
+        private int page;
+        private int dialogNumber;
+
+        public RoomItem(String room, String name, string[] textlines, int item, int page)
+        {
+            this.room = room;
+            this.name = name;
+            this.output = "  ";
+            this.dialog = textlines;
+            this.item = item;
+            this.page = page;
+            this.dialogNumber = 0;
+        }
+
+
+
+        public String GetName()
+        {
+            return name;
+
+        }
+
+
+        //returns output as a string
+        public String GetOutput()
+        {
+            return this.output;
+        }
+
+        // sets output from the diaglog list. int chooses which dialog is used.
+
+        public void SetOutput(int num)
+        {
+            this.output = dialog[num];
+        }
+
+
+        // returns item (not sure how this will work with the item getting.)
+        public int GetItem()
+        {
+            return item;
+
+        }
+
+        // returns item (not sure how this will work with the page getting.)
+        public int GetPage()
+        {
+            return page;
+
+        }
+
+        // sets the Dialog number. 
+        public void SetDialogNum(int num)
+        {
+            this.dialogNumber = num;
+        }
     }
 }
