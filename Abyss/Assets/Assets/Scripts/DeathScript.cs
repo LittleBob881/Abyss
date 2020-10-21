@@ -30,9 +30,18 @@ public class DeathScript : MonoBehaviour
     }
 
 
-    public void NewGame()
-    {
 
+    public void LoadSave()
+    {
+        PuzzleScript.NewGame();
+        PuzzleScript.TestLoadPuzzleSave();
+        DeathMenu.gameObject.SetActive(false);
     }
 
+    public void NewGame()
+    {
+        PuzzleScript.NewGame();
+        DeathMenu.gameObject.SetActive(false);
+
+    }
 }

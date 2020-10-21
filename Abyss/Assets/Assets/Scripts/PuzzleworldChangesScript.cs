@@ -17,7 +17,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     void Awake()
     {
-        Sprites = Resources.LoadAll<Sprite>("update page");
+        Sprites = Resources.LoadAll<Sprite>("update pages");
         LoadNewGame();
 
     }

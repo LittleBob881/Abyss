@@ -68,7 +68,7 @@ public class PuzzleScript : MonoBehaviour
 
 
     // sets all unlocks to false
-    void NewGame()
+    public void NewGame()
     {
         PuzzleItemProgress = 0;
         PICIndex = new PuzzleItemCompareIndex();
