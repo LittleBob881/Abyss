@@ -99,13 +99,13 @@ public class PuzzleScript : MonoBehaviour
         Unlocks[CUOM] = true;
         Unlocks[PUOM] = true;
         Unlocks[MK] = true;
-        Unlocks[PUOP] = true;
-        Unlocks[CUOC] = true;
-        Unlocks[CHC] = true;
-        Unlocks[BUOD] = true;
-        Unlocks[HUOT] = true;
-        Unlocks[DK] = true;
-        Unlocks[KUOP] = true;
+        Unlocks[PUOP] = false;
+        Unlocks[CUOC] = false;
+        Unlocks[CHC] = false;
+        Unlocks[BUOD] = false;
+        Unlocks[HUOT] = false;
+        Unlocks[DK] = false;
+        Unlocks[KUOP] = false;
         PuzzleItemProgression();
     }
     public void LoadPuzzleSave()

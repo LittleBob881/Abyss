@@ -42,6 +42,7 @@ public class DeathScript : MonoBehaviour
     {
         PuzzleScript.NewGame();
         DeathMenu.gameObject.SetActive(false);
-
+        //reset player
+        // reset monster
     }
 }
