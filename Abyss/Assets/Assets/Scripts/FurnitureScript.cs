@@ -201,7 +201,6 @@ public class FurnitureScript : MonoBehaviour
 
         if (invenScript.GetPlayerInventory().getActiveItemID() != 0)
         {
-            Debug.Log(invenScript.GetPlayerInventory().getActiveItemID());
             UseActiveItem(RoomItemID, invenScript.GetPlayerInventory().getActiveItemID());
         }
         else
