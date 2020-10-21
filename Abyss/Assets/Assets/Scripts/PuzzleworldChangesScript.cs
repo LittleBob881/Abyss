@@ -15,7 +15,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello    
 
 
-    void Start()
+    void Awake()
     {
         Sprites = Resources.LoadAll<Sprite>("update page");
         LoadNewGame();

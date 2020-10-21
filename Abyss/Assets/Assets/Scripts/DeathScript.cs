@@ -7,6 +7,7 @@ public class DeathScript : MonoBehaviour
     public GameObject DeathAnimation;
     public GameObject DeathMenu;
     public GameObject Deathtext;
+    public PuzzleScript PuzzleScript;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,12 @@ public class DeathScript : MonoBehaviour
     public void OpenDeathMenu()
     {
         DeathAnimation.gameObject.SetActive(false);
+    }
+
+
+    public void NewGame()
+    {
+
     }
 
 }

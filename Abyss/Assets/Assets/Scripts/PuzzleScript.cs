@@ -54,9 +54,16 @@ public class PuzzleScript : MonoBehaviour
     public static int DK = 11;
     public static int KUOP = 12;
 
-    void Start()
+    // Awake is called when the script is first being loaded 
+    void Awake()
     {
         NewGame();
+    }
+
+    // is called before update()
+    void Start()
+    {
+        
     }
 
 

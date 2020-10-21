@@ -14,7 +14,7 @@ public class FurnitureScript : MonoBehaviour
     public GameObject speechbox;
     public PuzzleScript PuzzleScript;
 
-    void Start()
+    void Awake()
     {
         Debug.Log("Start fruriture script");
         

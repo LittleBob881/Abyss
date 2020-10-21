@@ -18,7 +18,7 @@ public class NotebookScript : MonoBehaviour
     public Image page0;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //Makes a sprite array of all of the pages 
         loadPages();
