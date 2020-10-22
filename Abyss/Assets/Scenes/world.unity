@@ -6781,7 +6781,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1151186773}
         m_TargetAssemblyTypeName: PuzzleworldChangesScript, Main
-        m_MethodName: Effect15
+        m_MethodName: Effect0
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
