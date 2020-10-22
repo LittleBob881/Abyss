@@ -56,10 +56,12 @@ public class MonsterMovement : MonoBehaviour
         if((playerTransform.position.y <= floorPosition+0.5f && playerTransform.position.y >= floorPosition-0.5f) && (playerTransform.position.x <= wallRight && playerTransform.position.x >= wallLeft))
         {
             chase();
+            Debug.Log("chase mode");
         }
         else
         {
             walk();
+            Debug.Log("walk");
         }
     }
 

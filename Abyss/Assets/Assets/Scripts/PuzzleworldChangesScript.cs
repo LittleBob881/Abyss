@@ -39,7 +39,6 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     public void Effect0()
     {
-        Debug.Log("updating");
         Sprite image = Resources.Load<Sprite>("update page1");
         notebook.ChangePageImage(image,3);
     }
