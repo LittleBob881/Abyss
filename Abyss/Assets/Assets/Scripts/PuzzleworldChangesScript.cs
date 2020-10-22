@@ -10,6 +10,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public GameObject WorldObject2;
     public GameObject WorldObject3;
     public GameObject WorldObject4;
+    public GameObject book;
     private Sprite[] Sprites;
 
     // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello    
@@ -17,6 +18,8 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     void Awake()
     {
+        book = GameObject.Find("/world/NoteBook/NoteBookImage");
+        notebook = (NotebookScript)book.GetComponent(typeof(NotebookScript));
         Sprites = Resources.LoadAll<Sprite>("update pages");
         LoadNewGame();
 
@@ -44,6 +47,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public void Effect0()
     {
         notebook.ChangePageImage(Sprites[0],3);
+        Debug.Log("hewwo");
     }
 
     public void Effect10()

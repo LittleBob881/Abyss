@@ -6103,7 +6103,6 @@ GameObject:
   - component: {fileID: 284459863}
   - component: {fileID: 284459862}
   - component: {fileID: 284459861}
-  - component: {fileID: 284459860}
   m_Layer: 5
   m_Name: NoteBook
   m_TagString: Untagged
@@ -6111,26 +6110,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &284459860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284459859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63dc0715bfbddb24fa22d11b70919ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exitButton: {fileID: 695994979}
-  NextButton: {fileID: 1142834167}
-  BackButton: {fileID: 1259030479}
-  OpenButton: {fileID: 1981863558}
-  view: {fileID: 284459859}
-  sprites: []
-  activePage: {fileID: 1367664009}
-  page0: {fileID: 188300923}
 --- !u!210 &284459861
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -19103,11 +19082,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7656f006d55cc7648b10740cdf37a218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notebook: {fileID: 284459860}
+  notebook: {fileID: 1274173170}
   WorldObject1: {fileID: 312183992}
   WorldObject2: {fileID: 922031511}
   WorldObject3: {fileID: 1142234221}
   WorldObject4: {fileID: 838246070}
+  book: {fileID: 1274173166}
 --- !u!114 &1151186774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19536,7 +19516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162800535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83, y: -17.1, z: 0.0000076293945}
+  m_LocalPosition: {x: 13.2, y: -17.3, z: 0.0000076293945}
   m_LocalScale: {x: 21.999998, y: 21.999998, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 0}
@@ -22566,8 +22546,9 @@ GameObject:
   - component: {fileID: 1274173167}
   - component: {fileID: 1274173169}
   - component: {fileID: 1274173168}
+  - component: {fileID: 1274173170}
   m_Layer: 5
-  m_Name: Image
+  m_Name: NoteBookImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22630,6 +22611,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274173166}
   m_CullTransparentMesh: 0
+--- !u!114 &1274173170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274173166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63dc0715bfbddb24fa22d11b70919ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitButton: {fileID: 695994979}
+  NextButton: {fileID: 1142834167}
+  BackButton: {fileID: 1259030479}
+  OpenButton: {fileID: 1981863558}
+  view: {fileID: 284459859}
+  sprites: []
+  activePage: {fileID: 1367664009}
+  page0: {fileID: 188300923}
 --- !u!1 &1296516679
 GameObject:
   m_ObjectHideFlags: 0
@@ -24625,7 +24626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454066563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83, y: -17.1, z: -9.999992}
+  m_LocalPosition: {x: 13.2, y: -17.3, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -31291,7 +31292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741331005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83, y: -17.1, z: -9.999992}
+  m_LocalPosition: {x: 13.2, y: -17.3, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 352460535}
