@@ -6,7 +6,6 @@ using UnityEngine;
 public class PuzzleSaveData
 {
     public int puzzleItemProgress;
-
     public Boolean[] unlocks;
 
     public PuzzleSaveData(PuzzleScript puzzle)

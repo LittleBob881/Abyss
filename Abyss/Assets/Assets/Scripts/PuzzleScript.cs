@@ -54,19 +54,24 @@ public class PuzzleScript : MonoBehaviour
     public static int DK = 11;
     public static int KUOP = 12;
 
+    // Awake is called when the script is first being loaded 
+    void Awake()
+    {
+        NewGame();
+    }
+
+    // is called before update()
     void Start()
     {
-        PuzzleItemProgress = 0;
-        PICIndex = new PuzzleItemCompareIndex();
-        loadUnlocks();
-
-
+        
     }
 
 
     // sets all unlocks to false
-    void loadUnlocks()
+    public void NewGame()
     {
+        PuzzleItemProgress = 0;
+        PICIndex = new PuzzleItemCompareIndex();
         Unlocks = new Boolean[13];
         Unlocks[TAP] = false;
         Unlocks[OAP] = false;
@@ -84,7 +89,32 @@ public class PuzzleScript : MonoBehaviour
         
     }
 
-
+    public void TestLoadPuzzleSave()
+    {
+        
+        PuzzleItemProgress = 0;
+        Unlocks[TAP] = true;
+        Unlocks[OAP] = true;
+        Unlocks[PC] = true;
+        Unlocks[CUOM] = true;
+        Unlocks[PUOM] = true;
+        Unlocks[MK] = true;
+        Unlocks[PUOP] = false;
+        Unlocks[CUOC] = false;
+        Unlocks[CHC] = false;
+        Unlocks[BUOD] = false;
+        Unlocks[HUOT] = false;
+        Unlocks[DK] = false;
+        Unlocks[KUOP] = false;
+        PuzzleItemProgression();
+    }
+    public void LoadPuzzleSave()
+    {
+        //call load here?
+        // add in PuzzleItemProgress = save;
+        // add in Unlocks[] = saveUnlocks[];
+        PuzzleItemProgression();
+    }
 
     // checks if the right room item is pressed and if the player has the by itemPuzzleProgress stage
     // returns a bool dependent if an item is used or not.
@@ -94,19 +124,8 @@ public class PuzzleScript : MonoBehaviour
         Boolean ItemUsed = false;
         
         
-        //for testing 
-        if (RoomItemID == PICIndex.getRoomItemIndex(TOYDOG))
-        {
-            if (ActiveItemID == PICIndex.getItemIndex(BONE))
-            {
-                Unlocks[BUOD] = true;
-                ItemUsed = true;
-                InventoryScript.RemoveItemFromInventory(1);
-            }
-        }
-
-
-            if (PuzzleItemProgress == 0)
+    
+        if (PuzzleItemProgress == 0)
         {
             if (RoomItemID == PICIndex.getRoomItemIndex(POT))
             {
@@ -136,12 +155,16 @@ public class PuzzleScript : MonoBehaviour
                     ItemUsed = true;
                     InventoryScript.RemoveItemFromInventory(7);
                 }
-                else if (ActiveItemID == PICIndex.getItemIndex(POISON))
-                {
-                    Unlocks[PUOM] = true;
-                    ItemUsed = true;
-                    InventoryScript.RemoveItemFromInventory(11);
-                }
+
+            }
+        }
+        else if (PuzzleItemProgress ==15)
+        {
+            if (ActiveItemID == PICIndex.getItemIndex(POISON))
+            {
+                Unlocks[PUOM] = true;
+                ItemUsed = true;
+                InventoryScript.RemoveItemFromInventory(11);
             }
         }
         else if (PuzzleItemProgress == 20)
@@ -220,8 +243,9 @@ public class PuzzleScript : MonoBehaviour
     // need to be called for load game
     void PuzzleItemProgression()
     {
-        if(PuzzleItemProgress==0&&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
+        if(PuzzleItemProgress == 0 &&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
         {
+
             Unlocks[PC] = true;
             PuzzleItemProgress = 10;
             changesScript.Effect0();
