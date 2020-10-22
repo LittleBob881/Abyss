@@ -222,6 +222,7 @@ public class PuzzleScript : MonoBehaviour
     {
         if(PuzzleItemProgress==0&&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
         {
+            Debug.Log("puzzle item progress");
             Unlocks[PC] = true;
             PuzzleItemProgress = 10;
             changesScript.Effect0();
