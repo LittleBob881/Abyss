@@ -10,14 +10,17 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public GameObject WorldObject2;
     public GameObject WorldObject3;
     public GameObject WorldObject4;
-    private Sprite[] Sprites;
+    private Sprite[] SpritesNotebook;
+    private Sprite[] SpritesWorld;
+
 
     // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello    
 
 
     void Awake()
     {
-        Sprites = Resources.LoadAll<Sprite>("update pages");
+        SpritesNotebook = Resources.LoadAll<Sprite>("update pages");
+        SpritesWorld = Resources.LoadAll<Sprite>("roomitemsheet_2");
         LoadNewGame();
 
     }
@@ -41,9 +44,15 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     }
 
+    public void Effecttest()
+    {
+        notebook.ChangePageImage(SpritesNotebook[0], 3);
+    }
+
+
     public void Effect0()
     {
-        notebook.ChangePageImage(Sprites[0],3);
+        notebook.ChangePageImage(SpritesNotebook[0],3);
     }
 
     public void Effect10()
@@ -54,8 +63,8 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     public void Effect15()
     {
-        Button ObjectChange = WorldObject1.GetComponent<Button>(); 
-        ObjectChange.image.sprite = Resources.Load<Sprite>("roomitemsheet_2_1");
+        Button ObjectChange = WorldObject1.GetComponent<Button>();
+        ObjectChange.image.sprite = SpritesWorld[1];
     }
 
     public void Effect20()
@@ -78,9 +87,6 @@ public class PuzzleworldChangesScript : MonoBehaviour
         WorldObject4.SetActive(true);
         WorldObject1.SetActive(false);
     }
-
-
-
 
 }
 
