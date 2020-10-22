@@ -10,8 +10,11 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public GameObject WorldObject2;
     public GameObject WorldObject3;
     public GameObject WorldObject4;
+    public GameObject WorldObject5;
     public GameObject book;
-    private Sprite[] Sprites;
+    private Sprite[] PageSprites;
+    private Sprite[] NotebookSprites;
+   
 
     // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello    
 
@@ -20,7 +23,9 @@ public class PuzzleworldChangesScript : MonoBehaviour
     {
         //book = GameObject.Find("/world/NoteBook/NoteBookImage");
         //notebook = (NotebookScript)book.GetComponent(typeof(NotebookScript));
-        Sprites = Resources.LoadAll<Sprite>("update pages");
+        PageSprites = Resources.LoadAll<Sprite>("update pages");
+        NotebookSprites = Resources.LoadAll<Sprite>("Pagespage");
+      
         LoadNewGame();
 
     }
@@ -30,37 +35,37 @@ public class PuzzleworldChangesScript : MonoBehaviour
     {
        
         Debug.Log("load new game started");
-        Sprite image = Resources.Load<Sprite>("page3");
-        notebook.ChangePageImage(image, 3);
-        image = Resources.Load<Sprite>("page4");
-        notebook.ChangePageImage(image, 4);
+        
+        notebook.ChangePageImage(NotebookSprites[3], 3);
+        
+        notebook.ChangePageImage(NotebookSprites[4], 4);
         WorldObject2.gameObject.SetActive(false);
         WorldObject3.gameObject.SetActive(false);
         WorldObject4.SetActive(false);
         WorldObject1.SetActive(true);
-        Button ObjectChange = WorldObject1.GetComponent<Button>();
-        ObjectChange.image.sprite = Resources.Load<Sprite>("roomitemsheet_2_0");
-        image = Resources.Load<Sprite>("dogPage");
-        notebook.ChangePageImage(image, 9);
+        Sprite ObjectChange = WorldObject1.GetComponent<Sprite>();
+        WorldObject5.SetActive(true);
+
+        notebook.ChangePageImage(Resources.Load<Sprite>("dogPage"), 9);
 
     }
 
     public void Effect0()
     {
-        notebook.ChangePageImage(Sprites[0],3);
+        notebook.ChangePageImage(PageSprites[0],3);
         Debug.Log("hewwo");
     }
 
     public void Effect10()
     {
-        Sprite image = Resources.Load<Sprite>("update page2");
-        notebook.ChangePageImage(image, 4);
+        
+        notebook.ChangePageImage(PageSprites[1], 4);
     }
 
     public void Effect15()
     {
-        Button ObjectChange = WorldObject1.GetComponent<Button>(); 
-        ObjectChange.image.sprite = Resources.Load<Sprite>("roomitemsheet_2_1");
+        Debug.Log("Effect15 called");
+        WorldObject1.SetActive(false);
     }
 
     public void Effect20()
@@ -81,7 +86,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public void Effect60()
     {
         WorldObject4.SetActive(true);
-        WorldObject1.SetActive(false);
+        WorldObject5.SetActive(false);
     }
 
 
