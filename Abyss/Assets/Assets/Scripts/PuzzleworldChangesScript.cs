@@ -18,8 +18,8 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     void Awake()
     {
-        book = GameObject.Find("/world/NoteBook/NoteBookImage");
-        notebook = (NotebookScript)book.GetComponent(typeof(NotebookScript));
+        //book = GameObject.Find("/world/NoteBook/NoteBookImage");
+        //notebook = (NotebookScript)book.GetComponent(typeof(NotebookScript));
         Sprites = Resources.LoadAll<Sprite>("update pages");
         LoadNewGame();
 
@@ -28,6 +28,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     //undo all changes for new new game and hides game objects that need to be hidden 
     private void LoadNewGame()
     {
+       
         Debug.Log("load new game started");
         Sprite image = Resources.Load<Sprite>("page3");
         notebook.ChangePageImage(image, 3);
