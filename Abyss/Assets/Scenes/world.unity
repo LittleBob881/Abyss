@@ -3884,7 +3884,7 @@ GameObject:
   - component: {fileID: 81781489}
   - component: {fileID: 81781490}
   m_Layer: 0
-  m_Name: Door Controller (Blue Hallway to Bedroom)
+  m_Name: Door Controller (Saferoom from bluehall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3917,8 +3917,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 576280895}
-  x: 8.72
-  y: -17.62
+  x: -29
+  y: -18
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &90662674
@@ -4051,7 +4051,7 @@ GameObject:
   - component: {fileID: 136715456}
   - component: {fileID: 136715457}
   m_Layer: 0
-  m_Name: Door Controller (Kitchen to Hallway)
+  m_Name: Door Controller (blueHall from Kitchen)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4084,8 +4084,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 580894481}
-  x: 15.7
-  y: -17.7
+  x: 6
+  y: -17.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &159663210
@@ -5664,7 +5664,7 @@ GameObject:
   - component: {fileID: 251336494}
   - component: {fileID: 251336495}
   m_Layer: 0
-  m_Name: Door Controller (Blue Hallway Stairs)
+  m_Name: Door Controller (Blue to green Hallway Stairs)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5697,8 +5697,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 2133547867}
-  x: -3.51
-  y: -17.58
+  x: 68
+  y: -17.8
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &254509604
@@ -10377,7 +10377,7 @@ GameObject:
   - component: {fileID: 546528370}
   - component: {fileID: 546528371}
   m_Layer: 0
-  m_Name: Door Controller (Shed to Kitchen)
+  m_Name: Door Controller (BlueHall from shed)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10410,8 +10410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 48456337}
-  x: 40.2
-  y: -32.5
+  x: 24
+  y: -17
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &553157496
@@ -10426,6 +10426,7 @@ GameObject:
   - component: {fileID: 553157500}
   - component: {fileID: 553157499}
   - component: {fileID: 553157498}
+  - component: {fileID: 553157501}
   m_Layer: 5
   m_Name: Load Save
   m_TagString: Untagged
@@ -10446,7 +10447,7 @@ RectTransform:
   m_Children:
   - {fileID: 353951089}
   m_Father: {fileID: 1185907510}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10546,6 +10547,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553157496}
   m_CullTransparentMesh: 0
+--- !u!210 &553157501
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553157496}
+  m_Enabled: 1
+  m_SortingLayerID: -1195343463
+  m_SortingLayer: 12
+  m_SortingOrder: 2
 --- !u!1 &566836907
 GameObject:
   m_ObjectHideFlags: 0
@@ -10736,7 +10748,7 @@ GameObject:
   - component: {fileID: 576280898}
   - component: {fileID: 576280897}
   m_Layer: 5
-  m_Name: Blue Hallway to Bedroom
+  m_Name: Blue Hallway to saferoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11403,7 +11415,7 @@ RectTransform:
   m_LocalScale: {x: 0.46627957, y: 0.46627957, z: 0.46627957}
   m_Children: []
   m_Father: {fileID: 1185907510}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13899,7 +13911,7 @@ GameObject:
   - component: {fileID: 763067801}
   - component: {fileID: 763067800}
   m_Layer: 0
-  m_Name: Door Controller (Lounge to Hallway)
+  m_Name: Door Controller (greenHall from lounge)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13918,8 +13930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1455205317}
-  x: 77.19
-  y: -17.58
+  x: 77
+  y: -17.8
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!4 &763067801
@@ -14440,7 +14452,7 @@ GameObject:
   - component: {fileID: 861858907}
   - component: {fileID: 861858908}
   m_Layer: 0
-  m_Name: Door Controller (Hallway to Lounge)
+  m_Name: Door Controller (Lounge from greenhall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14473,8 +14485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1649184240}
-  x: 67.89
-  y: -30.917
+  x: 77
+  y: -17.8
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &863096747
@@ -19529,7 +19541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162800535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.45, y: -16.91, z: 0.0000076293945}
+  m_LocalPosition: {x: -15, y: -32.5, z: 0.0000076293945}
   m_LocalScale: {x: 21.999998, y: 21.999998, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19852,9 +19864,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 374358099}
-  - {fileID: 610935257}
   - {fileID: 1526044199}
   - {fileID: 553157497}
+  - {fileID: 610935257}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -22655,7 +22667,7 @@ GameObject:
   - component: {fileID: 1296516680}
   - component: {fileID: 1296516681}
   m_Layer: 0
-  m_Name: Door Controller (Kitchen to shed)
+  m_Name: Door Controller (Garden from kitchen)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22688,8 +22700,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1156012862}
-  x: 80.7
-  y: 1.62
+  x: 39
+  y: -32.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1304069234
@@ -23161,7 +23173,7 @@ GameObject:
   - component: {fileID: 1359663748}
   - component: {fileID: 1359663749}
   m_Layer: 0
-  m_Name: Door Controller (Shed to Green Hallway)
+  m_Name: Door Controller (Kitchen from garden)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23194,8 +23206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 48456337}
-  x: 24
-  y: -17.5
+  x: 31
+  y: 0
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1363647122
@@ -24640,7 +24652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454066563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.45, y: -16.91, z: -9.999992}
+  m_LocalPosition: {x: -15, y: -32.5, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25036,7 +25048,7 @@ GameObject:
   - component: {fileID: 1467879530}
   - component: {fileID: 1467879531}
   m_Layer: 0
-  m_Name: Door Controller (KidsBR to Hallway)
+  m_Name: Door Controller (greenHall from bedroom)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25069,8 +25081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 190589560}
-  x: 91.69
-  y: -17.58
+  x: 92
+  y: -17.8
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1470056028
@@ -26855,6 +26867,7 @@ GameObject:
   - component: {fileID: 1526044202}
   - component: {fileID: 1526044201}
   - component: {fileID: 1526044200}
+  - component: {fileID: 1526044203}
   m_Layer: 5
   m_Name: NewGame
   m_TagString: Untagged
@@ -26875,7 +26888,7 @@ RectTransform:
   m_Children:
   - {fileID: 518012987}
   m_Father: {fileID: 1185907510}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26975,6 +26988,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526044198}
   m_CullTransparentMesh: 0
+--- !u!210 &1526044203
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526044198}
+  m_Enabled: 1
+  m_SortingLayerID: -1195343463
+  m_SortingLayer: 12
+  m_SortingOrder: 2
 --- !u!1 &1546008261
 GameObject:
   m_ObjectHideFlags: 0
@@ -30801,7 +30825,7 @@ GameObject:
   - component: {fileID: 1687136072}
   - component: {fileID: 1687136073}
   m_Layer: 0
-  m_Name: Door Controller (Hallway to KidsBR)
+  m_Name: Door Controller (Bedroom from greenhall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30834,8 +30858,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 190589560}
-  x: 80.7
-  y: 1.62
+  x: 81
+  y: 1
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1699078300
@@ -30968,7 +30992,7 @@ GameObject:
   - component: {fileID: 1705790666}
   - component: {fileID: 1705790667}
   m_Layer: 0
-  m_Name: Door Controller (Blue Hallway to BackYard)
+  m_Name: Door Controller (Garden from Bluehall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31001,8 +31025,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1492810625}
-  x: -18.2
-  y: -33.8
+  x: -15
+  y: -32.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1706852203
@@ -31306,7 +31330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741331005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.45, y: -16.91, z: -9.999992}
+  m_LocalPosition: {x: -15, y: -32.5, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 352460535}
@@ -31815,8 +31839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1507222511}
-  x: 68.1
-  y: -17.58
+  x: -4
+  y: -17.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1776520132
@@ -33412,7 +33436,7 @@ GameObject:
   - component: {fileID: 1797845793}
   - component: {fileID: 1797845794}
   m_Layer: 0
-  m_Name: Door Controller (Blue Hallway to Kitchen)
+  m_Name: Door Controller (Kitchen blue hall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33445,8 +33469,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1267614549}
-  x: -4.3
-  y: 0.5
+  x: -4
+  y: 0
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1804679542
@@ -34708,7 +34732,7 @@ GameObject:
   - component: {fileID: 1831721246}
   - component: {fileID: 1831721247}
   m_Layer: 0
-  m_Name: Door Controller (Bedroom to Blue Hallway)
+  m_Name: Door Controller (Blue Hallway from saferoom)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34741,8 +34765,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1168359072}
-  x: 15.4
-  y: -17.9
+  x: 16
+  y: -17.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1839417971
