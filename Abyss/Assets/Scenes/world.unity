@@ -754,7 +754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76358382}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 421, y: -565, z: 0}
+  m_LocalPosition: {x: 421, y: -546, z: 0}
   m_LocalScale: {x: 31.088976, y: 31.088976, z: 0}
   m_Children: []
   m_Father: {fileID: 1076040040}
@@ -3884,7 +3884,7 @@ GameObject:
   - component: {fileID: 81781489}
   - component: {fileID: 81781490}
   m_Layer: 0
-  m_Name: Door Controller (Blue Hallway to Bedroom)
+  m_Name: Door Controller (Saferoom from bluehall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3917,8 +3917,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 576280895}
-  x: 8.72
-  y: -17.62
+  x: -29
+  y: -18
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &90662674
@@ -4124,7 +4124,7 @@ GameObject:
   - component: {fileID: 136715456}
   - component: {fileID: 136715457}
   m_Layer: 0
-  m_Name: Door Controller (Kitchen to Hallway)
+  m_Name: Door Controller (blueHall from Kitchen)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4157,8 +4157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 580894481}
-  x: 15.7
-  y: -17.7
+  x: 6
+  y: -17.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &159663210
@@ -4445,7 +4445,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4469,7 +4469,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &188195846
 GameObject:
@@ -4959,7 +4959,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4983,7 +4983,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &220800287
 GameObject:
@@ -5531,7 +5531,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5555,7 +5555,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &238818308
 GameObject:
@@ -5592,8 +5592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 567.7, y: -183.97993}
-  m_SizeDelta: {x: 41.91381, y: 2.2960508}
+  m_AnchoredPosition: {x: 567.7, y: -212.9}
+  m_SizeDelta: {x: 41.91381, y: 3.5019643}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!210 &238818310
 SortingGroup:
@@ -5618,7 +5618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 0.18431373, g: 0.1254902, b: 0.09411766, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -5737,7 +5737,7 @@ GameObject:
   - component: {fileID: 251336494}
   - component: {fileID: 251336495}
   m_Layer: 0
-  m_Name: Door Controller (Blue Hallway Stairs)
+  m_Name: Door Controller (Blue to green Hallway Stairs)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5770,8 +5770,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 2133547867}
-  x: -3.51
-  y: -17.58
+  x: 68
+  y: -17.8
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &254509604
@@ -6073,7 +6073,7 @@ RectTransform:
   - {fileID: 1981863562}
   - {fileID: 358002738}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6273,7 +6273,7 @@ RectTransform:
   - {fileID: 188300925}
   - {fileID: 1367664011}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6434,8 +6434,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.3, y: -4.4027}
-  m_SizeDelta: {x: 36.585075, y: 1.1699581}
+  m_AnchoredPosition: {x: -3.3, y: -4.89}
+  m_SizeDelta: {x: 36.585075, y: 2.146738}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!210 &321435951
 SortingGroup:
@@ -6460,7 +6460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 0.18431373, g: 0.1254902, b: 0.09411766, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -9362,7 +9362,6 @@ GameObject:
   - component: {fileID: 404469167}
   - component: {fileID: 404469166}
   - component: {fileID: 404469165}
-  - component: {fileID: 404469169}
   m_Layer: 0
   m_Name: Garden
   m_TagString: Untagged
@@ -9455,17 +9454,6 @@ RectTransform:
   m_AnchoredPosition: {x: 101.8, y: 46.1}
   m_SizeDelta: {x: 799.99994, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!210 &404469169
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404469164}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &404983397
 GameObject:
   m_ObjectHideFlags: 0
@@ -10522,7 +10510,7 @@ GameObject:
   - component: {fileID: 546528370}
   - component: {fileID: 546528371}
   m_Layer: 0
-  m_Name: Door Controller (Shed to Kitchen)
+  m_Name: Door Controller (BlueHall from shed)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10555,8 +10543,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 48456337}
-  x: 40.2
-  y: -32.5
+  x: 24
+  y: -17
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &553157496
@@ -10953,7 +10941,7 @@ GameObject:
   - component: {fileID: 576280898}
   - component: {fileID: 576280897}
   m_Layer: 5
-  m_Name: Blue Hallway to Bedroom
+  m_Name: Blue Hallway to saferoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11428,7 +11416,7 @@ Transform:
   - {fileID: 1246962014}
   - {fileID: 558466530}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &583471014
 GameObject:
@@ -11513,7 +11501,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11537,7 +11525,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585330839
 GameObject:
@@ -12149,9 +12137,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 823049637
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2056486247698834262, guid: b633311431c3bbd4dbf8339064b7ac2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12243,7 +12231,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 1454066564}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -12294,7 +12282,7 @@ RectTransform:
   - {fileID: 1359663748}
   - {fileID: 1831721246}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14087,8 +14075,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.3, y: -4.4027}
-  m_SizeDelta: {x: 36.585075, y: 1.1699581}
+  m_AnchoredPosition: {x: -3.3, y: -5.05}
+  m_SizeDelta: {x: 36.585075, y: 2.4704494}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!210 &758745088
 SortingGroup:
@@ -14113,7 +14101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 0.18431373, g: 0.1254902, b: 0.09411766, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -14150,7 +14138,7 @@ GameObject:
   - component: {fileID: 763067801}
   - component: {fileID: 763067800}
   m_Layer: 0
-  m_Name: Door Controller (Lounge to Hallway)
+  m_Name: Door Controller (greenHall from lounge)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14169,8 +14157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1455205317}
-  x: 77.19
-  y: -17.58
+  x: 77
+  y: -17.8
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!4 &763067801
@@ -14471,7 +14459,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14495,7 +14483,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &838246070
 GameObject:
@@ -14691,7 +14679,7 @@ GameObject:
   - component: {fileID: 861858907}
   - component: {fileID: 861858908}
   m_Layer: 0
-  m_Name: Door Controller (Hallway to Lounge)
+  m_Name: Door Controller (Lounge from greenhall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14724,8 +14712,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1649184240}
-  x: 67.89
-  y: -30.917
+  x: 68
+  y: -31
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &863096747
@@ -15036,7 +15024,7 @@ GameObject:
   - component: {fileID: 903300021}
   - component: {fileID: 903300020}
   m_Layer: 5
-  m_Name: kitchen_floor (2)
+  m_Name: Bedroom_floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15058,8 +15046,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 358.4, y: -190}
-  m_SizeDelta: {x: 40.05919, y: 1.9391456}
+  m_AnchoredPosition: {x: 358.4, y: -235.5}
+  m_SizeDelta: {x: 40.05919, y: 3.836957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!210 &903300020
 SortingGroup:
@@ -15084,7 +15072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 0.18431373, g: 0.1254902, b: 0.09411766, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -15871,8 +15859,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 823049637
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -18517,8 +18505,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.3, y: -4.4027}
-  m_SizeDelta: {x: 36.585075, y: 1.1699581}
+  m_AnchoredPosition: {x: -3.3, y: -5.05}
+  m_SizeDelta: {x: 36.585075, y: 2.47233}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!210 &1102655045
 SortingGroup:
@@ -18543,7 +18531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_Color: {r: 0.18431373, g: 0.1254902, b: 0.09411766, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -18649,9 +18637,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 823049637
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2056486247698834262, guid: b633311431c3bbd4dbf8339064b7ac2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18782,7 +18770,7 @@ RectTransform:
   - {fileID: 1970289974}
   - {fileID: 975666769}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -19780,7 +19768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162800535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.45, y: -16.91, z: 0.0000076293945}
+  m_LocalPosition: {x: 27, y: 1, z: 0.0000076293945}
   m_LocalScale: {x: 21.999998, y: 21.999998, z: 0.99999994}
   m_Children:
   - {fileID: 1922127970}
@@ -20108,7 +20096,7 @@ RectTransform:
   - {fileID: 1526044199}
   - {fileID: 553157497}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20364,7 +20352,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20388,7 +20376,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1245580668
 GameObject:
@@ -22200,8 +22188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.54739, y: -4.1}
-  m_SizeDelta: {x: 44.505226, y: 3}
+  m_AnchoredPosition: {x: -0.54739, y: -4.67}
+  m_SizeDelta: {x: 44.505226, y: 4.139574}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!210 &1248886080
 SortingGroup:
@@ -22226,8 +22214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.4339623, g: 0.4080337, b: 0.4080337, a: 1}
+  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_Color: {r: 0.2924528, g: 0.26118428, b: 0.26118428, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22573,7 +22561,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22597,7 +22585,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267614549
 GameObject:
@@ -22859,9 +22847,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 823049637
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2056486247698834262, guid: b633311431c3bbd4dbf8339064b7ac2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -22980,7 +22968,7 @@ GameObject:
   - component: {fileID: 1296516680}
   - component: {fileID: 1296516681}
   m_Layer: 0
-  m_Name: Door Controller (Kitchen to shed)
+  m_Name: Door Controller (Garden from kitchen)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23013,8 +23001,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1156012862}
-  x: 80.7
-  y: 1.62
+  x: 39
+  y: -32.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1304069234
@@ -23486,7 +23474,7 @@ GameObject:
   - component: {fileID: 1359663748}
   - component: {fileID: 1359663749}
   m_Layer: 0
-  m_Name: Door Controller (Shed to Green Hallway)
+  m_Name: Door Controller (Kitchen from garden)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23519,8 +23507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 48456337}
-  x: 24
-  y: -17.5
+  x: 31
+  y: 0
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1363647122
@@ -24265,7 +24253,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -24289,7 +24277,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452148776
 GameObject:
@@ -24965,7 +24953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454066563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.45, y: -16.91, z: -9.999992}
+  m_LocalPosition: {x: 27, y: 1, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25361,7 +25349,7 @@ GameObject:
   - component: {fileID: 1467879530}
   - component: {fileID: 1467879531}
   m_Layer: 0
-  m_Name: Door Controller (KidsBR to Hallway)
+  m_Name: Door Controller (greenHall from bedroom)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25394,8 +25382,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 190589560}
-  x: 91.69
-  y: -17.58
+  x: 92
+  y: -17.8
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1470056028
@@ -25874,7 +25862,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -25898,7 +25886,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1502302935
 GameObject:
@@ -30559,7 +30547,7 @@ RectTransform:
   - {fileID: 404469168}
   - {fileID: 800684850}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -31126,7 +31114,7 @@ GameObject:
   - component: {fileID: 1687136072}
   - component: {fileID: 1687136073}
   m_Layer: 0
-  m_Name: Door Controller (Hallway to KidsBR)
+  m_Name: Door Controller (Bedroom from greenhall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31158,9 +31146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 190589560}
-  x: 80.7
-  y: 1.62
+  doorButton: {fileID: 228539411}
+  x: 81
+  y: 1
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1699078300
@@ -31293,7 +31281,7 @@ GameObject:
   - component: {fileID: 1705790666}
   - component: {fileID: 1705790667}
   m_Layer: 0
-  m_Name: Door Controller (Blue Hallway to BackYard)
+  m_Name: Door Controller (Garden from Bluehall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31326,8 +31314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1492810625}
-  x: -18.2
-  y: -33.8
+  x: -15
+  y: -32.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1706852203
@@ -31545,7 +31533,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -31569,7 +31557,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1741331005
 GameObject:
@@ -31631,12 +31619,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741331005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.45, y: -16.91, z: -9.999992}
+  m_LocalPosition: {x: 27, y: 1, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 352460535}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1750044265
 GameObject:
@@ -31951,7 +31939,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -31975,7 +31963,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1774927410
 GameObject:
@@ -32140,8 +32128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1507222511}
-  x: 68.1
-  y: -17.58
+  x: -4
+  y: -17.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1776520132
@@ -33737,7 +33725,7 @@ GameObject:
   - component: {fileID: 1797845793}
   - component: {fileID: 1797845794}
   m_Layer: 0
-  m_Name: Door Controller (Blue Hallway to Kitchen)
+  m_Name: Door Controller (Kitchen blue hall)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33770,8 +33758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1267614549}
-  x: -4.3
-  y: 0.5
+  x: -4
+  y: 0
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1804679542
@@ -35033,7 +35021,7 @@ GameObject:
   - component: {fileID: 1831721246}
   - component: {fileID: 1831721247}
   m_Layer: 0
-  m_Name: Door Controller (Bedroom to Blue Hallway)
+  m_Name: Door Controller (Blue Hallway from saferoom)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35066,8 +35054,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1168359072}
-  x: 15.4
-  y: -17.9
+  x: 16
+  y: -17.5
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &1839417971
@@ -35272,7 +35260,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 823049637
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 602dbbbf3b2885f4a9dc5f4b80c923f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -35296,7 +35284,7 @@ Transform:
   m_LocalScale: {x: 0.25465778, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888786052
 GameObject:
@@ -37292,6 +37280,100 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970289973}
   m_CullTransparentMesh: 0
+--- !u!1 &1977506702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977506703}
+  - component: {fileID: 1977506705}
+  - component: {fileID: 1977506704}
+  m_Layer: 0
+  m_Name: Darkness
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1977506703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977506702}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.559998, y: -15.48, z: 0}
+  m_LocalScale: {x: 18.963932, y: 12.510657, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1977506704
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977506702}
+  m_Enabled: 1
+  m_SortingLayerID: 823049637
+  m_SortingLayer: 2
+  m_SortingOrder: -1
+--- !u!212 &1977506705
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977506702}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 823049637
+  m_SortingLayer: 2
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: e3f0a85a823b9cf4c8b191822e563331, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 7, y: 1.28}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1981863558
 GameObject:
   m_ObjectHideFlags: 0

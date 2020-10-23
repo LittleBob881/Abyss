@@ -61,7 +61,7 @@ public class MonsterMovement : MonoBehaviour
     {
         if((playerTransform.position.y <= floorPosition+0.5f && playerTransform.position.y >= floorPosition-0.5f) && (playerTransform.position.x <= wallRight && playerTransform.position.x >= wallLeft))
         {
-            chase();
+           // chase(); time out go sit in the naughty chair 
         }
         else
         {
