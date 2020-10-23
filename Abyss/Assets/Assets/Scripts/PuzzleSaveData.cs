@@ -11,7 +11,6 @@ public class PuzzleSaveData
     public PuzzleSaveData(PuzzleScript puzzle)
     {
         this.puzzleItemProgress = puzzle.GetPuzzleItemValue();
-
         this.unlocks = puzzle.GetUnlock();
     }
 }
