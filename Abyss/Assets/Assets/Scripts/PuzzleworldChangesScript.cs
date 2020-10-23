@@ -21,8 +21,6 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     void Awake()
     {
-        //book = GameObject.Find("/world/NoteBook/NoteBookImage");
-        //notebook = (NotebookScript)book.GetComponent(typeof(NotebookScript));
         PageSprites = Resources.LoadAll<Sprite>("update pages");
         NotebookSprites = Resources.LoadAll<Sprite>("Pagespage");
       
@@ -88,10 +86,6 @@ public class PuzzleworldChangesScript : MonoBehaviour
         WorldObject4.SetActive(true);
         WorldObject5.SetActive(false);
     }
-
-
-
-
 }
 
 
