@@ -19339,6 +19339,7 @@ MonoBehaviour:
   WorldObject3: {fileID: 1142234221}
   WorldObject4: {fileID: 838246070}
   WorldObject5: {fileID: 2008240547}
+  WorldObject6: {fileID: 312183992}
   book: {fileID: 1274173166}
 --- !u!114 &1151186774
 MonoBehaviour:

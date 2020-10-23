@@ -11,6 +11,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public GameObject WorldObject3;
     public GameObject WorldObject4;
     public GameObject WorldObject5;
+    public GameObject WorldObject6;
     public GameObject book;
     private Sprite[] PageSprites;
     private Sprite[] NotebookSprites;
@@ -85,6 +86,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     {
         WorldObject4.SetActive(true);
         WorldObject5.SetActive(false);
+        WorldObject6.SetActive(false);
     }
 }
 
