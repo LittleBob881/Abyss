@@ -52,14 +52,14 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     public void Effect0()
     {
-        notebook.ChangePageImage(PageSprites[0],3);
+        notebook.ChangePageImage(PageSprites[0],2);
         Debug.Log("hewwo");
     }
 
     public void Effect10()
     {
         
-        notebook.ChangePageImage(PageSprites[1], 4);
+        notebook.ChangePageImage(PageSprites[1], 3);
     }
 
     public void Effect15()
