@@ -132,7 +132,9 @@ public class NotebookScript : MonoBehaviour
     //Changes pageImage by number 
     public void ChangePageImage(Sprite image, int pageNumber)
     {
+        Debug.Log("in notebook");
         sprites[pageNumber] = image;
+        //^ think thats wrong should be editing playerNoteBook.pagesomething.
     }
 }
 
