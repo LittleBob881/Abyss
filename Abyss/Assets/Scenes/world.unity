@@ -14485,8 +14485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 1649184240}
-  x: 77
-  y: -17.8
+  x: 68
+  y: -31
   player: {fileID: 1162800535}
   walkcontroller: {fileID: 1162800536}
 --- !u!1 &863096747
@@ -19541,7 +19541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162800535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: -32.5, z: 0.0000076293945}
+  m_LocalPosition: {x: 71, y: -31, z: 0.0000076293945}
   m_LocalScale: {x: 21.999998, y: 21.999998, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 0}
@@ -24652,7 +24652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454066563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: -32.5, z: -9.999992}
+  m_LocalPosition: {x: 71, y: -31, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -30857,7 +30857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db01eb2c0c19d140a1d06c011c5768d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorButton: {fileID: 190589560}
+  doorButton: {fileID: 228539411}
   x: 81
   y: 1
   player: {fileID: 1162800535}
@@ -31330,7 +31330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741331005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: -32.5, z: -9.999992}
+  m_LocalPosition: {x: 71, y: -31, z: -9.999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 352460535}
