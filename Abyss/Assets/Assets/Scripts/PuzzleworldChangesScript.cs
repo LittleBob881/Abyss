@@ -15,7 +15,8 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public GameObject book;
     private Sprite[] PageSprites;
     private Sprite[] NotebookSprites;
-   
+    public GameObject WorldObject7;
+
 
     // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello    
 
@@ -90,6 +91,13 @@ public class PuzzleworldChangesScript : MonoBehaviour
         WorldObject5.SetActive(false);
         WorldObject6.SetActive(false);
     }
+
+    public void Effect70()
+    {
+        WorldObject7.SetActive(true);
+
+    }
+
 }
 
 

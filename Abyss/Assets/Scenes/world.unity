@@ -10711,7 +10711,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 610935261}
         m_TargetAssemblyTypeName: DeathScript, Main
-        m_MethodName: LoadSave
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19510,6 +19510,7 @@ MonoBehaviour:
   WorldObject5: {fileID: 2008240547}
   WorldObject6: {fileID: 312183992}
   book: {fileID: 1274173166}
+  WorldObject7: {fileID: 1490079325}
 --- !u!114 &1151186774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27510,7 +27511,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 610935261}
         m_TargetAssemblyTypeName: DeathScript, Main
-        m_MethodName: NewGame
+        m_MethodName: Tryagain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
