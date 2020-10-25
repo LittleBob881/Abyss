@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 20813632}
   m_Layer: 0
   m_Name: child_sheet1_0
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14180,9 +14180,10 @@ GameObject:
   m_Component:
   - component: {fileID: 729234395}
   - component: {fileID: 729234394}
+  - component: {fileID: 729234396}
   m_Layer: 0
   m_Name: mirror
-  m_TagString: Untagged
+  m_TagString: LoadingPlace
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14252,6 +14253,32 @@ Transform:
   m_Father: {fileID: 800684850}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &729234396
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729234393}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.35, y: 0.9}
+    newSize: {x: 0.35, y: 0.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35, y: 0.9}
+  m_EdgeRadius: 0
 --- !u!1 &758745086
 GameObject:
   m_ObjectHideFlags: 0
@@ -19643,6 +19670,7 @@ MonoBehaviour:
   WorldObject6: {fileID: 312183992}
   book: {fileID: 1274173166}
   WorldObject7: {fileID: 1490079325}
+  MonsterMovement: {fileID: 0}
 --- !u!114 &1151186774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19876,6 +19904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathScript: {fileID: 610935261}
+  respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!82 &1162800537
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19888,7 +19917,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2694902cfd9fc489183d91d16ae917ba, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.472
   m_Pitch: 1
   Loop: 1
   Mute: 0
