@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     {
         //When the start button is tapped, the game will load with scenemanager
         Debug.Log("Game Started");
-        //This code will load scene number 1
+        //This code will load scene number 1 by adding 1 to current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

@@ -9,23 +9,31 @@ namespace Tests
 {
     public class FlipTest
     {
+        int xScale = 22;
+        bool facingRight = true;
+        int faceLeft = -22;
         // A Test behaves as an ordinary method
         [Test]
         public void FlipTestSimplePasses()
         {
-            // Use the Assert class to test conditions
-            var flip = new Flip();
-            var hori = 22;
-            var faceLeft = -22;
 
-            
-            //Action
-            flip.flipCharacter(hori);
+            //ACT
+            facingRight = false;
 
+            //ARRANGE
+
+            if (facingRight == true)
+            {
+                xScale *= 1;
+            }
+
+            if (facingRight == false)
+            {
+                xScale *= -1;
+            }
 
             //Assert
-            // Assert.That(flip.getScale(), Is.EqualTo(faceLeft));
-            flip.getScale();
+            Assert.That(xScale, Is.EqualTo(faceLeft));
 
         }
     }
