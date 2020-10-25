@@ -16,6 +16,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     private Sprite[] PageSprites;
     private Sprite[] NotebookSprites;
     public GameObject WorldObject7;
+    public MonsterMovement MonsterMovement;
 
 
     // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello    
@@ -94,8 +95,8 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     public void Effect70()
     {
+        MonsterMovement.StopMonster();
         WorldObject7.SetActive(true);
-
     }
 
 }
