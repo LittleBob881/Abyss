@@ -14,7 +14,9 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public GameObject book;
     private Sprite[] PageSprites;
     private Sprite[] NotebookSprites;
-   
+    public GameObject WorldObject7;
+    public MonsterMovement MonsterMovement;
+
 
     // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello    
 
@@ -47,6 +49,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
         WorldObject5.SetActive(true);
 
         notebook.ChangePageImage(Resources.Load<Sprite>("dogPage"), 9);
+        WorldObject7.SetActive(false); 
 
     }
 
@@ -88,10 +91,19 @@ public class PuzzleworldChangesScript : MonoBehaviour
         WorldObject4.SetActive(true);
         WorldObject5.SetActive(false);
     }
+<<<<<<< Updated upstream
 
 
 
 
+=======
+    public void Effect70()
+    {
+        MonsterMovement.StopMonster();
+        WorldObject7.SetActive(true);
+
+    }
+>>>>>>> Stashed changes
 }
 
 

@@ -46,7 +46,7 @@ public class MonsterMovement : MonoBehaviour
         monsterTransform = monster.transform;
     }
 
-    private void LoadMonsterPosition()
+    public void LoadMonsterPosition()
     {
         wallLeft = 65f;
         wallRight = 100f;
@@ -54,6 +54,7 @@ public class MonsterMovement : MonoBehaviour
         direction = DIRECTION_CONST;
         door1Position = 67.5f;
         floorPosition = -30.82f;
+        //playerAlive = true;
     }
 
     // Update is called once per frame
@@ -61,7 +62,11 @@ public class MonsterMovement : MonoBehaviour
     {
         if((playerTransform.position.y <= floorPosition+1f && playerTransform.position.y >= floorPosition-1f) && (playerTransform.position.x <= wallRight && playerTransform.position.x >= wallLeft))
         {
+<<<<<<< Updated upstream
             //chase(); 
+=======
+            chase(); 
+>>>>>>> Stashed changes
         }
         else
         {
@@ -194,5 +199,12 @@ public class MonsterMovement : MonoBehaviour
             wallRight = 96.3f;
             door2Position = 77f;
         }
+    }
+
+
+    //set player to dead so monster doent kill him when game ended
+    public void StopMonster()
+    {
+        playerAlive = false;
     }
 }
