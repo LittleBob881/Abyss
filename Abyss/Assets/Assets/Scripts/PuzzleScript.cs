@@ -14,6 +14,8 @@ public class PuzzleScript : MonoBehaviour
     private PuzzleItemCompareIndex PICIndex;
     public inventoryScript InventoryScript;
     public PuzzleworldChangesScript changesScript;
+    public MenuLoadscript MainMenu;
+    
 
 
     // enum varibles  
@@ -55,20 +57,8 @@ public class PuzzleScript : MonoBehaviour
     public static int KUOP = 12;
 
     // Awake is called when the script is first being loaded 
+    // first intualises all the variables
     void Awake()
-    {
-        NewGame();
-    }
-
-    // is called before update()
-    void Start()
-    {
-        
-    }
-
-
-    // sets all unlocks to false
-    public void NewGame()
     {
         PuzzleItemProgress = 0;
         PICIndex = new PuzzleItemCompareIndex();
@@ -86,7 +76,38 @@ public class PuzzleScript : MonoBehaviour
         Unlocks[HUOT] = false;
         Unlocks[DK] = false;
         Unlocks[KUOP] = false;
-        
+    }
+
+    // is called before update()
+    void Start()
+    {
+        if(MainMenu.loadContinue)
+        {
+            LoadPuzzleSave();
+        }
+    }
+
+    // sets puzzle progress to 0
+    // sets all unlocks to false
+    // resets all the changes to world scene
+    public void NewGame()
+    {
+        PuzzleItemProgress = 0;
+        Unlocks[TAP] = false;
+        Unlocks[OAP] = false;
+        Unlocks[PC] = false;
+        Unlocks[CUOM] = false;
+        Unlocks[PUOM] = false;
+        Unlocks[MK] = false;
+        Unlocks[PUOP] = false;
+        Unlocks[CUOC] = false;
+        Unlocks[CHC] = false;
+        Unlocks[BUOD] = false;
+        Unlocks[HUOT] = false;
+        Unlocks[DK] = false;
+        Unlocks[KUOP] = false;
+        changesScript.LoadNewGame();
+
     }
 
     public void TestLoadPuzzleSave()
@@ -107,9 +128,11 @@ public class PuzzleScript : MonoBehaviour
         Unlocks[DK] = false;
         Unlocks[KUOP] = false;
         PuzzleItemProgression();
+
     }
     public void LoadPuzzleSave()
     {
+        
         //call load here?
         // add in PuzzleItemProgress = save;
         // add in Unlocks[] = saveUnlocks[];

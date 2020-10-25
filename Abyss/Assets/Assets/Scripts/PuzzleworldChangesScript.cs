@@ -11,6 +11,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public GameObject WorldObject3;
     public GameObject WorldObject4;
     public GameObject WorldObject5;
+    public GameObject WorldObject6;
     public GameObject book;
     private Sprite[] PageSprites;
     private Sprite[] NotebookSprites;
@@ -21,23 +22,23 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     void Awake()
     {
-        //book = GameObject.Find("/world/NoteBook/NoteBookImage");
-        //notebook = (NotebookScript)book.GetComponent(typeof(NotebookScript));
         PageSprites = Resources.LoadAll<Sprite>("update pages");
         NotebookSprites = Resources.LoadAll<Sprite>("Pagespage");
-      
-        LoadNewGame();
 
     }
 
+    private void Start()
+    {
+        LoadNewGame();
+    }
+
     //undo all changes for new new game and hides game objects that need to be hidden 
-    private void LoadNewGame()
+    public void LoadNewGame()
     {
        
         Debug.Log("load new game started");
         
         notebook.ChangePageImage(NotebookSprites[3], 3);
-        
         notebook.ChangePageImage(NotebookSprites[4], 4);
         WorldObject2.gameObject.SetActive(false);
         WorldObject3.gameObject.SetActive(false);
@@ -45,21 +46,21 @@ public class PuzzleworldChangesScript : MonoBehaviour
         WorldObject1.SetActive(true);
         Sprite ObjectChange = WorldObject1.GetComponent<Sprite>();
         WorldObject5.SetActive(true);
-
+        WorldObject6.SetActive(true);
         notebook.ChangePageImage(Resources.Load<Sprite>("dogPage"), 9);
 
     }
 
     public void Effect0()
     {
-        notebook.ChangePageImage(PageSprites[0],3);
+        notebook.ChangePageImage(PageSprites[0],2);
         Debug.Log("hewwo");
     }
 
     public void Effect10()
     {
         
-        notebook.ChangePageImage(PageSprites[1], 4);
+        notebook.ChangePageImage(PageSprites[1], 3);
     }
 
     public void Effect15()
@@ -87,11 +88,8 @@ public class PuzzleworldChangesScript : MonoBehaviour
     {
         WorldObject4.SetActive(true);
         WorldObject5.SetActive(false);
+        WorldObject6.SetActive(false);
     }
-
-
-
-
 }
 
 

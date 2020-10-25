@@ -133,8 +133,7 @@ public class NotebookScript : MonoBehaviour
     public void ChangePageImage(Sprite image, int pageNumber)
     {
         Debug.Log("in notebook");
-        sprites[pageNumber] = image;
-        //^ think thats wrong should be editing playerNoteBook.pagesomething.
+        playerNoteBook.updatePage(image, pageNumber);
     }
 }
 
@@ -158,6 +157,11 @@ public class noteBookPage
     public Sprite getPage()
     {
         return this.page;
+    }
+
+    public void setPage(Sprite page)
+    {
+        this.page = page;
     }
 
     public int getPageNum()
@@ -279,5 +283,10 @@ public class NoteBook
     public noteBookPage getPage(int pageNum)
     {
         return pages[pageNum];
+    }
+
+    public void updatePage(Sprite page, int pageNum)
+    {
+        pages[pageNum].setPage(page);
     }
 }

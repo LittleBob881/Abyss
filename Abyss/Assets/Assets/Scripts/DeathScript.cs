@@ -33,9 +33,9 @@ public class DeathScript : MonoBehaviour
 
     public void LoadSave()
     {
-        PuzzleScript.NewGame();
+        NewGame();
         PuzzleScript.TestLoadPuzzleSave();
-        DeathMenu.gameObject.SetActive(false);
+        
     }
 
     public void NewGame()
@@ -44,5 +44,6 @@ public class DeathScript : MonoBehaviour
         DeathMenu.gameObject.SetActive(false);
         //reset player
         // reset monster
+        
     }
 }
