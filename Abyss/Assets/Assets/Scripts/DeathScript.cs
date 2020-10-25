@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DeathScript : MonoBehaviour
 {
@@ -9,7 +8,6 @@ public class DeathScript : MonoBehaviour
     public GameObject DeathMenu;
     public GameObject Deathtext;
     public PuzzleScript PuzzleScript;
-    public MonsterMovement MonsterMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -42,18 +40,9 @@ public class DeathScript : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-        MonsterMovement.LoadMonsterPosition();
         PuzzleScript.NewGame();
         DeathMenu.gameObject.SetActive(false);
         //reset player
-<<<<<<< Updated upstream
         // reset monster
-=======
-        
-
-
->>>>>>> Stashed changes
     }
 }
