@@ -54,6 +54,7 @@ public class MonsterMovement : MonoBehaviour
         direction = DIRECTION_CONST;
         door1Position = 67.5f;
         floorPosition = -30.82f;
+        //playerAlive = true;
     }
 
     // Update is called once per frame
@@ -61,7 +62,7 @@ public class MonsterMovement : MonoBehaviour
     {
         if((playerTransform.position.y <= floorPosition+0.5f && playerTransform.position.y >= floorPosition-0.5f) && (playerTransform.position.x <= wallRight && playerTransform.position.x >= wallLeft))
         {
-           // chase(); time out go sit in the naughty chair 
+           chase();
         }
         else
         {
@@ -194,5 +195,11 @@ public class MonsterMovement : MonoBehaviour
             wallRight = 96.3f;
             door2Position = 77f;
         }
+    }
+
+    // stop monster from killing player in end game menu
+    public void StopMonster()
+    {
+        playerAlive = false;
     }
 }

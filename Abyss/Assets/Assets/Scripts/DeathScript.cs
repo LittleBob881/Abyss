@@ -31,10 +31,11 @@ public class DeathScript : MonoBehaviour
 
 
 
-    public void LoadSave()
+    public void Tryagain()
     {
         NewGame();
-        PuzzleScript.TestLoadPuzzleSave();
+        
+        PuzzleScript.Tryagain();
         
     }
 
@@ -45,5 +46,11 @@ public class DeathScript : MonoBehaviour
         //reset player
         // reset monster
         
+    }
+
+    public void Quit()
+    {
+        // change back to menuScene
+
     }
 }

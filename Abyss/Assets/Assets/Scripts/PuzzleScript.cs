@@ -110,24 +110,14 @@ public class PuzzleScript : MonoBehaviour
 
     }
 
-    public void TestLoadPuzzleSave()
+    //resets the world and if there is save data load the save
+    public void Tryagain()
     {
-        
-        PuzzleItemProgress = 0;
-        Unlocks[TAP] = true;
-        Unlocks[OAP] = true;
-        Unlocks[PC] = true;
-        Unlocks[CUOM] = true;
-        Unlocks[PUOM] = true;
-        Unlocks[MK] = true;
-        Unlocks[PUOP] = false;
-        Unlocks[CUOC] = false;
-        Unlocks[CHC] = false;
-        Unlocks[BUOD] = false;
-        Unlocks[HUOT] = false;
-        Unlocks[DK] = false;
-        Unlocks[KUOP] = false;
-        PuzzleItemProgression();
+        NewGame();
+
+        //if there is save data 
+        // LoadPuzzleSave();
+
 
     }
     public void LoadPuzzleSave()
@@ -313,6 +303,10 @@ public class PuzzleScript : MonoBehaviour
 
             PuzzleItemProgress = 70;
             changesScript.Effect60();
+        }
+        if (PuzzleItemProgress == 70)
+        {
+            changesScript.Effect70();
         }
     }
 
