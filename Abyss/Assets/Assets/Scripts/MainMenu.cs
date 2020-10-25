@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     private AudioSource MainMenuSound;
-    private bool loadContinue = false;
+    public MenuLoadscript loadContinue;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     public void ContiuneGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        loadContinue = true;
+        loadContinue.loadContinue = true;
     }
 
     public void QuitGame()
@@ -34,8 +34,5 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public bool getLoadContinue()
-    {
-        return loadContinue;
-    }
+
 }

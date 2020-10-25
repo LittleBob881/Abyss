@@ -25,18 +25,17 @@ public class PuzzleworldChangesScript : MonoBehaviour
         PageSprites = Resources.LoadAll<Sprite>("update pages");
         NotebookSprites = Resources.LoadAll<Sprite>("Pagespage");
       
-        LoadNewGame();
+        //LoadNewGame();
 
     }
 
     //undo all changes for new new game and hides game objects that need to be hidden 
-    private void LoadNewGame()
+    public void LoadNewGame()
     {
        
         Debug.Log("load new game started");
         
         notebook.ChangePageImage(NotebookSprites[3], 3);
-        
         notebook.ChangePageImage(NotebookSprites[4], 4);
         WorldObject2.gameObject.SetActive(false);
         WorldObject3.gameObject.SetActive(false);
@@ -44,7 +43,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
         WorldObject1.SetActive(true);
         Sprite ObjectChange = WorldObject1.GetComponent<Sprite>();
         WorldObject5.SetActive(true);
-
+        WorldObject6.SetActive(true);
         notebook.ChangePageImage(Resources.Load<Sprite>("dogPage"), 9);
 
     }
