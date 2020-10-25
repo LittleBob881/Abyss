@@ -49,7 +49,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
         WorldObject5.SetActive(true);
         WorldObject6.SetActive(true);
         notebook.ChangePageImage(Resources.Load<Sprite>("dogPage"), 9);
-
+        WorldObject7.SetActive(false);
     }
 
     public void Effect0()

@@ -304,6 +304,10 @@ public class PuzzleScript : MonoBehaviour
             PuzzleItemProgress = 70;
             changesScript.Effect60();
         }
+        if (PuzzleItemProgress == 70)
+        {
+            changesScript.Effect70();
+        }
     }
 
 
