@@ -15,7 +15,6 @@ public class Walk : MonoBehaviour
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-       // audioSrc = GetComponent<AudioSource>();
         speed = 5f;
     }
 

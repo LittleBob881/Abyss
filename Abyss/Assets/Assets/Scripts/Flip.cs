@@ -9,6 +9,7 @@ public class Flip : MonoBehaviour
 
     private void Start()
     {
+        horizontal = 1;
         facingRight = true;
     }
 
