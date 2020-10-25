@@ -13,6 +13,7 @@ public class FurnitureScript : MonoBehaviour
     private PuzzleScript.PuzzleRefeanceItems list;
     public GameObject speechbox;
     public PuzzleScript PuzzleScript;
+    private int PuzzleProgressNeedForSaveChecker;
 
     void Awake()
     {
@@ -21,9 +22,10 @@ public class FurnitureScript : MonoBehaviour
         list = new PuzzleScript.PuzzleRefeanceItems();
         CreateButtons();
         AddRoomItems();
+        PuzzleProgressNeedForSaveChecker = 0;
     }
 
-
+    // please refuer to RoomItem.doc on Google drive or Trello 
     // action when roomItem button pressed
     // num = item number
     // calls room item action
@@ -105,10 +107,10 @@ public class FurnitureScript : MonoBehaviour
         RoomItemAction(num);
     }
 
+    //Mirror 
     private void OnClick13()
     {
-        int num = 13;
-        RoomItemAction(num);
+        MirrorAction();
     }
 
     private void OnClick14()
@@ -272,6 +274,28 @@ public class FurnitureScript : MonoBehaviour
         Text speech = speechbox.GetComponent<Text>();
         speech.text = ItemActionString;
 
+    }
+
+    // save fuction for mirror 
+    void MirrorAction()
+    {
+        String MirrorActionString= " ";
+        if (PuzzleScript.GetPuzzleItemValue() != PuzzleProgressNeedForSaveChecker )
+        {
+            // save data 
+
+            MirrorActionString = "Progress saved";
+            PuzzleProgressNeedForSaveChecker = PuzzleScript.GetPuzzleItemValue();
+        }
+        else
+        {
+            MirrorActionString = "Looks like I can save my Progress here";
+        }
+
+
+
+        Text speech = speechbox.GetComponent<Text>();
+        speech.text = MirrorActionString;
     }
 
     //create all 27 roomitems and fills with data

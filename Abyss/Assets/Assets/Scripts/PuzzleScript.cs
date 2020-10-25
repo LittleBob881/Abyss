@@ -14,6 +14,8 @@ public class PuzzleScript : MonoBehaviour
     private PuzzleItemCompareIndex PICIndex;
     public inventoryScript InventoryScript;
     public PuzzleworldChangesScript changesScript;
+    public MainMenu MainMenu;
+    
 
 
     // enum varibles  
@@ -63,7 +65,10 @@ public class PuzzleScript : MonoBehaviour
     // is called before update()
     void Start()
     {
-        
+        if(MainMenu.getLoadContinue())
+        {
+            LoadPuzzleSave();
+        }
     }
 
 
@@ -110,6 +115,7 @@ public class PuzzleScript : MonoBehaviour
     }
     public void LoadPuzzleSave()
     {
+
         //call load here?
         // add in PuzzleItemProgress = save;
         // add in Unlocks[] = saveUnlocks[];
