@@ -76,6 +76,7 @@ public class PuzzleScript : MonoBehaviour
         Unlocks[HUOT] = false;
         Unlocks[DK] = false;
         Unlocks[KUOP] = false;
+        changesScript.LoadNewGame();
     }
 
     // is called before update()
