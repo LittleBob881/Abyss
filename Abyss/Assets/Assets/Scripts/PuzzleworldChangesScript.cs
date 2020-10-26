@@ -26,13 +26,8 @@ public class PuzzleworldChangesScript : MonoBehaviour
     {
         PageSprites = Resources.LoadAll<Sprite>("update pages");
         NotebookSprites = Resources.LoadAll<Sprite>("Pagespage");
-
     }
 
-    private void Start()
-    {
-        LoadNewGame();
-    }
 
     //undo all changes for new new game and hides game objects that need to be hidden 
     public void LoadNewGame()
