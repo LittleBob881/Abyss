@@ -39,19 +39,26 @@ public class DeathScript : MonoBehaviour
     public void Tryagain()
     {
         NewGame();
-        
+
         PuzzleScript.Tryagain();
-        
+        DeathMenu.gameObject.SetActive(false);
+        player.gameObject.SetActive(true);
+        player.transform.position = new Vector3(playerWalk.respawnPoint.x, playerWalk.respawnPoint.y);
+
     }
 
+
+    // resets the puzzles 
+    // hides the death menu
+    // reset the player
+    // 
     public void NewGame()
     {
         PuzzleScript.Tryagain();
         DeathMenu.gameObject.SetActive(false);
         player.gameObject.SetActive(true);
-        // player.alive = true;
         player.transform.position = new Vector3(playerWalk.respawnPoint.x, playerWalk.respawnPoint.y);
-        Monster.StopMonster();
+        Monster.ResetMonster();
         
     }
 

@@ -39,21 +39,22 @@ public class MonsterMovement : MonoBehaviour
         LOCAL_SCALE_CONST = localScale.x;
         monster = GetComponent<Rigidbody2D>();
 
-        LoadMonsterPosition();
-
-        player = GameObject.Find("Player");
-        playerTransform = player.transform;
-        monsterTransform = monster.transform;
-    }
-
-    private void LoadMonsterPosition()
-    {
         wallLeft = 65f;
         wallRight = 100f;
         movement = walkingSpeed;
         direction = DIRECTION_CONST;
         door1Position = 67.5f;
         floorPosition = -30.82f;
+
+        ResetMonster();
+
+        player = GameObject.Find("Player");
+        playerTransform = player.transform;
+        monsterTransform = monster.transform;
+    }
+
+    public void ResetMonster()
+    {
         playerAlive = true;
     }
 

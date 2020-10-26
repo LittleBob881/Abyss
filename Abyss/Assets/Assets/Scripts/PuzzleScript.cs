@@ -144,9 +144,12 @@ public class PuzzleScript : MonoBehaviour
     {
         NewGame();
 
-        //if there is save data 
-        // LoadPuzzleSave();
+        if (SavePuzzleData.LoadPuzzleData() != null)
+        {
 
+
+            LoadPuzzleSave();
+        }
 
     }
 
