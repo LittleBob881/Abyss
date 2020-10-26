@@ -154,7 +154,7 @@ public class PuzzleScript : MonoBehaviour
     public void LoadPuzzleSave()
     {
         PuzzleSaveData saveData = SavePuzzleData.LoadPuzzleData();
-        PuzzleItemProgress = saveData.puzzleItemProgress;
+        //PuzzleItemProgress = saveData.puzzleItemProgress;
         Unlocks = saveData.unlocks;
         PuzzleItemProgression();
     }
