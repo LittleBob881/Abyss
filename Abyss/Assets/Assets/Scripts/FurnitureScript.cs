@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class FurnitureScript : MonoBehaviour
 {
-
     public Button[] Unitybutton;
     private RoomItem[] roomitems;
     public inventoryScript invenScript;
@@ -16,9 +15,7 @@ public class FurnitureScript : MonoBehaviour
     private int PuzzleProgressNeedForSaveChecker;
 
     void Awake()
-    {
-        Debug.Log("Start fruriture script");
-        
+    {      
         list = new PuzzleScript.PuzzleRefeanceItems();
         CreateButtons();
         AddRoomItems();
@@ -199,8 +196,6 @@ public class FurnitureScript : MonoBehaviour
     // if there is an item to pick up then the item is placed in the inventory and the speech box is updated to say what item was picked up. 
     public void RoomItemAction(int RoomItemID)
     {
-        Debug.Log("starting room item action ");
-
         if (invenScript.GetPlayerInventory().getActiveItemID() != 0)
         {
             UseActiveItem(RoomItemID, invenScript.GetPlayerInventory().getActiveItemID());
@@ -211,7 +206,6 @@ public class FurnitureScript : MonoBehaviour
 
             PickupItemCheck(RoomItemID);
         }
-
     }
 
 
@@ -231,7 +225,6 @@ public class FurnitureScript : MonoBehaviour
                     AddItemSpeech(RoomItemID);
                 }
             }
-
         }
     }
 
@@ -245,13 +238,12 @@ public class FurnitureScript : MonoBehaviour
     }
 
     // sets the speech box to the a string that says the player picked up name of item. 
-        public void AddItemSpeech(int RoomItemID)
+    public void AddItemSpeech(int RoomItemID)
     {
         Text speech = speechbox.GetComponent<Text>();
         String strings = "Picked up " + list.GetPuzzleInventory().getInventorySlot(roomitems[RoomItemID].GetItem()).getName();
         speech.text = strings;
     }
-
 
     // itemUsed checks if the right item is being added to the right room object
     // if it is the wrong item then sets the speech box to the a string that says that item name doesnt go here.
@@ -273,26 +265,22 @@ public class FurnitureScript : MonoBehaviour
 
         Text speech = speechbox.GetComponent<Text>();
         speech.text = ItemActionString;
-
     }
 
     // save fuction for mirror 
     void MirrorAction()
     {
         String MirrorActionString= " ";
+
         if (PuzzleScript.GetPuzzleItemValue() != PuzzleProgressNeedForSaveChecker )
         {
             SavePuzzleData.SavePuzzle(PuzzleScript);
-
-            MirrorActionString = "Progress saved";
             PuzzleProgressNeedForSaveChecker = PuzzleScript.GetPuzzleItemValue();
         }
         else
         {
             MirrorActionString = "Looks like I can save my Progress here";
         }
-
-
 
         Text speech = speechbox.GetComponent<Text>();
         speech.text = MirrorActionString;
@@ -324,12 +312,11 @@ public class FurnitureScript : MonoBehaviour
         string[] Strings19 = { "Its an old tree" };
         string[] Strings20 = { "I don’t see a dog" };
         string[] Strings21 = { "A box of old tools and junk" };
-        string[] Strings22 = { "Its is displaying random junk " };
+        string[] Strings22 = { "It is displaying random junk " };
         string[] Strings23 = { "Ugh exercise " };
         string[] Strings24 = { "It’s a tv, it doesn’t seem to work though." };
         string[] Strings25 = { "It looks soft to sit on. " };
         string[] Strings26 = { "It looks like I could hide here" };
-
 
         roomitems[0] = new RoomItem("Kitchen", "Highchair", Strings0, 0, 0);
         roomitems[1] = new RoomItem("Kitchen", "Table", Strings1, 0, 0);
@@ -362,9 +349,7 @@ public class FurnitureScript : MonoBehaviour
         roomitems[24] = (new RoomItem("Kitchen", "Tv", Strings24, 10, 0));
 
         roomitems[25] = new RoomItem("Kitchen", "Couch", Strings25, 2, 0);
-        roomitems[26] = new RoomItem("Kitchen", "Closet", Strings26, 0, 0);
-        
-        
+        roomitems[26] = new RoomItem("Kitchen", "Closet", Strings26, 0, 0);  
     }
 
     // adds all buttions with an action listener that call a unique fuction. 
@@ -474,14 +459,10 @@ public class FurnitureScript : MonoBehaviour
             this.dialogNumber = 0;
         }
 
-
-
         public String GetName()
         {
             return name;
-
         }
-
 
         //returns output as a string
         public String GetOutput()
@@ -490,28 +471,24 @@ public class FurnitureScript : MonoBehaviour
         }
 
         // sets output from the diaglog list. int chooses which dialog is used.
-
         public void SetOutput(int num)
         {
             this.output = dialog[num];
         }
 
-
-        // returns item (not sure how this will work with the item getting.)
+        // returns item 
         public int GetItem()
         {
             return item;
-
         }
 
-        // returns item (not sure how this will work with the page getting.)
+        // returns item. To be used when later compoents added
         public int GetPage()
         {
             return page;
-
         }
 
-        // sets the Dialog number. 
+        // sets the Dialog number. To be used when later compoents added
         public void SetDialogNum(int num)
         {
             this.dialogNumber = num;

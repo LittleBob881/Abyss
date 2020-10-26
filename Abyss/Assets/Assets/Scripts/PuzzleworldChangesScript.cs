@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PuzzleworldChangesScript : MonoBehaviour
 {
+    // all refence and names are in code please refer to Puzzles file on the Abyss google share drive or Abyss trello    
     public NotebookScript notebook;
     public GameObject WorldObject1;
     public GameObject WorldObject2;
@@ -16,11 +17,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     private Sprite[] PageSprites;
     private Sprite[] NotebookSprites;
     public GameObject WorldObject7;
-    public MonsterMovement MonsterMovement;
-
-
-    // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello    
-
+    public MonsterMovement MonsterMovement;  
 
     void Awake()
     {
@@ -29,12 +26,9 @@ public class PuzzleworldChangesScript : MonoBehaviour
     }
 
 
-    //undo all changes for new new game and hides game objects that need to be hidden 
+    //undo all changes for new game and hides game objects that need to be hidden 
     public void LoadNewGame()
     {
-       
-
-        
         notebook.ChangePageImage(NotebookSprites[3], 3);
         notebook.ChangePageImage(NotebookSprites[4], 4);
         WorldObject2.gameObject.SetActive(false);
@@ -57,7 +51,6 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     public void Effect10()
     {
-        
         notebook.ChangePageImage(PageSprites[1], 3);
     }
 
@@ -94,7 +87,6 @@ public class PuzzleworldChangesScript : MonoBehaviour
         MonsterMovement.StopMonster();
         WorldObject7.SetActive(true);
     }
-
 }
 
 

@@ -28,13 +28,10 @@ public class MainMenu : MonoBehaviour
     {
         load.setLoadcontuie(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
-
-
 }

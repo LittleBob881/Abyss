@@ -13,29 +13,26 @@ public class inventoryScript : MonoBehaviour
     public GameObject IOpenButton;
     public GameObject[] Slot;
 
-
-
     public GameObject view;
     static public Sprite[] sprites;
     static public inventoryItem Empty;
 
-
     void Start()
     {
+        //loads the sprites for the inventory
         sprites = Resources.LoadAll<Sprite>("Itemsheet_6");
         alist = new PuzzleScript.PuzzleRefeanceItems();
         CreateNewGame();
-
+        
+        // conects the buttons with the right function.
         Button openBtu = IOpenButton.GetComponent<Button>();
         openBtu.onClick.AddListener(OpenInvetory);
-
 
         Button exitBtu = IExitButton.GetComponent<Button>();
         exitBtu.onClick.AddListener(CloseInventory);
 
         Button Slot0L = Slot[0].GetComponent<Button>();
         Slot0L.onClick.AddListener(slot0OnClick);
-
         Button Slot1L = Slot[1].GetComponent<Button>();
         Slot1L.onClick.AddListener(slot1OnClick);
         Button Slot2L = Slot[2].GetComponent<Button>();
@@ -63,76 +60,56 @@ public class inventoryScript : MonoBehaviour
         view.gameObject.SetActive(false);
     }
 
-
- 
-
+    //from slot0OnClick to slot11OnClick:
     // num == what slot is clicked.
     // calls SlotButtonAction.
-
     private void slot0OnClick()
     {
         int num = 0;
         SlotButtonAction(num);
     }
 
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
     private void slot1OnClick()
     {
         int num = 1;
         SlotButtonAction(num);
     }
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
 
     private void slot2OnClick()
     {
         int num = 2;
         SlotButtonAction(num);
     }
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
 
     private void slot3OnClick()
     {
         int num = 3;
         SlotButtonAction(num);
     }
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
 
     private void slot4OnClick()
     {
         int num = 4;
         SlotButtonAction(num);
     }
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
 
     private void slot5OnClick()
     {
         int num = 5;
         SlotButtonAction(num);
     }
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
 
     private void slot6OnClick()
     {
         int num = 6;
         SlotButtonAction(num);
     }
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
-
+ 
     private void slot7OnClick()
     {
         int num = 7;
         SlotButtonAction(num);
     }
-
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
 
     private void slot8OnClick()
     {
@@ -140,26 +117,17 @@ public class inventoryScript : MonoBehaviour
         SlotButtonAction(num);
     }
 
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
-
     private void slot9OnClick()
     {
         int num = 9;
         SlotButtonAction(num);
     }
 
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
-
     private void slot10OnClick()
     {
         int num = 10;
         SlotButtonAction(num);
     }
-
-    // num == what slot is clicked.
-    // calls SlotButtonAction.
 
     private void slot11OnClick()
     {
@@ -201,7 +169,6 @@ public class inventoryScript : MonoBehaviour
     // sets item of old active not active.
     // sets the new active item to the item thats in the slot that was pressed
     // sets new active item to active 
-
     private void updateactiveitem(int slot)
     {
         if (playerInventory.getActiveItemID() != 0)
@@ -214,7 +181,6 @@ public class inventoryScript : MonoBehaviour
         playerInventory.getInventorySlot(slot).setActive(true);
 
     }
-
 
     public Inventory GetPlayerInventory()
     {
@@ -239,7 +205,6 @@ public class inventoryScript : MonoBehaviour
             Button Slots = Slot[a].GetComponent<Button>();
             Slots.image.sprite = playerInventory.getInventorySlot(a).getImage();
         }
-        
         if (playerInventory.getActiveItemID() != 0)
         {
            
@@ -251,10 +216,9 @@ public class inventoryScript : MonoBehaviour
                     Slots.image.sprite = playerInventory.getActiveItemActiveimage();
                 }
             }
-
         } 
-            view.gameObject.SetActive(true);
 
+        view.gameObject.SetActive(true);
     }
 
     //sets the inventory to empty
@@ -285,10 +249,7 @@ public class inventoryScript : MonoBehaviour
                 playerInventory.RemoveInventoryItem(k);
             }
         }
-
-       
     }
-
 
 
     public class inventoryItem
@@ -299,15 +260,12 @@ public class inventoryScript : MonoBehaviour
         private int id;
         private Boolean active; 
 
-
         public inventoryItem(String name,int id, Sprite image, Sprite active)
         {
             this.name = name;
             this.id = id;
             this.image = image;
             this.activeImage = active;
-
-
         }
 
         public String getName()
@@ -347,7 +305,7 @@ public class inventoryScript : MonoBehaviour
         private inventoryItem activeItem;
         private inventoryItem empty;
 
-        //for Initializing iventory class when loading a save file
+        //for Initializing iventory class when creating player inventory 
         public Inventory(List<inventoryItem> slots)
         {
             this.inventorySlots = slots;
@@ -355,7 +313,7 @@ public class inventoryScript : MonoBehaviour
             this.activeItem = this.empty;
         }
 
-        //for Initializing iventory class when creating a new game.
+        //for Initializing iventory class when creating a puzzle PuzzleRefeanceItems.
         public Inventory()
         {
             inventorySlots = new List<inventoryItem>();
@@ -363,15 +321,11 @@ public class inventoryScript : MonoBehaviour
             this.activeItem = this.empty;
         }
 
-     
-
         //gets an iventory item at the slot location given to the method
         public inventoryItem getInventorySlot(int slot)
         {
-            
             return inventorySlots[slot];
         }
-
 
         // creates a new list without the item that needs to be removed. 
         //The items that were behind the removed item is moved up a slot.
@@ -412,6 +366,7 @@ public class inventoryScript : MonoBehaviour
                     return k;
                 }
             }
+
             return toreturn;
         }
 
@@ -486,7 +441,6 @@ public class inventoryScript : MonoBehaviour
             return toreturn;
         }
 
-
         // false = item was not picked up
         // 1 checks if the item picking is already in inventory if it is then check is true. if it is not then false. 
         // 2 finds the first empty slot
@@ -494,7 +448,6 @@ public class inventoryScript : MonoBehaviour
         //sets first empty slot (from step 2) in playerInventory with the item from puzzleInventory 
         //  with the item id that was given into this meathord. 
         // returns true if the item was added to the playerInventory. 
-
         public Boolean PickupItem(inventoryItem aItem)
         {
             int newSlot;
@@ -513,20 +466,15 @@ public class inventoryScript : MonoBehaviour
                     
                     toreturn = true;
                 }
-
             }
 
             return toreturn;
         }
-
-
     }
 
+    //for unit test
     static public inventoryItem getItemForTest()
     {
         return new inventoryItem("empty", 3, sprites[5], sprites[6]);
     }
-
-
-
 }

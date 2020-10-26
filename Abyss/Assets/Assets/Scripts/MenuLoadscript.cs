@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class MenuLoadscript : MonoBehaviour
 {
-    //Carries the vairalbe from main menu
+    //Carries the vairalbe from main menu scene to world scene
     public bool loadContinue;
 
     private void Awake()
     {
         loadContinue = false;
-
-       
-
     }
-
 
     public bool getLoadcontuine()
     {
@@ -25,7 +21,4 @@ public class MenuLoadscript : MonoBehaviour
     {
         loadContinue = loaded;
     }
-
-   
-
 }

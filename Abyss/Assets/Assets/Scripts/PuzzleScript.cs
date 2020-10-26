@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class PuzzleScript : MonoBehaviour
 {
-
     private static PuzzleRefeanceItems puzzleMaster;
     private static int PuzzleItemProgress;
     private Boolean[] Unlocks;
@@ -16,8 +15,6 @@ public class PuzzleScript : MonoBehaviour
     public PuzzleworldChangesScript changesScript;
     public MenuLoadscript MainMenu;
     
-
-
     // enum varibles  
 
     //Inventory items
@@ -40,7 +37,6 @@ public class PuzzleScript : MonoBehaviour
     public static int DOGHOUSE = 6;
 
     //unlocks
-    //in code so everything not reveled
     // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello 
     public static int TAP = 0;
     public static int OAP = 1;
@@ -76,23 +72,23 @@ public class PuzzleScript : MonoBehaviour
         Unlocks[HUOT] = false;
         Unlocks[DK] = false;
         Unlocks[KUOP] = false;
-        
     }
 
-    // is called before update()
+    // loads new game in other conecting scripts
+    // checks if player presed continue buttion 
+    // updates game with save data if there is save data 
     void Start()
     {
         GameObject menu = GameObject.Find("MainMenuloadScript");
         MainMenu= menu.GetComponent<MenuLoadscript>();
-        Debug.Log("Puzzle started");
         changesScript.LoadNewGame();
-        Debug.Log(MainMenu.getLoadcontuine());
+        
         if (MainMenu.getLoadcontuine())
         {
-            if(SavePuzzleData.LoadPuzzleData() != null)
-            Debug.Log("Game loaded");
-            LoadPuzzleSave();
-            //Testload();
+            if (SavePuzzleData.LoadPuzzleData() != null)
+            {
+                LoadPuzzleSave();
+            }
         }
     }
 
@@ -116,27 +112,6 @@ public class PuzzleScript : MonoBehaviour
         Unlocks[DK] = false;
         Unlocks[KUOP] = false;
         changesScript.LoadNewGame();
-
-    }
-
-    public void Testload()
-    {
-        PuzzleItemProgress = 0;
-        Unlocks[TAP] = true;
-        Unlocks[OAP] = true;
-        Unlocks[PC] = true;
-        Unlocks[CUOM] = true;
-        Unlocks[PUOM] = true;
-        Unlocks[MK] = true;
-        Unlocks[PUOP] = true;
-        Unlocks[CUOC] = true;
-        Unlocks[CHC] = true;
-        Unlocks[BUOD] = true;
-        Unlocks[HUOT] = true;
-        Unlocks[DK] = true;
-        Unlocks[KUOP] = true;
-        PuzzleItemProgression();
-
     }
 
     //resets the world and if there is save data load the save
@@ -146,11 +121,8 @@ public class PuzzleScript : MonoBehaviour
 
         if (SavePuzzleData.LoadPuzzleData() != null)
         {
-
-
             LoadPuzzleSave();
         }
-
     }
 
     //loads the save file and updates the vrairables in puzzle script and up dates the puzzle progress
@@ -169,8 +141,6 @@ public class PuzzleScript : MonoBehaviour
     {
         Boolean ItemUsed = false;
         
-        
-    
         if (PuzzleItemProgress == 0)
         {
             if (RoomItemID == PICIndex.getRoomItemIndex(POT))
@@ -187,9 +157,7 @@ public class PuzzleScript : MonoBehaviour
                     ItemUsed = true;
                     InventoryScript.RemoveItemFromInventory(4);
                 }
-
             }
-
         }
         else if (PuzzleItemProgress == 10)
         {
@@ -201,7 +169,6 @@ public class PuzzleScript : MonoBehaviour
                     ItemUsed = true;
                     InventoryScript.RemoveItemFromInventory(7);
                 }
-
             }
         }
         else if (PuzzleItemProgress ==15)
@@ -249,11 +216,9 @@ public class PuzzleScript : MonoBehaviour
                     InventoryScript.RemoveItemFromInventory(1);
                 }
             }
-
         }
         else if (PuzzleItemProgress == 50)
         {
-
             if (RoomItemID == PICIndex.getRoomItemIndex(TOYDOG))
             {
                 if (ActiveItemID == PICIndex.getItemIndex(HAMMER))
@@ -266,7 +231,6 @@ public class PuzzleScript : MonoBehaviour
         }
         else if (PuzzleItemProgress == 60)
         {
-
             if (RoomItemID == PICIndex.getRoomItemIndex(PAINTINGPLAYER))
             {
                 if (ActiveItemID == PICIndex.getItemIndex(KNIFE))
@@ -288,15 +252,12 @@ public class PuzzleScript : MonoBehaviour
     // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello 
     // need to be called for load game
     void PuzzleItemProgression()
-    {
-        Debug.Log("puzzle progression started");
+    {     
         if (PuzzleItemProgress == 0 &&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
         {
-            Debug.Log("effect start");
             Unlocks[PC] = true;
             PuzzleItemProgress = 10;
             changesScript.Effect0();
-            Debug.Log("effect0 done");
         }
         if(PuzzleItemProgress == 10 && (Unlocks[CUOM] == true))
         {
@@ -310,8 +271,7 @@ public class PuzzleScript : MonoBehaviour
             changesScript.Effect15();
         }
         if (PuzzleItemProgress == 20 && (Unlocks[PUOP] == true))
-        {
-            
+        {          
             PuzzleItemProgress = 30;
             changesScript.Effect20();
         }
@@ -323,7 +283,6 @@ public class PuzzleScript : MonoBehaviour
         }
         if (PuzzleItemProgress == 40 && (Unlocks[BUOD] == true))
         {
-
             PuzzleItemProgress = 50;
             changesScript.Effect40();
         }
@@ -331,11 +290,9 @@ public class PuzzleScript : MonoBehaviour
         {
             Unlocks[DK] = true;
             PuzzleItemProgress = 60;
-            //Add effect unlock
         }
         if (PuzzleItemProgress == 60 && (Unlocks[KUOP] == true))
         {
-
             PuzzleItemProgress = 70;
             changesScript.Effect60();
         }
@@ -345,7 +302,7 @@ public class PuzzleScript : MonoBehaviour
         }
     }
 
-
+//checks if unlock is true or false. used to check if the player can pick up and item 
     public Boolean ItemlockedCheck(int ItemId)
     {
         Boolean toreturn = false;
@@ -376,7 +333,6 @@ public class PuzzleScript : MonoBehaviour
                 }
             }
         }
-
         if (PuzzleItemProgress == 10)
         {
              if (ItemId == 7)
@@ -391,7 +347,6 @@ public class PuzzleScript : MonoBehaviour
                 }
              }
         }
-
         if (PuzzleItemProgress == 15)
         {
             if (ItemId == 11)
@@ -494,24 +449,19 @@ public class PuzzleScript : MonoBehaviour
         return toreturn;
     }
 
-
-
-
     // gets
-
     public int GetPuzzleItemValue()
     {
         return PuzzleItemProgress;
     }
-
-
 
     public Boolean[] GetUnlock()
     {
         return Unlocks;
     }
 
-
+    // the Puzzle refrences item this is a refrences to tall the items in the game
+    //used when creating items to put in inventory or to check if the item used is the right item needed.
       public class PuzzleRefeanceItems
       {
             inventoryScript.Inventory puzzleInventory;
@@ -547,7 +497,7 @@ public class PuzzleScript : MonoBehaviour
                 puzzleInventory.addInventoryItem(item10);
                 puzzleInventory.addInventoryItem(item11);
                 puzzleInventory.addInventoryItem(item12);
-                
+ 
             }
 
             public inventoryScript.Inventory GetPuzzleInventory()
@@ -556,7 +506,8 @@ public class PuzzleScript : MonoBehaviour
             }
       }
 
-
+    // used to make sure the right item and room item is being compare to these variables 
+    // all refence and names are in code please refer to Puzzles.doc on the Abyss google share drive or Abyss trello 
     public class PuzzleItemCompareIndex
     {
         int[] ItemIndex;
@@ -596,8 +547,5 @@ public class PuzzleScript : MonoBehaviour
         {
             return ItemIndex[num];
         }
-
     }
-
-
 }
