@@ -76,13 +76,16 @@ public class PuzzleScript : MonoBehaviour
         Unlocks[HUOT] = false;
         Unlocks[DK] = false;
         Unlocks[KUOP] = false;
-        changesScript.LoadNewGame();
+        
     }
 
     // is called before update()
     void Start()
     {
-        if(MainMenu.loadContinue)
+        Debug.Log("Puzzle started");
+        changesScript.LoadNewGame();
+        Debug.Log(MainMenu.getLoadcontuine());
+        if (MainMenu.getLoadcontuine())
         {
             Debug.Log("Game loaded");
             //LoadPuzzleSave();
@@ -280,12 +283,14 @@ public class PuzzleScript : MonoBehaviour
     // need to be called for load game
     void PuzzleItemProgression()
     {
-        if(PuzzleItemProgress == 0 &&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
+        Debug.Log("puzzle progression started");
+        if (PuzzleItemProgress == 0 &&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
         {
-            Debug.Log("puzzle progression loaded");
+            Debug.Log("effect start");
             Unlocks[PC] = true;
             PuzzleItemProgress = 10;
             changesScript.Effect0();
+            Debug.Log("effect0 done");
         }
         if(PuzzleItemProgress == 10 && (Unlocks[CUOM] == true))
         {

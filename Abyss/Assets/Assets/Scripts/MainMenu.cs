@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Game contniue Started");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        loadContinue.loadContinue = true;
+        loadContinue.setLoadcontuie(true);
     }
 
     public void QuitGame()
