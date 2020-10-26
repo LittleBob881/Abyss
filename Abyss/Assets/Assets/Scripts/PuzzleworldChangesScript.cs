@@ -33,7 +33,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
     public void LoadNewGame()
     {
        
-        Debug.Log("load new game started");
+
         
         notebook.ChangePageImage(NotebookSprites[3], 3);
         notebook.ChangePageImage(NotebookSprites[4], 4);
@@ -50,6 +50,7 @@ public class PuzzleworldChangesScript : MonoBehaviour
 
     public void Effect0()
     {
+        Debug.Log("hewwo");
         notebook.ChangePageImage(PageSprites[0],2);
         Debug.Log("hewwo");
     }
