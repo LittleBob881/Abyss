@@ -57,10 +57,10 @@ public class Walk : MonoBehaviour
         transform.localScale = characterScale;
     }
 
+    //Is used by the monster movement script to kill the player
     public void killPlayer()
     {
         alive = false;
-        Debug.Log("Player is dead");
         DeathScript.PlayerDeath();
     }
 

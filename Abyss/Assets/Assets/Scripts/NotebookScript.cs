@@ -129,10 +129,9 @@ public class NotebookScript : MonoBehaviour
         playerNoteBook.unlockPage(1);
     }
 
-    //Changes pageImage by number 
+    //Changes pageImage at page number to new sprite 
     public void ChangePageImage(Sprite image, int pageNumber)
     {
-        Debug.Log("in notebook");
         playerNoteBook.updatePage(image, pageNumber);
     }
 }

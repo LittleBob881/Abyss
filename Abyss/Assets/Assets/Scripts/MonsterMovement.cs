@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 
-
+//This class is in charge of all the movement of the monster. It controls the walking and chasing method
 public class MonsterMovement : MonoBehaviour
 {
+    //Variable for walking
     private float direction;
     private float movement;
     private const float walkingSpeed = 0.15f;
@@ -14,6 +15,7 @@ public class MonsterMovement : MonoBehaviour
     private const float DIRECTION_CONST = -22;
     private float LOCAL_SCALE_CONST;
 
+    //Variables for the monster and the player
     private Rigidbody2D monster;
     private GameObject player;
     private Transform playerTransform;
@@ -31,7 +33,7 @@ public class MonsterMovement : MonoBehaviour
     private float door2Position = 0;
     private System.Random rand = new System.Random();
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update and sets monster location, walls and door. Also gets the player infomation
     void Start()
     {
         monsterSound = GetComponent<AudioSource>();
@@ -53,12 +55,13 @@ public class MonsterMovement : MonoBehaviour
         monsterTransform = monster.transform;
     }
 
+    //Used to reset the game from save or respwan
     public void ResetMonster()
     {
         playerAlive = true;
     }
 
-    // Update is called once per frame
+    // Update is called once per frame. Checks if player is in room with monster when it will chase, else it will randomly walk around
     void Update()
     {
         if((playerTransform.position.y <= floorPosition+0.5f && playerTransform.position.y >= floorPosition-0.5f) && (playerTransform.position.x <= wallRight && playerTransform.position.x >= wallLeft))
@@ -71,9 +74,11 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
+    //This method makes the monster randomly walk around one floor of the house
     void walk()
     {
         movement = walkingSpeed;
+        //Checks that monster is not infront of either door in the room
         if (monsterTransform.position.x <= door1Position + 0.05f && monsterTransform.position.x >= door1Position)
         {
             AtDoor();
@@ -82,13 +87,13 @@ public class MonsterMovement : MonoBehaviour
         {
             AtDoor();
         }
-        else if (!(monsterTransform.position.x < wallRight && monsterTransform.position.x > wallLeft))
+        else if (!(monsterTransform.position.x < wallRight && monsterTransform.position.x > wallLeft)) //Checking monster has not hit a wall and will turn around if has
         {
             facingR = !facingR;
         }
         else
         {
-            //Chooses a random number 1-200 and will turn if the random number is 200
+            //Chooses a random number 1-200 and will turn if the random number is 1
             int randomGen = rand.Next(1, 200);
             if (randomGen == 1)
             {
@@ -125,10 +130,13 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
+    //This is called if the monster is in the same room as the player. It will speed up the monster and make it chase the player
     void chase()
     {
         movement = chasingSpeed;
         float playerLocation = playerTransform.position.x;
+        
+        //Checks if the monster is on top of the player and will kill player if so
         if(playerLocation+0.5f >= monsterTransform.position.x && playerLocation-0.5f <= monsterTransform.position.x && playerAlive)
         {
             Walk playerScript = (Walk)player.GetComponent(typeof(Walk));
@@ -137,7 +145,7 @@ public class MonsterMovement : MonoBehaviour
             player.SetActive(false);
             
         }
-        else if(playerLocation > monsterTransform.position.x)
+        else if(playerLocation > monsterTransform.position.x) //Else will find players position and go that direction
         {
             facingR = true;
             direction = -DIRECTION_CONST;
@@ -160,36 +168,32 @@ public class MonsterMovement : MonoBehaviour
         float monsterX = monsterTransform.position.x;
         float monsterY = monsterTransform.position.y;
 
-        if(monsterY == -30.82f && monsterX <= 68.5f && monsterX >= 66.5f)
+        if(monsterY == -30.82f && monsterX <= 68.5f && monsterX >= 66.5f) //From Lounge to Green Hall
         {
-            Debug.Log("Going from Lounge to Green Hall");
             door1Position = 77f;
             floorPosition = -17.58f;
             wallLeft = 64.5f;
             wallRight = 96.3f;
             door2Position = 92f;
         }
-        else if(monsterY == -17.58f && monsterX <= 78 && monsterX >= 76)
+        else if(monsterY == -17.58f && monsterX <= 78 && monsterX >= 76) //From Green Hall to Lounge
         {
-            Debug.Log("Going from Green Hall to Lounge");
             door1Position = 67.5f;
             floorPosition = -30.82f;
             wallLeft = 65f;
             wallRight = 100f;
             door2Position = 0;
         }
-        else if (monsterY == -17.58f && monsterX <= 93 && monsterX >= 91)
+        else if (monsterY == -17.58f && monsterX <= 93 && monsterX >= 91) //From Green Hall to Bedroom
         {
-            Debug.Log("Going from Green Hall to Bedroom");
             door1Position = 80.7f;
             floorPosition = 1.62f;
             wallLeft = 64.5f;
             wallRight = 99.5f;
             door2Position = 0;
         }
-        else if (monsterY == 1.62f && monsterX <= 81.7f && monsterX >= 79.7f)
+        else if (monsterY == 1.62f && monsterX <= 81.7f && monsterX >= 79.7f) //From Bedroom to Green Hall
         {
-            Debug.Log("Going from Bedroom to Green Hall");
             door1Position = 92f;
             floorPosition = -17.58f;
             wallLeft = 64.5f;
@@ -198,7 +202,7 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
-    // stop monster from killing player in end game menu
+    // Stop monster from killing player in end game menu
     public void StopMonster()
     {
         playerAlive = false;
