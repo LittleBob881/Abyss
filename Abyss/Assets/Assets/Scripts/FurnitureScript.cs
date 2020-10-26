@@ -282,7 +282,7 @@ public class FurnitureScript : MonoBehaviour
         String MirrorActionString= " ";
         if (PuzzleScript.GetPuzzleItemValue() != PuzzleProgressNeedForSaveChecker )
         {
-            // save data 
+            SavePuzzleData.SavePuzzle(PuzzleScript);
 
             MirrorActionString = "Progress saved";
             PuzzleProgressNeedForSaveChecker = PuzzleScript.GetPuzzleItemValue();
