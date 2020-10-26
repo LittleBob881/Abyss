@@ -9,8 +9,9 @@ public class Walk : MonoBehaviour
     private float speed;
     private AudioSource audioSrc;
     private float walkSound = 2f;
-    private bool alive = true;
+    public bool alive = true;
     public DeathScript DeathScript;
+    public Vector3 respawnPoint;
 
     private void Start()
     {
@@ -61,5 +62,18 @@ public class Walk : MonoBehaviour
         alive = false;
         Debug.Log("Player is dead");
         DeathScript.PlayerDeath();
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Monster")
+        {
+            //
+        }
+
+        if (collision.tag == "LoadingPoint")
+        {
+            respawnPoint = collision.transform.position;
+        }
     }
 }

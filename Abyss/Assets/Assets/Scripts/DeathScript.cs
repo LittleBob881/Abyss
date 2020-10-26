@@ -8,8 +8,11 @@ public class DeathScript : MonoBehaviour
     public GameObject DeathAnimation;
     public GameObject DeathMenu;
     public GameObject Deathtext;
+    public GameObject player;
+    public Walk playerWalk;
     public PuzzleScript PuzzleScript;
     public MonsterMovement Monster;
+    public string LoadingPlace;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +48,9 @@ public class DeathScript : MonoBehaviour
     {
         PuzzleScript.Tryagain();
         DeathMenu.gameObject.SetActive(false);
-        //reset player
+        player.gameObject.SetActive(true);
+        // player.alive = true;
+        player.transform.position = new Vector3(playerWalk.respawnPoint.x, playerWalk.respawnPoint.y);
         Monster.StopMonster();
         
     }
