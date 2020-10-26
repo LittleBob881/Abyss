@@ -76,6 +76,7 @@ public class PuzzleScript : MonoBehaviour
         Unlocks[HUOT] = false;
         Unlocks[DK] = false;
         Unlocks[KUOP] = false;
+        changesScript.LoadNewGame();
     }
 
     // is called before update()
@@ -83,7 +84,9 @@ public class PuzzleScript : MonoBehaviour
     {
         if(MainMenu.loadContinue)
         {
-            LoadPuzzleSave();
+            Debug.Log("Game loaded");
+            //LoadPuzzleSave();
+            Testload();
         }
     }
 
@@ -110,6 +113,26 @@ public class PuzzleScript : MonoBehaviour
 
     }
 
+    public void Testload()
+    {
+        PuzzleItemProgress = 0;
+        Unlocks[TAP] = true;
+        Unlocks[OAP] = true;
+        Unlocks[PC] = true;
+        Unlocks[CUOM] = true;
+        Unlocks[PUOM] = true;
+        Unlocks[MK] = true;
+        Unlocks[PUOP] = true;
+        Unlocks[CUOC] = true;
+        Unlocks[CHC] = true;
+        Unlocks[BUOD] = true;
+        Unlocks[HUOT] = true;
+        Unlocks[DK] = true;
+        Unlocks[KUOP] = true;
+        PuzzleItemProgression();
+
+    }
+
     //resets the world and if there is save data load the save
     public void Tryagain()
     {
@@ -120,12 +143,13 @@ public class PuzzleScript : MonoBehaviour
 
 
     }
+
+    //loads the save file and updates the vrairables in puzzle script and up dates the puzzle progress
     public void LoadPuzzleSave()
     {
-        
-        //call load here?
-        // add in PuzzleItemProgress = save;
-        // add in Unlocks[] = saveUnlocks[];
+        PuzzleSaveData saveData = SavePuzzleData.LoadPuzzleData();
+        PuzzleItemProgress = saveData.puzzleItemProgress;
+        Unlocks = saveData.unlocks;
         PuzzleItemProgression();
     }
 
@@ -258,7 +282,7 @@ public class PuzzleScript : MonoBehaviour
     {
         if(PuzzleItemProgress == 0 &&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
         {
-
+            Debug.Log("puzzle progression loaded");
             Unlocks[PC] = true;
             PuzzleItemProgress = 10;
             changesScript.Effect0();
