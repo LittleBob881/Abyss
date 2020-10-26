@@ -128,7 +128,7 @@ public class PuzzleScript : MonoBehaviour
         Unlocks[HUOT] = true;
         Unlocks[DK] = true;
         Unlocks[KUOP] = true;
-        changesScript.LoadNewGame();
+        PuzzleItemProgression();
 
     }
 
@@ -281,7 +281,7 @@ public class PuzzleScript : MonoBehaviour
     {
         if(PuzzleItemProgress == 0 &&(Unlocks[TAP]==true&&Unlocks[OAP]==true))
         {
-
+            Debug.Log("puzzle progression loaded");
             Unlocks[PC] = true;
             PuzzleItemProgress = 10;
             changesScript.Effect0();
