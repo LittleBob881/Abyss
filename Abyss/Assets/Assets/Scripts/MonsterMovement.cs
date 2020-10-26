@@ -25,7 +25,7 @@ public class MonsterMovement : MonoBehaviour
     private AudioSource monsterSound;
     private bool playerAlive = true;
 
-    //Variables for randomized walking
+    //Variables for monster to walk around the building randomly
     private float floorPosition;
     private float wallLeft;
     private float wallRight;
