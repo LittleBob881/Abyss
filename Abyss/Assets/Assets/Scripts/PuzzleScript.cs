@@ -82,14 +82,17 @@ public class PuzzleScript : MonoBehaviour
     // is called before update()
     void Start()
     {
+        GameObject menu = GameObject.Find("MainMenuloadScript");
+        MainMenu= menu.GetComponent<MenuLoadscript>();
         Debug.Log("Puzzle started");
         changesScript.LoadNewGame();
         Debug.Log(MainMenu.getLoadcontuine());
         if (MainMenu.getLoadcontuine())
         {
+            if(SavePuzzleData.LoadPuzzleData() != null)
             Debug.Log("Game loaded");
-            //LoadPuzzleSave();
-            Testload();
+            LoadPuzzleSave();
+            //Testload();
         }
     }
 

@@ -7,10 +7,13 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     private AudioSource MainMenuSound;
-    public MenuLoadscript loadContinue;
+    public GameObject loadContinue;
+    public MenuLoadscript load;
 
     private void Start()
     {
+        load = loadContinue.GetComponent<MenuLoadscript>();
+        DontDestroyOnLoad(loadContinue);
         MainMenuSound = GetComponent<AudioSource>();
         MainMenuSound.Play();
     }
@@ -24,9 +27,10 @@ public class MainMenu : MonoBehaviour
 
     public void ContiuneGame()
     {
+        load.setLoadcontuie(true);
         Debug.Log("Game contniue Started");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        loadContinue.setLoadcontuie(true);
+        
     }
 
     public void QuitGame()
