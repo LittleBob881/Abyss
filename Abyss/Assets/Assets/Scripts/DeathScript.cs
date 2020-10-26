@@ -9,6 +9,7 @@ public class DeathScript : MonoBehaviour
     public GameObject DeathMenu;
     public GameObject Deathtext;
     public PuzzleScript PuzzleScript;
+    public MonsterMovement Monster;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,7 @@ public class DeathScript : MonoBehaviour
         PuzzleScript.NewGame();
         DeathMenu.gameObject.SetActive(false);
         //reset player
-        // reset monster
+        Monster.StopMonster();
         
     }
 

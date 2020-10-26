@@ -9778,7 +9778,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This this the end of the story so far in the game. Feel free play again.
+  m_Text: This is the end of the story so far in the game. Feel free play again.
 --- !u!222 &405184115
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11936,6 +11936,7 @@ MonoBehaviour:
   DeathMenu: {fileID: 1185907506}
   Deathtext: {fileID: 1895347806}
   PuzzleScript: {fileID: 199884814}
+  Monster: {fileID: 20813630}
 --- !u!210 &610935262
 SortingGroup:
   m_ObjectHideFlags: 0
