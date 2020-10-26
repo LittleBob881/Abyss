@@ -27,7 +27,7 @@ namespace Tests
             {
                 inventorySlots.Add(puzzle.GetPuzzleInventory().getInventorySlot(0));
             }
-            var inventory = new inventoryScript.inventory(inventorySlots);
+            var inventory = new inventoryScript.Inventory(inventorySlots);
 
 
 

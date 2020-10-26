@@ -479,11 +479,11 @@ public class PuzzleScript : MonoBehaviour
 
       public class PuzzleRefeanceItems
       {
-            inventoryScript.inventory puzzleInventory;
+            inventoryScript.Inventory puzzleInventory;
 
             public PuzzleRefeanceItems()
             {
-                puzzleInventory = new inventoryScript.inventory();
+                puzzleInventory = new inventoryScript.Inventory();
                 Sprite[] sprites = Resources.LoadAll<Sprite>("itemsheet_7");
                 inventoryScript.inventoryItem Empty = new inventoryScript.inventoryItem("Empty", 0, sprites[0], sprites[0]);
                 inventoryScript.inventoryItem item1 = new inventoryScript.inventoryItem("bone", 1, sprites[1], sprites[13]);
@@ -515,7 +515,7 @@ public class PuzzleScript : MonoBehaviour
                 
             }
 
-            public inventoryScript.inventory GetPuzzleInventory()
+            public inventoryScript.Inventory GetPuzzleInventory()
             {
                 return puzzleInventory;
             }

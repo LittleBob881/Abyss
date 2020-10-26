@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class inventoryScript : MonoBehaviour
 {
-    private static inventory playerInventory;
+    private static Inventory playerInventory;
     private PuzzleScript.PuzzleRefeanceItems alist;
     public GameObject IExitButton;
     public GameObject IOpenButton;
@@ -24,14 +24,14 @@ public class inventoryScript : MonoBehaviour
     {
         sprites = Resources.LoadAll<Sprite>("Itemsheet_6");
         alist = new PuzzleScript.PuzzleRefeanceItems();
-        createNewGame();
+        CreateNewGame();
 
         Button openBtu = IOpenButton.GetComponent<Button>();
-        openBtu.onClick.AddListener(OpenTaskOnClick);
+        openBtu.onClick.AddListener(OpenInvetory);
 
 
         Button exitBtu = IExitButton.GetComponent<Button>();
-        exitBtu.onClick.AddListener(ExitTaskOnClick);
+        exitBtu.onClick.AddListener(CloseInventory);
 
         Button Slot0L = Slot[0].GetComponent<Button>();
         Slot0L.onClick.AddListener(slot0OnClick);
@@ -216,20 +216,20 @@ public class inventoryScript : MonoBehaviour
     }
 
 
-    public inventory GetPlayerInventory()
+    public Inventory GetPlayerInventory()
     {
         return playerInventory;
     }
 
     // closes the inventory
-    void ExitTaskOnClick()
+    void CloseInventory()
     {
         view.gameObject.SetActive(false);
-
     }
 
-    // open the invetory and updates the items in inventory.
-    void OpenTaskOnClick()
+    //updates Sprites in the Inventory gui to the curent items in inventory.
+    // and opens the Inventory gui in the game view.
+    void OpenInvetory()
     {
         Debug.Log("You have clicked the button!");
    
@@ -258,7 +258,7 @@ public class inventoryScript : MonoBehaviour
     }
 
     //sets the inventory to empty
-    private void createNewGame()
+    private void CreateNewGame()
     {
         Empty = new inventoryItem("empty", 0, sprites[0], sprites[0]);
     
@@ -269,7 +269,7 @@ public class inventoryScript : MonoBehaviour
             inventorySlots.Add(Empty);
         }
         
-        playerInventory = new inventory(inventorySlots);
+        playerInventory = new Inventory(inventorySlots);
     }
 
 
@@ -341,14 +341,14 @@ public class inventoryScript : MonoBehaviour
         }
     }
 
-    public class inventory
+    public class Inventory
     {
         private List<inventoryItem> inventorySlots;
         private inventoryItem activeItem;
         private inventoryItem empty;
 
         //for Initializing iventory class when loading a save file
-        public inventory(List<inventoryItem> slots)
+        public Inventory(List<inventoryItem> slots)
         {
             this.inventorySlots = slots;
             this.empty = Empty;
@@ -356,7 +356,7 @@ public class inventoryScript : MonoBehaviour
         }
 
         //for Initializing iventory class when creating a new game.
-        public inventory()
+        public Inventory()
         {
             inventorySlots = new List<inventoryItem>();
             this.empty = Empty;
@@ -402,7 +402,7 @@ public class inventoryScript : MonoBehaviour
 
         // finds the first empty slot 
         // returns 55 if inventory full
-        public int FristEmptySlot()
+        public int FirstEmptySlot()
         {
             int toreturn = 55;
             for (int k = 0; k <= 11; k++)
@@ -502,7 +502,7 @@ public class inventoryScript : MonoBehaviour
             Boolean check = Checkforitem(aItem.getID());
             if (check == false)
             {
-                newSlot = FristEmptySlot();
+                newSlot = FirstEmptySlot();
                 if (newSlot == 55)
                 {
                     return false;
