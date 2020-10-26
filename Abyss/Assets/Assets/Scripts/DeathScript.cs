@@ -43,7 +43,7 @@ public class DeathScript : MonoBehaviour
 
     public void NewGame()
     {
-        PuzzleScript.NewGame();
+        PuzzleScript.Tryagain();
         DeathMenu.gameObject.SetActive(false);
         //reset player
         Monster.StopMonster();
