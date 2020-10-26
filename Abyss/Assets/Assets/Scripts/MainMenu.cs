@@ -20,22 +20,19 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         //When the start button is tapped, the game will load with scenemanager
-        Debug.Log("Game Started");
-        //This code will load scene number 1
+        //This code will load scene number 1 which is World scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ContiuneGame()
     {
         load.setLoadcontuie(true);
-        Debug.Log("Game contniue Started");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
     }
 
     public void QuitGame()
     {
-        Debug.Log("Game Quitting");
         Application.Quit();
     }
 
